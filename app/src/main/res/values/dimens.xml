@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="headerSize">30sp</dimen>
+    <dimen name="enterNameBarSize">30sp</dimen>
+    <dimen name="enterNameBarMarginTop">20sp</dimen>
+    <dimen name="enterButtonTextSize">20sp</dimen>
+    <dimen name="inputBarPadingStart">10sp</dimen>
+    <dimen name="enterButtonMarginTop">15sp</dimen>
+</resources>

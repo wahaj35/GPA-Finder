@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="layoutsMarginTop">
+        <item name="android:layout_marginTop">20sp</item>
+    </style>
+
+    <style name="headerStyle">
+        <item name="android:layout_marginTop">7sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+
+    <style name="appHeaderStyle">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="subjectInput">
+        <item name="android:textSize">22sp</item>
+        <item name="android:ems">4</item>
+    </style>
+
+    <style name="marksInput">
+        <item name="android:textSize">22sp</item>
+        <item name="android:ems">3</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="creditInput">
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:ems">7</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+</resources>

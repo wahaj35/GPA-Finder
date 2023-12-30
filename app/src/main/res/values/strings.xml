@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">GPA Finder</string>
+    <string name="appHeader">GPA Finder</string>
+    <string name="subject_2_name">Subject 2</string>
+    <string name="marks">Marks</string>
+    <string name="subject_1_name">Subject 1</string>
+    <string name="subject_3_name">Subject 3</string>
+    <string name="subject_4_name">Subject 4</string>
+    <string name="subject_5_name">Subject 5</string>
+    <string name="subject_6_name">Subject 6</string>
+    <string name="credit_hours_hint">Credit Hours</string>
+    <string name="checkGPA_button_text">Check GPA</string>
+    <string name="finalGPA" />
+    <string name="no_ofSubjects_InputBar_TextHint">No.Of Subejcts</string>
+    <string name="subjectsHeader">Subjects</string>
+    <string name="marksHeader">Marks</string>
+    <string name="creditHeader">Credit Hours</string>
+    <string name="enterButtonText">Enter</string>
+    <string name="gpaText">GPA: </string>
+    <string name="leftStarDescription">App Icon1</string>
+    <string name="noOfSubjectsInputBarHint">No.Of Subjects</string>
+    <string name="subject_input">Enter Subject name here</string>
+</resources>
