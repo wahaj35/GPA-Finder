@@ -17,6 +17,10 @@ class Report : Fragment() {
         // Inflate the layout for this fragment
 
         val binding:FragmentReportBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_report, container,false)
+
+
+
+
         return binding.root
     }
 

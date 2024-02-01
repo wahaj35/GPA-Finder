@@ -14,16 +14,16 @@ import com.example.about.databinding.FragmentDataInputBinding
 
 class DataInput : Fragment() {
     lateinit var noOfSubjects: String // The variable to store the no.of subjects entered by user
-    private lateinit var bind: ActivityMainBinding
     private val gpa_text = GPA()
     lateinit var binding: FragmentDataInputBinding
+    private var subjects = Data()
+    private var marks = Data()
+    private var credits = Data()
     override fun onCreateView(
 
 
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
          binding = DataBindingUtil.inflate(inflater,R.layout.fragment_data_input,container,false)
-
-
         // Binding all the data classes to the ActivityMainClass
         binding.gpaText = gpa_text
         // Setting up setOnClickListener on the buttons.
@@ -33,14 +33,14 @@ class DataInput : Fragment() {
             // Setting up setOnClickLick method for the GPA Button
             checkGPAButton.setOnClickListener { chkGPA() }
 
-            checkReportButton.setOnClickListener {
-                view:View -> Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-            }
         }
 
         return binding.root
     }
+
+
     private fun view() {
+
         noOfSubjects = binding.noOfSubjectsInputBar.text.toString()
         val layouts = arrayOf(
             binding.layout1,
@@ -169,24 +169,33 @@ class DataInput : Fragment() {
     //This function will be called when the chkGPA button will be entered to calculate the GPA according to the given Input.
     @SuppressLint("ResourceAsColor")
     private fun chkGPA() {
+
         binding.apply {
             // Assigning the EditText Credit Hours and Marks to the Properties of the Marks and Credit Hours Class
             val qp = Array(6) { "" }
             val marks = arrayOf(
-                Subject1Marks.text.toString(),
-                Subject2Marks.text.toString(),
-                Subject3Marks.text.toString(),
-                Subject4Marks.text.toString(),
-                Subject5Marks.text.toString(),
-                Subject6Marks.text.toString()
+                Subject1Marks.text.toString().also { marks.marks[0] = it },
+                Subject2Marks.text.toString().also {marks.marks[1] = it},
+                Subject3Marks.text.toString().also {marks.marks[2] = it},
+                Subject4Marks.text.toString().also {marks.marks[3] = it},
+                Subject5Marks.text.toString().also {marks.marks[4] = it},
+                Subject6Marks.text.toString().also {marks.marks[5] = it}
             )
             val creditHours = arrayOf(
-                creditHours1.text.toString(),
-                creditHours2.text.toString(),
-                creditHours3.text.toString(),
-                creditHours4.text.toString(),
-                creditHours5.text.toString(),
-                creditHours6.text.toString()
+                creditHours1.text.toString().also {credits.creditHours[0] = it},
+                creditHours2.text.toString().also {credits.creditHours[1] = it},
+                creditHours3.text.toString().also {credits.creditHours[2] = it},
+                creditHours4.text.toString().also {credits.creditHours[3] = it},
+                creditHours5.text.toString().also {credits.creditHours[4] = it},
+                creditHours6.text.toString().also {credits.creditHours[5] = it}
+            )
+            val subjectsName  = arrayOf(
+                        Subject1.text.toString().also { subjects.subjects[0] },
+                        Subject2.text.toString().also { subjects.subjects[1] },
+                        Subject3.text.toString().also { subjects.subjects[2] },
+                        Subject4.text.toString().also { subjects.subjects[3] },
+                        Subject5.text.toString().also { subjects.subjects[4] },
+                        Subject6.text.toString().also { subjects.subjects[5] }
             )
             this.invalidateAll()
             when (noOfSubjects) {
