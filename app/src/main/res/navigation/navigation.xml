@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/dataInput5">
+
+    
+
     <fragment
         android:id="@+id/dataInput5"
         android:name="com.example.about.DataInput"

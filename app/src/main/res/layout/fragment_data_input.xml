@@ -8,6 +8,7 @@
         <variable
             name="gpaText"
             type="com.example.about.GPA" />
+
     </data>
 
 

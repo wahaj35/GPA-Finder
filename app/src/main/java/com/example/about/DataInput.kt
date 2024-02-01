@@ -9,16 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
-import com.example.about.databinding.ActivityMainBinding
 import com.example.about.databinding.FragmentDataInputBinding
 
 class DataInput : Fragment() {
     lateinit var noOfSubjects: String // The variable to store the no.of subjects entered by user
     private val gpa_text = GPA()
     lateinit var binding: FragmentDataInputBinding
-    private var subjects = Data()
-    private var marks = Data()
-    private var credits = Data()
     override fun onCreateView(
 
 
@@ -32,6 +28,10 @@ class DataInput : Fragment() {
             enterButton.setOnClickListener { view() }
             // Setting up setOnClickLick method for the GPA Button
             checkGPAButton.setOnClickListener { chkGPA() }
+
+            checkReportButton.setOnClickListener { view:View->
+                Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+            }
 
         }
 
@@ -67,6 +67,9 @@ class DataInput : Fragment() {
             binding.creditHours5,
             binding.creditHours6
         )
+
+
+
         when (noOfSubjects) {
             "1" -> {
                 binding.scrollView2.visibility = View.VISIBLE
@@ -174,28 +177,20 @@ class DataInput : Fragment() {
             // Assigning the EditText Credit Hours and Marks to the Properties of the Marks and Credit Hours Class
             val qp = Array(6) { "" }
             val marks = arrayOf(
-                Subject1Marks.text.toString().also { marks.marks[0] = it },
-                Subject2Marks.text.toString().also {marks.marks[1] = it},
-                Subject3Marks.text.toString().also {marks.marks[2] = it},
-                Subject4Marks.text.toString().also {marks.marks[3] = it},
-                Subject5Marks.text.toString().also {marks.marks[4] = it},
-                Subject6Marks.text.toString().also {marks.marks[5] = it}
+                Subject1Marks.text.toString(),
+                Subject2Marks.text.toString(),
+                Subject3Marks.text.toString(),
+                Subject4Marks.text.toString(),
+                Subject5Marks.text.toString(),
+                Subject6Marks.text.toString()
             )
             val creditHours = arrayOf(
-                creditHours1.text.toString().also {credits.creditHours[0] = it},
-                creditHours2.text.toString().also {credits.creditHours[1] = it},
-                creditHours3.text.toString().also {credits.creditHours[2] = it},
-                creditHours4.text.toString().also {credits.creditHours[3] = it},
-                creditHours5.text.toString().also {credits.creditHours[4] = it},
-                creditHours6.text.toString().also {credits.creditHours[5] = it}
-            )
-            val subjectsName  = arrayOf(
-                        Subject1.text.toString().also { subjects.subjects[0] },
-                        Subject2.text.toString().also { subjects.subjects[1] },
-                        Subject3.text.toString().also { subjects.subjects[2] },
-                        Subject4.text.toString().also { subjects.subjects[3] },
-                        Subject5.text.toString().also { subjects.subjects[4] },
-                        Subject6.text.toString().also { subjects.subjects[5] }
+                creditHours1.text.toString(),
+                creditHours2.text.toString(),
+                creditHours3.text.toString(),
+                creditHours4.text.toString(),
+                creditHours5.text.toString(),
+                creditHours6.text.toString()
             )
             this.invalidateAll()
             when (noOfSubjects) {

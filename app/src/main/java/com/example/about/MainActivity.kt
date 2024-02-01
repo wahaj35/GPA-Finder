@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.about.databinding.ActivityMainBinding
 
-lateinit var noOfSubjects: String // The variable to store the no.of subjects entered by user
 
 open class MainActivity : AppCompatActivity() {
     private lateinit var bindActivity: ActivityMainBinding

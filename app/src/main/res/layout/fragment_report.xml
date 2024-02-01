@@ -6,22 +6,6 @@
     tools:context=".Report">
 
 
-    <data>
-
-        <variable
-            name="SubjectsName"
-            type="com.example.about.Data" />
-        <variable
-            name="Marks"
-            type="com.example.about.Data" />
-        <variable
-            name="CreditHours"
-            type="com.example.about.Data" />
-
-
-
-    </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/TopLayout"
