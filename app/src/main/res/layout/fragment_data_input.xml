@@ -19,81 +19,14 @@
         android:layout_height="match_parent">
 
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/headerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@android:color/holo_blue_dark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <FrameLayout
-                android:id="@+id/frameLayout1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@id/header"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@android:color/holo_blue_dark">
-
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="44dp"
-                    android:layout_height="35dp"
-                    android:contentDescription="@string/leftStarDescription"
-                    app:layout_constraintEnd_toStartOf="@+id/header"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/btn_star_big_on" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frameLayout2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/header"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@android:color/holo_blue_dark">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="44dp"
-                    android:layout_height="35dp"
-                    android:contentDescription="@string/leftStarDescription"
-                    app:layout_constraintStart_toEndOf="@+id/header"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/btn_star_big_on" />
-
-
-            </FrameLayout>
-
-
-
-
-            <TextView
-                android:id="@+id/header"
-                style="@style/appHeaderStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/appHeader"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/enterLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="45dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/headerLayout">
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/enterButton"
@@ -173,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/subjectsAndMarksHeader"
@@ -515,7 +448,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/GPALayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@android:color/holo_blue_light"
                     android:visibility="gone">
 
@@ -541,6 +474,26 @@
                         android:text="@={gpaText.finalGPA}"
                         android:textSize="20sp"
                         app:layout_constraintStart_toEndOf="@id/GPAText"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/checkReportLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/checkReportButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/GenerateReportText"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

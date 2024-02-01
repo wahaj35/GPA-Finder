@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.example.about.databinding.ActivityMainBinding
 import com.example.about.databinding.FragmentDataInputBinding
 
@@ -24,13 +25,17 @@ class DataInput : Fragment() {
 
 
         // Binding all the data classes to the ActivityMainClass
-        bind.gpaText = gpa_text
+        binding.gpaText = gpa_text
         // Setting up setOnClickListener on the buttons.
         binding.apply {
             // Setting up setOnClickLick method for the layout to view according to the user input
             enterButton.setOnClickListener { view() }
             // Setting up setOnClickLick method for the GPA Button
             checkGPAButton.setOnClickListener { chkGPA() }
+
+            checkReportButton.setOnClickListener {
+                view:View -> Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+            }
         }
 
         return binding.root
@@ -198,6 +203,10 @@ class DataInput : Fragment() {
                 "1" -> oneSubject(creditHours, marks, qp)
             }
         }
+
+        //Will show the button for generating the Marks Report
+        binding.checkReportLayout.visibility = View.VISIBLE
+
     }
     @SuppressLint("ResourceAsColor")
     private fun sixSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {

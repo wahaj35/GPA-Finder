@@ -22,4 +22,8 @@
     <string name="subject_input">Enter Subject name here</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="GenerateReportText">Generate Report? Click Here</string>
+    <string name="enterNameText">Enter Name</string>
+    <string name="enterRegNoHint">Enter Reg No</string>
+    <string name="GenerateButtonText">Generate</string>
 </resources>
