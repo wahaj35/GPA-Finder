@@ -37,6 +37,9 @@ class DataInput : Fragment() {
                 when(noOfSubjects){
                     "1" -> {
                         if(binding.Subject1.text.toString() != ""){
+                                sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString()))
+                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString()))
+                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString()))
                             Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
                         }else{
                             Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
@@ -44,6 +47,9 @@ class DataInput : Fragment() {
                     }
                     "2" ->{
                         if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "")){
+                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString(),))
+                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString()))
+                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString()))
                             Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
                         }else{
                             Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
@@ -51,6 +57,9 @@ class DataInput : Fragment() {
                     }
                     "3" ->{
                         if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "")){
+                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString()))
+                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString()))
+                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString()))
                             Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
                         }else{
                             Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
@@ -58,6 +67,9 @@ class DataInput : Fragment() {
                     }
                     "4" ->{
                         if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "")){
+                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString(),binding.Subject4.text.toString()))
+                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString() ,binding.Subject4Marks.text.toString()))
+                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString(),binding.creditHours4.text.toString()))
                             Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
                         }else{
                             Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
@@ -65,6 +77,9 @@ class DataInput : Fragment() {
                     }
                     "5" ->{
                         if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "")){
+                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString(),binding.Subject4.text.toString(),binding.Subject5.text.toString()))
+                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString() ,binding.Subject4Marks.text.toString(),binding.Subject5Marks.text.toString()))
+                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString(),binding.creditHours4.text.toString(),binding.creditHours5.text.toString()))
                             Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
                         }else{
                             Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
@@ -72,6 +87,9 @@ class DataInput : Fragment() {
                     }
                     "6" ->{
                         if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "") && (binding.Subject6.text.toString() != "")){
+                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString(),binding.Subject4.text.toString(),binding.Subject5.text.toString() ,binding.Subject6.text.toString()))
+                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString() ,binding.Subject4Marks.text.toString(),binding.Subject5Marks.text.toString() ,binding.Subject6Marks.text.toString()))
+                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString(),binding.creditHours4.text.toString() ,binding.creditHours5.text.toString() ,binding.creditHours6.text.toString()))
                             Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
                         }else{
                             Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
@@ -125,8 +143,6 @@ class DataInput : Fragment() {
             binding.Subject5,
             binding.Subject6
         )
-
-
 
         when (noOfSubjects) {
             "1" -> {
@@ -256,20 +272,6 @@ class DataInput : Fragment() {
                 creditHours6.text.toString()
             )
 
-            val subjectsNames = arrayOf(
-                Subject1.text.toString(),
-                Subject2.text.toString(),
-                Subject3.text.toString(),
-                Subject4.text.toString(),
-                Subject5.text.toString(),
-                Subject6.text.toString(),
-                )
-            for(i in 0..5){
-                sharedViewModel.setMarks(marks)
-                sharedViewModel.setSubjects(subjectsNames)
-                sharedViewModel.setCreditHours(creditHours)
-            }
-
             this.invalidateAll()
             when (noOfSubjects) {
                 "6" -> sixSubjects(creditHours, marks, qp)
@@ -331,7 +333,6 @@ class DataInput : Fragment() {
 
                         else -> {
                             binding.GPALayout.visibility = View.VISIBLE
-                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
                             binding.checkReportLayout.visibility = View.VISIBLE
                         }
                     }
@@ -390,7 +391,6 @@ class DataInput : Fragment() {
 
                         else -> {
                             binding.GPALayout.visibility = View.VISIBLE
-                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
                             binding.checkReportLayout.visibility = View.VISIBLE
                         }
                     }
@@ -448,7 +448,6 @@ class DataInput : Fragment() {
 
                         else -> {
                             binding.GPALayout.visibility = View.VISIBLE
-                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
                             binding.checkReportLayout.visibility = View.VISIBLE
                         }
                     }
@@ -505,7 +504,6 @@ class DataInput : Fragment() {
 
                         else -> {
                             binding.GPALayout.visibility = View.VISIBLE
-                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
                             binding.checkReportLayout.visibility = View.VISIBLE
                         }
                     }
@@ -561,7 +559,6 @@ class DataInput : Fragment() {
 
                         else -> {
                             binding.GPALayout.visibility = View.VISIBLE
-                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
                             binding.checkReportLayout.visibility = View.VISIBLE
                         }
                     }

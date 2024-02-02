@@ -21,7 +21,7 @@ class SharedViewModel:ViewModel() {
 
     //Function to Set Subjects Names in the List
     fun setSubjects(subjects: Array<String>){
-        for(i in 0..5){
+        for(i in subjects.indices){
             subjectsNames[i] = subjects[i]
         }
 
@@ -29,14 +29,14 @@ class SharedViewModel:ViewModel() {
 
     //Function to Set marks Names in the List
     fun setMarks(marks: Array<String>){
-        for(i in 0..5){
+        for(i in marks.indices){
             studentMarks[i] = marks[i]
         }
 
     }
 
     fun setCreditHours(credits:Array<String>){
-        for(i in 0..5){
+        for(i in credits.indices){
             creditHours[i] = credits[i]
         }
     }
