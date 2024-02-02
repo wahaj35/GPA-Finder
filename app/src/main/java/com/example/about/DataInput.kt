@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentDataInputBinding
 
 class DataInput : Fragment() {
@@ -32,8 +32,16 @@ class DataInput : Fragment() {
             // Setting up setOnClickLick method for the GPA Button
             checkGPAButton.setOnClickListener { chkGPA() }
 
-            checkReportButton.setOnClickListener {
-              view:View -> Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+            checkReportButton.setOnClickListener{
+                view:View ->
+                if(binding.Subject1.text.toString() == "" || binding.Subject2.text.toString() == ""  || binding.Subject3.text.toString() == "" || binding.Subject4.text.toString() == "" || binding.Subject5.text.toString() == "" || binding.Subject6.text.toString() == "" )
+        {
+           Toast.makeText(activity,"Enter Subjects Names", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+        }
+
             }
 
         }
@@ -41,9 +49,20 @@ class DataInput : Fragment() {
         return binding.root
     }
 
+//    private fun checkReport()
+//    {
+////        if(binding.Subject1.text.toString() == "" && binding.Subject2.text.toString() == ""  && binding.Subject3.text.toString() == "" && binding.Subject4.text.toString() == "" && binding.Subject5.text.toString() == "" && binding.Subject6.text.toString() == "" )
+////        {
+////           Toast.makeText(activity,"Enter Subjects Names", Toast.LENGTH_SHORT).show()
+////        }
+////        else{
+////            Navigation.createNavigateOnClickListener(R.id.action_dataInput5_to_report2)
+////        }
+//        binding.checkReportButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_dataInput5_to_report2))
+//
+//    }
 
     private fun view() {
-
         noOfSubjects = binding.noOfSubjectsInputBar.text.toString()
         val layouts = arrayOf(
             binding.layout1,
@@ -175,7 +194,6 @@ class DataInput : Fragment() {
     //This function will be called when the chkGPA button will be entered to calculate the GPA according to the given Input.
     @SuppressLint("ResourceAsColor")
     private fun chkGPA() {
-        sharedViewModel.setMarks(binding.Subject1Marks.text.toString())
         binding.apply {
             // Assigning the EditText Credit Hours and Marks to the Properties of the Marks and Credit Hours Class
             val qp = Array(6) { "" }
@@ -195,6 +213,21 @@ class DataInput : Fragment() {
                 creditHours5.text.toString(),
                 creditHours6.text.toString()
             )
+
+            val subjectsNames = arrayOf(
+                Subject1.text.toString(),
+                Subject2.text.toString(),
+                Subject3.text.toString(),
+                Subject4.text.toString(),
+                Subject5.text.toString(),
+                Subject6.text.toString(),
+                )
+            for(i in 0..5){
+                sharedViewModel.setMarks(marks)
+                sharedViewModel.setSubjects(subjectsNames)
+                sharedViewModel.setCreditHours(creditHours)
+            }
+
             this.invalidateAll()
             when (noOfSubjects) {
                 "6" -> sixSubjects(creditHours, marks, qp)

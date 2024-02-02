@@ -20,9 +20,11 @@ class Report : Fragment() {
 
        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_report, container,false)
 
-        sharedViewModel.studentMarks.observe(viewLifecycleOwner) { studentMarks ->
-            binding.EnterNameEditText.setText(studentMarks)
-        }
+//        sharedViewModel.studentMarks.observe(viewLifecycleOwner) { studentMarks ->
+//            binding.EnterNameEditText.setText(studentMarks)
+//        }
+        binding.EnterNameEditText.setText(sharedViewModel.subjectsNames[0])
+
 
         return binding.root
     }
