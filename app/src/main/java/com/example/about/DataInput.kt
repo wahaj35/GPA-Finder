@@ -34,14 +34,54 @@ class DataInput : Fragment() {
 
             checkReportButton.setOnClickListener{
                 view:View ->
-                if(binding.Subject1.text.toString() == "" || binding.Subject2.text.toString() == ""  || binding.Subject3.text.toString() == "" || binding.Subject4.text.toString() == "" || binding.Subject5.text.toString() == "" || binding.Subject6.text.toString() == "" )
-        {
-           Toast.makeText(activity,"Enter Subjects Names", Toast.LENGTH_SHORT).show()
-        }
-        else{
-            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-        }
+                when(noOfSubjects){
+                    "1" -> {
+                        if(binding.Subject1.text.toString() != ""){
+                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+                        }else{
+                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    "2" ->{
+                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "")){
+                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+                        }else{
+                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    "3" ->{
+                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "")){
+                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+                        }else{
+                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    "4" ->{
+                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "")){
+                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+                        }else{
+                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    "5" ->{
+                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "")){
+                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+                        }else{
+                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    "6" ->{
+                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "") && (binding.Subject6.text.toString() != "")){
+                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
+                        }else{
+                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    else ->{
+                        Toast.makeText(activity,"Invalid No.Of Subjects",Toast.LENGTH_SHORT).show()
+                    }
 
+                }
             }
 
         }
@@ -49,18 +89,6 @@ class DataInput : Fragment() {
         return binding.root
     }
 
-//    private fun checkReport()
-//    {
-////        if(binding.Subject1.text.toString() == "" && binding.Subject2.text.toString() == ""  && binding.Subject3.text.toString() == "" && binding.Subject4.text.toString() == "" && binding.Subject5.text.toString() == "" && binding.Subject6.text.toString() == "" )
-////        {
-////           Toast.makeText(activity,"Enter Subjects Names", Toast.LENGTH_SHORT).show()
-////        }
-////        else{
-////            Navigation.createNavigateOnClickListener(R.id.action_dataInput5_to_report2)
-////        }
-//        binding.checkReportButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_dataInput5_to_report2))
-//
-//    }
 
     private fun view() {
         noOfSubjects = binding.noOfSubjectsInputBar.text.toString()
@@ -89,6 +117,14 @@ class DataInput : Fragment() {
             binding.creditHours5,
             binding.creditHours6
         )
+        val subjects  = arrayOf(
+            binding.Subject1,
+            binding.Subject2,
+            binding.Subject3,
+            binding.Subject4,
+            binding.Subject5,
+            binding.Subject6
+        )
 
 
 
@@ -100,6 +136,7 @@ class DataInput : Fragment() {
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
                     credits[i].setText("")
+                    subjects[i].setText("")
                 }
                 binding.noOfSubjectsInputBar.setText("")
                 binding.subjectsAndMarksHeader.visibility = View.VISIBLE
@@ -114,6 +151,7 @@ class DataInput : Fragment() {
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
                     credits[i].setText("")
+                    subjects[i].setText("")
                 }
                 binding.noOfSubjectsInputBar.setText("")
                 binding.subjectsAndMarksHeader.visibility = View.VISIBLE
@@ -128,6 +166,7 @@ class DataInput : Fragment() {
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
                     credits[i].setText("")
+                    subjects[i].setText("")
                 }
                 binding.noOfSubjectsInputBar.setText("")
                 binding.subjectsAndMarksHeader.visibility = View.VISIBLE
@@ -142,6 +181,7 @@ class DataInput : Fragment() {
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
                     credits[i].setText("")
+                    subjects[i].setText("")
                 }
                 binding.noOfSubjectsInputBar.setText("")
                 binding.subjectsAndMarksHeader.visibility = View.VISIBLE
@@ -156,6 +196,7 @@ class DataInput : Fragment() {
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
                     credits[i].setText("")
+                    subjects[i].setText("")
                 }
                 binding.noOfSubjectsInputBar.setText("")
                 binding.subjectsAndMarksHeader.visibility = View.VISIBLE
@@ -169,6 +210,7 @@ class DataInput : Fragment() {
                     layouts[i].visibility = View.VISIBLE
                     marks[i].setText("")
                     credits[i].setText("")
+                    subjects[i].setText("")
                 }
                 binding.noOfSubjectsInputBar.setText("")
                 binding.subjectsAndMarksHeader.visibility = View.VISIBLE
@@ -244,13 +286,11 @@ class DataInput : Fragment() {
             }
         }
 
-        //Will show the button for generating the Marks Report
-        binding.checkReportLayout.visibility = View.VISIBLE
-
     }
     @SuppressLint("ResourceAsColor")
     private fun sixSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.Subject4Marks.text.toString() != "") && (binding.Subject5Marks.text.toString() != "") && (binding.Subject6Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "") && (binding.creditHours4.text.toString() != "") && (binding.creditHours5.text.toString() != "") && (binding.creditHours6.text.toString() != "")) {
+
             if ((binding.creditHours1.text.toString()
                     .toInt() in 2..4) && (binding.creditHours2.text.toString()
                     .toInt() in 2..4) && (binding.creditHours3.text.toString()
@@ -284,21 +324,26 @@ class DataInput : Fragment() {
                     when (element) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
+                            binding.checkReportLayout.visibility = View.GONE
                             Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
                             break
                         }
 
                         else -> {
                             binding.GPALayout.visibility = View.VISIBLE
+                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                            binding.checkReportLayout.visibility = View.VISIBLE
                         }
                     }
                 }
             } else {
                 binding.GPALayout.visibility = View.GONE
+                binding.checkReportLayout.visibility = View.GONE
                 Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT).show()
             }
         } else {
             binding.GPALayout.visibility = View.GONE
+            binding.checkReportLayout.visibility = View.GONE
             Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
         }
     }
@@ -338,19 +383,26 @@ class DataInput : Fragment() {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
+                            binding.checkReportLayout.visibility = View.GONE
                             Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
                             break
                         }
 
-                        else -> binding.GPALayout.visibility = View.VISIBLE
+                        else -> {
+                            binding.GPALayout.visibility = View.VISIBLE
+                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                            binding.checkReportLayout.visibility = View.VISIBLE
+                        }
                     }
                 }
             } else {
                 binding.GPALayout.visibility = View.GONE
+                binding.checkReportLayout.visibility = View.GONE
                 Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT).show()
             }
         } else {
             binding.GPALayout.visibility = View.GONE
+            binding.checkReportLayout.visibility = View.GONE
             Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
         }
     }
@@ -389,19 +441,26 @@ class DataInput : Fragment() {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
+                            binding.checkReportLayout.visibility = View.GONE
                             Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
                             break
                         }
 
-                        else -> binding.GPALayout.visibility = View.VISIBLE
+                        else -> {
+                            binding.GPALayout.visibility = View.VISIBLE
+                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                            binding.checkReportLayout.visibility = View.VISIBLE
+                        }
                     }
                 }
             } else {
                 binding.GPALayout.visibility = View.GONE
+                binding.checkReportLayout.visibility = View.GONE
                 Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT).show()
             }
         } else {
             binding.GPALayout.visibility = View.GONE
+            binding.checkReportLayout.visibility = View.GONE
             Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
         }
     }
@@ -439,19 +498,26 @@ class DataInput : Fragment() {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
+                            binding.checkReportLayout.visibility = View.GONE
                             Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
                             break
                         }
 
-                        else -> binding.GPALayout.visibility = View.VISIBLE
+                        else -> {
+                            binding.GPALayout.visibility = View.VISIBLE
+                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                            binding.checkReportLayout.visibility = View.VISIBLE
+                        }
                     }
                 }
             } else {
                 binding.GPALayout.visibility = View.GONE
+                binding.checkReportLayout.visibility = View.GONE
                 Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT).show()
             }
         } else {
             binding.GPALayout.visibility = View.GONE
+            binding.checkReportLayout.visibility = View.GONE
             Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
         }
     }
@@ -488,19 +554,26 @@ class DataInput : Fragment() {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
+                            binding.checkReportLayout.visibility = View.GONE
                             Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
                             break
                         }
 
-                        else -> binding.GPALayout.visibility = View.VISIBLE
+                        else -> {
+                            binding.GPALayout.visibility = View.VISIBLE
+                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                            binding.checkReportLayout.visibility = View.VISIBLE
+                        }
                     }
                 }
             } else {
                 binding.GPALayout.visibility = View.GONE
+                binding.checkReportLayout.visibility = View.GONE
                 Toast.makeText(activity, "Invalid Credit Hours", Toast.LENGTH_SHORT).show()
             }
         } else {
             binding.GPALayout.visibility = View.GONE
+            binding.checkReportLayout.visibility = View.GONE
             Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
         }
     }
@@ -535,18 +608,25 @@ class DataInput : Fragment() {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
+                            binding.GPALayout.visibility = View.GONE
                             Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
                             break
                         }
 
-                        else -> binding.GPALayout.visibility = View.VISIBLE
+                        else -> {
+                            binding.GPALayout.visibility = View.VISIBLE
+                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                            binding.checkReportLayout.visibility = View.VISIBLE
+                        }
                     }
                 }
             } else {
                 binding.GPALayout.visibility = View.GONE
+                binding.GPALayout.visibility = View.GONE
                 Toast.makeText(activity, "Invalid Credit Hours", Toast.LENGTH_SHORT).show()
             }
         } else {
+            binding.GPALayout.visibility = View.GONE
             binding.GPALayout.visibility = View.GONE
             Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
         }
