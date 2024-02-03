@@ -24,20 +24,19 @@ class Report : Fragment() {
 //        sharedViewModel.studentMarks.observe(viewLifecycleOwner) { studentMarks ->
 //            binding.EnterNameEditText.setText(studentMarks)
 //        }
-        binding.GenerateButton.setOnClickListener{
-            data.name = binding.EnterNameEditText.text.toString()
-            data.registration = binding.EnterRegNoEditText.text.toString()
-            data.department = binding.EnterDepartmentEditText.text.toString()
-            data.semester = binding.EnterSemesterEditText.text.toString()
-            binding.StudentName.text = data.name
-            binding.RegistrationNo.text = data.registration
-            binding.semesterNo.text = data.semester
-            binding.DepartmentName.text = data.department
-
-            sharedViewModel.creditsEarned.observe(viewLifecycleOwner) {creditsEarned -> binding.creditsEarned.setText(creditsEarned) }
-            sharedViewModel.finalGPA.observe(viewLifecycleOwner) {finalGPA -> binding.gpaValue.setText(finalGPA)}
-
-        }
+//        binding.GenerateButton.setOnClickListener{
+//            data.name = binding.EnterNameEditText.text.toString()
+//            data.registration = binding.EnterRegNoEditText.text.toString()
+//            data.department = binding.EnterDepartmentEditText.text.toString()
+//            data.semester = binding.EnterSemesterEditText.text.toString()
+//            binding.StudentName.text = data.name
+//            binding.RegistrationNo.text = data.registration
+//            binding.semesterNo.text = data.semester
+//            binding.DepartmentName.text = data.department
+//
+//            sharedViewModel.creditsEarned.observe(viewLifecycleOwner) {creditsEarned -> binding.creditsEarned.setText(creditsEarned) }
+//            sharedViewModel.finalGPA.observe(viewLifecycleOwner) {finalGPA -> binding.gpaValue.setText(finalGPA)}
+//        }
 
 
         return binding.root

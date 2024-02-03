@@ -12,221 +12,139 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/EnterDataLayout"
+            android:id="@+id/ReportLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
-                android:id="@+id/EnterNameEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/enterNameText"
-                android:inputType="text"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/EnterRegNoEditText"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/MarksSheetHeader"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/enterRegNoHint"
-                android:inputType="text"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/EnterNameEditText" />
-
-            <EditText
-                android:id="@+id/EnterDepartmentEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/enterDepartmentEditTextHint"
-                android:inputType="text"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/EnterRegNoEditText" />
-
-            <EditText
-                android:id="@+id/EnterSemesterEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/enterSemesterEditTextHint"
-                android:inputType="numberDecimal"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/EnterDepartmentEditText" />
-
-            <Button
-                android:id="@+id/GenerateButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/GenerateButtonText"
-                app:layout_constraintBottom_toBottomOf="@id/EnterSemesterEditText"
+                android:layout_marginTop="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/EnterNameEditText"
-                app:layout_constraintTop_toTopOf="@id/EnterNameEditText" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/reportLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/EnterDataLayout">
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/NameAndDepartLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/reportLayout">
-
-
-                <TextView
-                    android:id="@+id/StudentName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/NameAndDepartLayout" />
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/DepartmentName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/StudentName" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/SemesterLayout"
+                    android:id="@+id/MarksSheetHeaderText"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:foregroundGravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:background="#E3C63A"
+                    android:text="@string/marksSheetHeaderText"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/DepartmentName">
-
-                    <TextView
-                        android:id="@+id/semesterText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Semester-"
-                        android:textAlignment="center"
-                        android:textSize="20sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/semesterNo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        app:layout_constraintStart_toEndOf="@id/semesterText"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/DataLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/NameAndDepartLayout"
-                app:layout_constraintStart_toStartOf="parent">
-
-
-                <TextView
-                    android:id="@+id/RegistrationText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/registrationNoText"
-                    android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/RegistrationNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="60dp"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/RegistrationText"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/RegistrationText" />
-
-                <TextView
-                    android:id="@+id/CreditsEarnedText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/creditsEarnedText"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/RegistrationText" />
-
-                <TextView
-                    android:id="@+id/creditsEarned"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="155dp"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/CreditsEarnedText"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/CreditsEarnedText" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/gpaAndCreditsEarned"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/holo_blue_bright"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/MarksSheetHeader">
 
                 <TextView
                     android:id="@+id/gpaText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="30dp"
+                    android:backgroundTint="@color/black"
                     android:text="@string/gpaText"
-                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/CreditsEarnedText" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/gpaValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="140dp"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/gpaText"
+                    android:layout_marginEnd="40dp"
+                    android:text="3.78"
+                    android:textColor="@color/design_default_color_secondary_variant"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/gpaText"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/gpaText"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toTopOf="@id/gpaValue" />
+
+                <TextView
+                    android:id="@+id/CreditEarnedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/creditsEarnedText"
+
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/gpaText" />
+
+                <TextView
+                    android:id="@+id/creditsEarnedValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="18"
+                    android:textColor="@color/design_default_color_secondary_variant"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="@id/CreditEarnedText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/CreditEarnedText" />
+
+                <TextView
+                    android:id="@+id/percentageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/percentageText"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/CreditEarnedText" />
+
+                <TextView
+                    android:id="@+id/percentageValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="84.7"
+                    android:textColor="@color/design_default_color_secondary_variant"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="@id/percentageText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/percentageText" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/MarksSheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E3C63A"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gpaAndCreditsEarned">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/SubjectsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
