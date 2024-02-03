@@ -34,7 +34,8 @@
     <string name="creditsEarnedText">"Credits Earned: "</string>
     <string name="gpaTEXT">GPA:</string>
     <string name="gradeHeader">Grade</string>
-    <string name="courseTitleHeader">"Course Tittle"</string>
+    <string name="courseTitleHeader">"  Course Tittle  "</string>
     <string name="marksSheetHeaderText">Marks Sheet</string>
     <string name="percentageText">Percentage:</string>
+    <string name="courseTitleText" />
 </resources>
