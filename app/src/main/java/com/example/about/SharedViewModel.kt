@@ -18,6 +18,28 @@ class SharedViewModel:ViewModel() {
     private var credits = MutableList(6){""}
     var creditHours: MutableList<String> = credits
 
+    //Mutable Live Data For Earned Credts
+    private var EarnedCredits = MutableLiveData("")
+    var creditsEarned :MutableLiveData<String> = EarnedCredits
+
+
+    //Mutable Live Data For GPA
+    private var gpa = MutableLiveData("")
+    var finalGPA :MutableLiveData<String> = gpa
+
+
+    //Function to get Earned Credits
+    fun getEarnedCredits(earnedCredits:String){
+        creditsEarned.value = earnedCredits
+    }
+
+
+
+    //Function to get GPA
+    fun getGPA(gpa:String){
+        finalGPA.value = gpa
+    }
+
 
     //Function to Set Subjects Names in the List
     fun setSubjects(subjects: Array<String>){

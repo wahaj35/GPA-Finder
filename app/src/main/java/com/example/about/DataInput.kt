@@ -581,6 +581,7 @@ class DataInput : Fragment() {
             if ((binding.creditHours1.text.toString().toInt() in 2..4)) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
+                lateinit var finalGPA:String
                 for (i in 0 until creditHours.size - 5) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
@@ -600,7 +601,10 @@ class DataInput : Fragment() {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit
-                gpa_text.finalGPA = "%.2f".format(gpa).toFloat().toString()
+                finalGPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = finalGPA
+                sharedViewModel.getGPA(finalGPA)
+                sharedViewModel.getEarnedCredits(totalCredit.toString())
                 for (i in 0 until qp.size - 5) {
                     when (qp[i]) {
                         0.5.toString() -> {
@@ -612,7 +616,6 @@ class DataInput : Fragment() {
 
                         else -> {
                             binding.GPALayout.visibility = View.VISIBLE
-                            Toast.makeText(activity,"Generate Report? Enter Subjects Names",Toast.LENGTH_SHORT).show()
                             binding.checkReportLayout.visibility = View.VISIBLE
                         }
                     }

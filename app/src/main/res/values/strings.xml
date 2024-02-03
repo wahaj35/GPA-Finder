@@ -28,4 +28,9 @@
     <string name="GenerateButtonText">Generate</string>
     <string name="enterDepartmentEditTextHint">Enter Department</string>
     <string name="enterSemesterEditTextHint">Enter Semester</string>
+    <string name="semesterText">Semester-</string>
+    <string name="SemesterText">Semester-</string>
+    <string name="registrationNoText">Registration #:</string>
+    <string name="creditsEarnedText">"Credits Earned: "</string>
+    <string name="gpaTEXT">GPA:</string>
 </resources>
