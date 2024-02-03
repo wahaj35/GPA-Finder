@@ -13,16 +13,15 @@
         android:layout_height="match_parent">
 
 
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/EnterNameLayout"
+            android:id="@+id/EnterDataLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <EditText
                 android:id="@+id/EnterNameEditText"
                 android:layout_width="wrap_content"
@@ -31,9 +30,9 @@
                 android:hint="@string/enterNameText"
                 android:inputType="text"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/EnterRegNoEditText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <EditText
                 android:id="@+id/EnterRegNoEditText"
                 android:layout_width="wrap_content"
@@ -42,15 +41,37 @@
                 android:hint="@string/enterRegNoHint"
                 android:inputType="text"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/EnterNameEditText" />
+
+            <EditText
+                android:id="@+id/EnterDepartmentEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enterDepartmentEditTextHint"
+                android:inputType="text"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EnterRegNoEditText" />
+
+            <EditText
+                android:id="@+id/EnterSemesterEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enterSemesterEditTextHint"
+                android:inputType="numberDecimal"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EnterDepartmentEditText" />
+
             <Button
                 android:id="@+id/GenerateButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/GenerateButtonText"
-                app:layout_constraintBottom_toBottomOf="@id/EnterRegNoEditText"
+                app:layout_constraintBottom_toBottomOf="@id/EnterSemesterEditText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/EnterNameEditText"
                 app:layout_constraintTop_toTopOf="@id/EnterNameEditText" />
@@ -59,7 +80,65 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reportLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/EnterDataLayout">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/NameAndLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/reportLayout">
+
+
+                <TextView
+                    android:id="@+id/StudentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Muhammad Wahaj Sajid"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/NameAndLayout" />
+
+                <TextView
+                    android:id="@+id/DepartmentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Computer Scinces"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/StudentName" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/SemesterLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/DepartmentName">
+
+                    <TextView
+                        android:id="@+id/semesterText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Semester"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

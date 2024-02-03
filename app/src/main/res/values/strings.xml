@@ -26,4 +26,6 @@
     <string name="enterNameText">Enter Name</string>
     <string name="enterRegNoHint">Enter Reg No</string>
     <string name="GenerateButtonText">Generate</string>
+    <string name="enterDepartmentEditTextHint">Enter Department</string>
+    <string name="enterSemesterEditTextHint">Enter Semester</string>
 </resources>
