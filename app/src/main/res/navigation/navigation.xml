@@ -20,5 +20,9 @@
         android:id="@+id/report2"
         android:name="com.example.about.Report"
         android:label="fragment_report"
-        tools:layout="@layout/fragment_report" />
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_report2_to_dataInput5"
+            app:destination="@id/dataInput5" />
+    </fragment>
 </navigation>
