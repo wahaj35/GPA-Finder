@@ -1,6 +1,7 @@
 package com.example.about
 
 import android.annotation.SuppressLint
+import android.hardware.camera2.CameraExtensionSession.StillCaptureLatency
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +11,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentDataInputBinding
-
 class DataInput : Fragment() {
-    lateinit var noOfSubjects: String // The variable to store the no.of subjects entered by user
+    private lateinit var noOfSubjects: String // The variable to store the no.of subjects entered by user
     private val gpa_text = GPA()
     lateinit var binding: FragmentDataInputBinding
     val sharedViewModel:SharedViewModel by activityViewModels()
@@ -32,68 +31,40 @@ class DataInput : Fragment() {
             // Setting up setOnClickLick method for the GPA Button
             checkGPAButton.setOnClickListener { chkGPA() }
 
+
+
             checkReportButton.setOnClickListener{
                 view:View ->
                 when(noOfSubjects){
                     "1" -> {
-                        if(binding.Subject1.text.toString() != ""){
-                                sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString()))
-                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString()))
-                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString()))
-                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-                        }else{
-                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
-                        }
+                      val isTrue =  DataBetweenFragments()
+                        if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
+                        else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
                     }
                     "2" ->{
-                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "")){
-                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString(),))
-                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString()))
-                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString()))
-                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-                        }else{
-                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
-                        }
+                        val isTrue =  DataBetweenFragments()
+                        if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
+                        else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
                     }
                     "3" ->{
-                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "")){
-                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString()))
-                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString()))
-                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString()))
-                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-                        }else{
-                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
-                        }
+                        val isTrue =  DataBetweenFragments()
+                        if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
+                        else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
                     }
                     "4" ->{
-                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "")){
-                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString(),binding.Subject4.text.toString()))
-                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString() ,binding.Subject4Marks.text.toString()))
-                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString(),binding.creditHours4.text.toString()))
-                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-                        }else{
-                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
-                        }
+                        val isTrue =  DataBetweenFragments()
+                        if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
+                        else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
                     }
                     "5" ->{
-                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "")){
-                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString(),binding.Subject4.text.toString(),binding.Subject5.text.toString()))
-                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString() ,binding.Subject4Marks.text.toString(),binding.Subject5Marks.text.toString()))
-                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString(),binding.creditHours4.text.toString(),binding.creditHours5.text.toString()))
-                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-                        }else{
-                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
-                        }
+                        val isTrue =  DataBetweenFragments()
+                        if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
+                        else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
                     }
                     "6" ->{
-                        if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "") && (binding.Subject6.text.toString() != "")){
-                            sharedViewModel.setSubjects(arrayOf(binding.Subject1.text.toString(),binding.Subject2.text.toString() ,binding.Subject3.text.toString(),binding.Subject4.text.toString(),binding.Subject5.text.toString() ,binding.Subject6.text.toString()))
-                            sharedViewModel.setMarks(arrayOf(binding.Subject1Marks.text.toString(),binding.Subject2Marks.text.toString(),binding.Subject3Marks.text.toString() ,binding.Subject4Marks.text.toString(),binding.Subject5Marks.text.toString() ,binding.Subject6Marks.text.toString()))
-                            sharedViewModel.setCreditHours(arrayOf(binding.creditHours1.text.toString(),binding.creditHours2.text.toString(),binding.creditHours3.text.toString(),binding.creditHours4.text.toString() ,binding.creditHours5.text.toString() ,binding.creditHours6.text.toString()))
-                            Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)
-                        }else{
-                            Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
-                        }
+                        val isTrue =  DataBetweenFragments()
+                        if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
+                        else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
                     }
                     else ->{
                         Toast.makeText(activity,"Invalid No.Of Subjects",Toast.LENGTH_SHORT).show()
@@ -107,6 +78,95 @@ class DataInput : Fragment() {
         return binding.root
     }
 
+
+    fun DataBetweenFragments(): Boolean{
+binding.apply {
+    val marks = arrayOf(
+        Subject1Marks.text.toString(),
+        Subject2Marks.text.toString(),
+        Subject3Marks.text.toString(),
+        Subject4Marks.text.toString(),
+        Subject5Marks.text.toString(),
+        Subject6Marks.text.toString()
+    )
+    val creditHours = arrayOf(
+        creditHours1.text.toString(),
+        creditHours2.text.toString(),
+        creditHours3.text.toString(),
+        creditHours4.text.toString(),
+        creditHours5.text.toString(),
+        creditHours6.text.toString()
+    )
+    val subjects = arrayOf(
+        Subject1.text.toString(),
+        Subject2.text.toString(),
+        Subject3.text.toString(),
+        Subject4.text.toString(),
+        Subject5.text.toString(),
+        Subject6.text.toString()
+    )
+
+    when (noOfSubjects){
+        "1" ->{
+            return if(binding.Subject1.text.toString() != ""){
+                for(i in 0 until 1) {
+                    sharedViewModel.setSubjects(arrayOf(subjects[i]))
+                    sharedViewModel.setMarks(arrayOf(marks[i]))
+                    sharedViewModel.setCreditHours(arrayOf(creditHours[i]))
+                }
+                sharedViewModel.noOf_subjects.value = noOfSubjects
+                true
+            } else false
+        }
+        "2" ->{
+            return if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "")){
+                    sharedViewModel.setSubjects(arrayOf(subjects[0],subjects[1]))
+                    sharedViewModel.setMarks(arrayOf(marks[0],marks[1]))
+                    sharedViewModel.setCreditHours(arrayOf(creditHours[0],creditHours[1]))
+                sharedViewModel.noOf_subjects.value = noOfSubjects
+                true
+            } else false
+        }
+        "3" ->{
+            return if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "")){
+                    sharedViewModel.setSubjects(arrayOf(subjects[0],subjects[1],subjects[2]))
+                    sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2]))
+                    sharedViewModel.setCreditHours(arrayOf(creditHours[0],creditHours[1],creditHours[2]))
+                sharedViewModel.noOf_subjects.value = noOfSubjects
+                true
+            } else false
+        }
+        "4" -> {
+            return if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "")){
+                    sharedViewModel.setSubjects(arrayOf(subjects[0],subjects[1],subjects[2],subjects[3]))
+                    sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3]))
+                    sharedViewModel.setCreditHours(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3]))
+                sharedViewModel.noOf_subjects.value = noOfSubjects
+                true
+            } else false
+        }
+        "5" -> {
+            return if ((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "")) {
+                    sharedViewModel.setSubjects(arrayOf(subjects[0],subjects[1],subjects[2],subjects[3],subjects[4]))
+                    sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4]))
+                    sharedViewModel.setCreditHours(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4]))
+                sharedViewModel.noOf_subjects.value = noOfSubjects
+                true
+            } else false
+        }
+        "6" ->{
+            return if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "") && (binding.Subject6.text.toString() != "")){
+                    sharedViewModel.setSubjects(arrayOf(subjects[0],subjects[1],subjects[2],subjects[3],subjects[4],subjects[5]))
+                    sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5]))
+                    sharedViewModel.setCreditHours(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5]))
+                sharedViewModel.noOf_subjects.value = noOfSubjects
+                true
+            }else false
+        }  else -> return false
+
+    }
+}
+    }
 
     private fun view() {
         noOfSubjects = binding.noOfSubjectsInputBar.text.toString()
@@ -302,6 +362,7 @@ class DataInput : Fragment() {
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
+                lateinit var GPA: String
                 for (i in creditHours.indices) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
@@ -321,7 +382,10 @@ class DataInput : Fragment() {
                     totalCredit += element.toInt()
                 }
                 val gpa = totalQP / totalCredit
-                gpa_text.finalGPA = "%.2f".format(gpa).toFloat().toString()
+                GPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = GPA
+                sharedViewModel.finalGPA.value = GPA
+                sharedViewModel.creditsEarned.value = totalCredit.toString()
                 for (element in qp) {
                     when (element) {
                         0.5.toString() -> {
@@ -360,6 +424,7 @@ class DataInput : Fragment() {
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
+                lateinit var GPA: String
                 for (i in 0 until creditHours.size - 1) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
@@ -379,7 +444,10 @@ class DataInput : Fragment() {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit
-                gpa_text.finalGPA = "%.2f".format(gpa).toFloat().toString()
+                GPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = GPA
+                sharedViewModel.finalGPA.value = GPA
+                sharedViewModel.creditsEarned.value = totalCredit.toString()
                 for (i in 0 until qp.size - 1) {
                     when (qp[i]) {
                         0.5.toString() -> {
@@ -417,6 +485,7 @@ class DataInput : Fragment() {
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
+                lateinit var GPA: String
                 for (i in 0 until creditHours.size - 2) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
@@ -435,8 +504,11 @@ class DataInput : Fragment() {
                 for (i in 0 until creditHours.size - 2) {
                     totalCredit += creditHours[i].toInt()
                 }
-                val gpa = totalQP / totalCredit
-                gpa_text.finalGPA = "%.2f".format(gpa).toFloat().toString()
+                val gpa = totalQP / totalCredit.toInt()
+                GPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = GPA
+                sharedViewModel.finalGPA.value = GPA
+                sharedViewModel.creditsEarned.value = totalCredit.toString()
                 for (i in 0 until qp.size - 2) {
                     when (qp[i]) {
                         0.5.toString() -> {
@@ -473,6 +545,7 @@ class DataInput : Fragment() {
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
+                lateinit var GPA: String
                 for (i in 0 until creditHours.size - 3) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
@@ -491,8 +564,11 @@ class DataInput : Fragment() {
                 for (i in 0 until creditHours.size - 3) {
                     totalCredit += creditHours[i].toInt()
                 }
-                val gpa = totalQP / totalCredit
-                gpa_text.finalGPA = "%.2f".format(gpa).toFloat().toString()
+                val gpa = totalQP / totalCredit.toInt()
+                GPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = GPA
+                sharedViewModel.finalGPA.value = GPA
+                sharedViewModel.creditsEarned.value = totalCredit.toString()
                 for (i in 0 until qp.size - 3) {
                     when (qp[i]) {
                         0.5.toString() -> {
@@ -528,6 +604,7 @@ class DataInput : Fragment() {
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
+                lateinit var GPA:String
                 for (i in 0 until creditHours.size - 4) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
@@ -546,8 +623,11 @@ class DataInput : Fragment() {
                 for (i in 0 until creditHours.size - 4) {
                     totalCredit += creditHours[i].toInt()
                 }
-                val gpa = totalQP / totalCredit
-                gpa_text.finalGPA = "%.2f".format(gpa).toFloat().toString()
+                val gpa = totalQP / totalCredit.toInt()
+                GPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = GPA
+                sharedViewModel.finalGPA.value = GPA
+                sharedViewModel.creditsEarned.value = totalCredit.toString()
                 for (i in 0 until qp.size - 4) {
                     when (qp[i]) {
                         0.5.toString() -> {
@@ -581,7 +661,7 @@ class DataInput : Fragment() {
             if ((binding.creditHours1.text.toString().toInt() in 2..4)) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
-                lateinit var finalGPA:String
+                lateinit var GPA: String
                 for (i in 0 until creditHours.size - 5) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
@@ -601,10 +681,10 @@ class DataInput : Fragment() {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit
-                finalGPA = "%.2f".format(gpa).toFloat().toString()
-                gpa_text.finalGPA = finalGPA
-                sharedViewModel.getGPA(finalGPA)
-                sharedViewModel.getEarnedCredits(totalCredit.toString())
+                 GPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = GPA
+                sharedViewModel.finalGPA.value = GPA
+                sharedViewModel.creditsEarned.value = totalCredit.toString()
                 for (i in 0 until qp.size - 5) {
                     when (qp[i]) {
                         0.5.toString() -> {

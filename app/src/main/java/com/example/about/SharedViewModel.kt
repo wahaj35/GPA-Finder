@@ -1,6 +1,5 @@
 package com.example.about
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -27,17 +26,11 @@ class SharedViewModel:ViewModel() {
     private var gpa = MutableLiveData("")
     var finalGPA :MutableLiveData<String> = gpa
 
+    private var noOfSubjects = MutableLiveData("")
+    var noOf_subjects:MutableLiveData<String> = noOfSubjects
 
-    //Function to get Earned Credits
-    fun getEarnedCredits(earnedCredits:String){
-        creditsEarned.value = earnedCredits
-    }
-
-
-
-    //Function to get GPA
-    fun getGPA(gpa:String){
-        finalGPA.value = gpa
+    fun getNoOfSubjects(noOfSubjects:String){
+        noOf_subjects.value = noOfSubjects
     }
 
 

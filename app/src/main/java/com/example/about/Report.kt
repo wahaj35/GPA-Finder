@@ -21,25 +21,185 @@ class Report : Fragment() {
 //        binding.data = data
        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_report, container,false)
 
+        view()
+
 //        sharedViewModel.studentMarks.observe(viewLifecycleOwner) { studentMarks ->
 //            binding.EnterNameEditText.setText(studentMarks)
-//        }
-//        binding.GenerateButton.setOnClickListener{
-//            data.name = binding.EnterNameEditText.text.toString()
-//            data.registration = binding.EnterRegNoEditText.text.toString()
-//            data.department = binding.EnterDepartmentEditText.text.toString()
-//            data.semester = binding.EnterSemesterEditText.text.toString()
-//            binding.StudentName.text = data.name
-//            binding.RegistrationNo.text = data.registration
-//            binding.semesterNo.text = data.semester
-//            binding.DepartmentName.text = data.department
 //
-//            sharedViewModel.creditsEarned.observe(viewLifecycleOwner) {creditsEarned -> binding.creditsEarned.setText(creditsEarned) }
-//            sharedViewModel.finalGPA.observe(viewLifecycleOwner) {finalGPA -> binding.gpaValue.setText(finalGPA)}
-//        }
-
 
         return binding.root
+    }
+    private fun view() {
+        binding.apply {
+        var noOfSubjects = sharedViewModel.noOf_subjects.value
+
+            val marksLayout = arrayOf(
+                Course1Marks,
+                Course2Marks,
+                Course3Marks,
+                Course4Marks,
+                Course5Marks,
+                Course6Marks
+            )
+            val coursesLayout  = arrayOf(
+                Course1,
+                Course2,
+                Course3,
+                Course4,
+                Course5,
+                Course6
+            )
+
+            val gradeLayout  = arrayOf(
+                Course1Grade,
+                Course2Grade,
+                Course3Grade,
+                Course4Grade,
+                Course5Grade,
+                Course6Grade
+            )
+
+            var grade = Array(6){""}
+        when (noOfSubjects) {
+            "1" -> {
+                for (i in 0 until 1) {
+                    if(sharedViewModel.creditHours[i] == "4"){
+                        grade[i] = CH4(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "3"){
+                        grade[i] = CH3(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "2"){
+                        grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    }
+                    coursesLayout[i].text = sharedViewModel.subjectsNames[i]
+                    gradeLayout[i].text = grade[i]
+                    marksLayout[i].text = sharedViewModel.studentMarks[i]
+                    coursesLayout[i].visibility = View.VISIBLE
+                    marksLayout[i].visibility = View.VISIBLE
+                    gradeLayout[i].visibility = View.VISIBLE
+                }
+                gpaValue.text = sharedViewModel.finalGPA.value
+                creditsEarnedValue.text = sharedViewModel.creditsEarned.value
+            }
+            "2" -> {
+                for (i in 0 until 2) {
+                    if(sharedViewModel.creditHours[i] == "4"){
+                        grade[i] = CH4(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "3"){
+                        grade[i] = CH3(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "2"){
+                        grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    }
+                    coursesLayout[i].text = sharedViewModel.subjectsNames[i]
+                    gradeLayout[i].text = grade[i]
+                    marksLayout[i].text = sharedViewModel.studentMarks[i]
+                    coursesLayout[i].visibility = View.VISIBLE
+                    marksLayout[i].visibility = View.VISIBLE
+                    gradeLayout[i].visibility = View.VISIBLE
+                }
+                gpaValue.text = sharedViewModel.finalGPA.value
+                creditsEarnedValue.text = sharedViewModel.creditsEarned.value
+            }
+            "3" -> {
+                for (i in 0 until 3) {
+                    if(sharedViewModel.creditHours[i] == "4"){
+                        grade[i] = CH4(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "3"){
+                        grade[i] = CH3(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "2"){
+                        grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    }
+                    coursesLayout[i].text = sharedViewModel.subjectsNames[i]
+                    gradeLayout[i].text = grade[i]
+                    marksLayout[i].text = sharedViewModel.studentMarks[i]
+                    coursesLayout[i].visibility = View.VISIBLE
+                    marksLayout[i].visibility = View.VISIBLE
+                    gradeLayout[i].visibility = View.VISIBLE
+                }
+                gpaValue.text = sharedViewModel.finalGPA.value
+                creditsEarnedValue.text = sharedViewModel.creditsEarned.value
+            }
+            "4" -> {
+                for (i in 0 until 4) {
+                    if(sharedViewModel.creditHours[i] == "4"){
+                        grade[i] = CH4(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "3"){
+                        grade[i] = CH3(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "2"){
+                        grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    }
+                    coursesLayout[i].text = sharedViewModel.subjectsNames[i]
+                    gradeLayout[i].text = grade[i]
+                    marksLayout[i].text = sharedViewModel.studentMarks[i]
+                    coursesLayout[i].visibility = View.VISIBLE
+                    marksLayout[i].visibility = View.VISIBLE
+                    gradeLayout[i].visibility = View.VISIBLE
+                }
+                gpaValue.text = sharedViewModel.finalGPA.value
+                creditsEarnedValue.text = sharedViewModel.creditsEarned.value
+            }
+            "5" -> {
+                for (i in 0 until 5) {
+                    if(sharedViewModel.creditHours[i] == "4"){
+                        grade[i] = CH4(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "3"){
+                        grade[i] = CH3(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "2"){
+                        grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    }
+                    coursesLayout[i].text = sharedViewModel.subjectsNames[i]
+                    gradeLayout[i].text = grade[i]
+                    marksLayout[i].text = sharedViewModel.studentMarks[i]
+                    coursesLayout[i].visibility = View.VISIBLE
+                    marksLayout[i].visibility = View.VISIBLE
+                    gradeLayout[i].visibility = View.VISIBLE
+                }
+                gpaValue.text = sharedViewModel.finalGPA.value
+                creditsEarnedValue.text = sharedViewModel.creditsEarned.value
+            }
+            "6" -> {
+                for (i in 0 until 6) {
+                    if(sharedViewModel.creditHours[i] == "4"){
+                        grade[i] = CH4(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "3"){
+                        grade[i] = CH3(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "2"){
+                        grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    }
+                    coursesLayout[i].text = sharedViewModel.subjectsNames[i]
+                    gradeLayout[i].text = grade[i]
+                    marksLayout[i].text = sharedViewModel.studentMarks[i]
+                    coursesLayout[i].visibility = View.VISIBLE
+                    marksLayout[i].visibility = View.VISIBLE
+                    gradeLayout[i].visibility = View.VISIBLE
+                }
+                gpaValue.text = sharedViewModel.finalGPA.value
+                creditsEarnedValue.text = sharedViewModel.creditsEarned.value
+            }
+
+        }
+    }
+    }
+    fun CH4(marks:String): String{
+        if(marks.toInt() in 64 ..80) return "A"
+            else if(marks.toInt() in 52 .. 63) return "B"
+            else if(marks.toInt() in 40 .. 51) return "C"
+            else if(marks.toInt() in 32 .. 39) return "D"
+            else return "F"
+    }
+    fun CH3(marks: String): String {
+        if(marks.toInt() in 48..60) return "A"
+        else if(marks.toInt() in 39..47) return "B"
+        else if(marks.toInt() in 30..38) return "C"
+        else if(marks.toInt() in 24..29) return "D"
+        else return "F"
+    }
+
+    fun CH2(marks: String): String {
+        if(marks.toInt() in 32..40) return "A"
+        else if(marks.toInt() in 26..31) return "B"
+        else if(marks.toInt() in 20..25) return "C"
+        else if(marks.toInt() in 16..19) return "D"
+        else return "F"
     }
 
 }
