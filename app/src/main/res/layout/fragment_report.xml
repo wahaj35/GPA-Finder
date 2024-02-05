@@ -207,9 +207,22 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="parent"
+
+                        app:layout_constraintBottom_toTopOf="@+id/Course7"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course5" />
+
+                    <TextView
+                        android:id="@+id/Course7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Course6" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -234,6 +247,7 @@
                         android:textColor="@color/white"
                         android:textSize="25sp"
                         android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Course1Marks"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -246,9 +260,11 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/Course2Marks"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/MarksHeader" />
+                        app:layout_constraintTop_toBottomOf="@+id/MarksHeader" />
 
                     <TextView
                         android:id="@+id/Course2Marks"
@@ -257,8 +273,9 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toTopOf="@+id/Course3Marks"
+                        app:layout_constraintBottom_toTopOf="@+id/Course7Marks"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course1Marks" />
 
@@ -272,8 +289,9 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toTopOf="@+id/Course4Marks"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/Course2Marks" />
+                        app:layout_constraintTop_toBottomOf="@+id/Course7Marks" />
 
                     <TextView
                         android:id="@+id/Course4Marks"
@@ -284,6 +302,7 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toTopOf="@+id/Course5Marks"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course3Marks" />
 
@@ -296,6 +315,7 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toTopOf="@+id/Course6Marks"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course4Marks" />
 
@@ -308,8 +328,22 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course5Marks" />
+
+                    <TextView
+                        android:id="@+id/Course7Marks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/Course3Marks"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Course2Marks" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -335,6 +369,7 @@
                         android:textColor="@color/white"
                         android:textSize="25sp"
                         android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Course1Grade"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -347,9 +382,11 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/Course2Grade"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/GradeHeader" />
+                        app:layout_constraintTop_toBottomOf="@+id/GradeHeader" />
 
                     <TextView
                         android:id="@+id/Course2Grade"
@@ -360,6 +397,7 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toTopOf="@+id/Course3Grade"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course1Grade" />
 
@@ -373,6 +411,7 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toTopOf="@+id/Course4Grade"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course2Grade" />
 
@@ -385,6 +424,7 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toTopOf="@+id/Course5Grade"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course3Grade" />
 
@@ -397,6 +437,7 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toTopOf="@+id/Course6Grade"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course4Grade" />
 
@@ -407,10 +448,24 @@
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/Course7Grade"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Course5Grade" />
+
+                    <TextView
+                        android:id="@+id/Course7Grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Course6Grade" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

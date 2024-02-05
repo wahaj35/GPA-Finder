@@ -6,15 +6,15 @@ import androidx.lifecycle.ViewModel
 class SharedViewModel:ViewModel() {
 
     //MutableList for Marks
-   private var marks = MutableList(6){""}
+   private var marks = MutableList(7){""}
     var studentMarks: MutableList<String> = marks
 
     //MutableList for Subjects
-    private var subjects = MutableList(6){""}
+    private var subjects = MutableList(7){""}
     var subjectsNames: MutableList<String> = subjects
 
     //Mutable List For CreditHours
-    private var credits = MutableList(6){""}
+    private var credits = MutableList(7){""}
     var creditHours: MutableList<String> = credits
 
     //Mutable Live Data For Earned Credts

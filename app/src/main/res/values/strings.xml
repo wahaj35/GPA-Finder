@@ -38,4 +38,5 @@
     <string name="marksSheetHeaderText">Marks Sheet</string>
     <string name="percentageText">Percentage:</string>
     <string name="courseTitleText" />
+    <string name="subject7Text">Subject 7</string>
 </resources>

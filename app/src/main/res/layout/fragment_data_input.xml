@@ -407,6 +407,58 @@
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <EditText
+                        android:id="@+id/Subject7"
+                        style="@style/subjectInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="name"
+                        android:hint="@string/subject7Text"
+                        android:inputType="text"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/Subject7Marks"
+                        app:layout_constraintEnd_toStartOf="@+id/Subject7Marks"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <EditText
+                        android:id="@+id/Subject7Marks"
+                        style="@style/marksInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="phone"
+                        android:hint="@string/marks"
+                        android:inputType="numberSigned"
+                        app:layout_constraintEnd_toStartOf="@+id/creditHours7"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/Subject7"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/creditHours7"
+                        style="@style/creditInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="phone"
+                        android:hint="@string/credit_hours_hint"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/Subject7Marks"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/Subject7Marks" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ButtonLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

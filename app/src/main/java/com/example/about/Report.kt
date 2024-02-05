@@ -39,7 +39,9 @@ class Report : Fragment() {
                 Course3Marks,
                 Course4Marks,
                 Course5Marks,
-                Course6Marks
+                Course6Marks,
+                Course7Marks
+
             )
             val coursesLayout  = arrayOf(
                 Course1,
@@ -47,7 +49,9 @@ class Report : Fragment() {
                 Course3,
                 Course4,
                 Course5,
-                Course6
+                Course6,
+                Course7
+
             )
 
             val gradeLayout  = arrayOf(
@@ -56,10 +60,11 @@ class Report : Fragment() {
                 Course3Grade,
                 Course4Grade,
                 Course5Grade,
-                Course6Grade
+                Course6Grade,
+                Course7Grade
             )
 
-            var grade = Array(6){""}
+            var grade = Array(7){""}
         when (noOfSubjects) {
             "1" -> {
                 for (i in 0 until 1) {
@@ -69,6 +74,8 @@ class Report : Fragment() {
                         grade[i] = CH3(sharedViewModel.studentMarks[i])
                     }  else if(sharedViewModel.creditHours[i] == "2"){
                         grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "1"){
+                        grade[i] = CH1(sharedViewModel.studentMarks[i])
                     }
                     coursesLayout[i].text = sharedViewModel.subjectsNames[i]
                     gradeLayout[i].text = grade[i]
@@ -88,6 +95,8 @@ class Report : Fragment() {
                         grade[i] = CH3(sharedViewModel.studentMarks[i])
                     }  else if(sharedViewModel.creditHours[i] == "2"){
                         grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "1"){
+                        grade[i] = CH1(sharedViewModel.studentMarks[i])
                     }
                     coursesLayout[i].text = sharedViewModel.subjectsNames[i]
                     gradeLayout[i].text = grade[i]
@@ -107,6 +116,8 @@ class Report : Fragment() {
                         grade[i] = CH3(sharedViewModel.studentMarks[i])
                     }  else if(sharedViewModel.creditHours[i] == "2"){
                         grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "1"){
+                        grade[i] = CH1(sharedViewModel.studentMarks[i])
                     }
                     coursesLayout[i].text = sharedViewModel.subjectsNames[i]
                     gradeLayout[i].text = grade[i]
@@ -126,6 +137,8 @@ class Report : Fragment() {
                         grade[i] = CH3(sharedViewModel.studentMarks[i])
                     }  else if(sharedViewModel.creditHours[i] == "2"){
                         grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "1"){
+                        grade[i] = CH1(sharedViewModel.studentMarks[i])
                     }
                     coursesLayout[i].text = sharedViewModel.subjectsNames[i]
                     gradeLayout[i].text = grade[i]
@@ -145,6 +158,8 @@ class Report : Fragment() {
                         grade[i] = CH3(sharedViewModel.studentMarks[i])
                     }  else if(sharedViewModel.creditHours[i] == "2"){
                         grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "1"){
+                        grade[i] = CH1(sharedViewModel.studentMarks[i])
                     }
                     coursesLayout[i].text = sharedViewModel.subjectsNames[i]
                     gradeLayout[i].text = grade[i]
@@ -164,6 +179,29 @@ class Report : Fragment() {
                         grade[i] = CH3(sharedViewModel.studentMarks[i])
                     }  else if(sharedViewModel.creditHours[i] == "2"){
                         grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "1"){
+                        grade[i] = CH1(sharedViewModel.studentMarks[i])
+                    }
+                    coursesLayout[i].text = sharedViewModel.subjectsNames[i]
+                    gradeLayout[i].text = grade[i]
+                    marksLayout[i].text = sharedViewModel.studentMarks[i]
+                    coursesLayout[i].visibility = View.VISIBLE
+                    marksLayout[i].visibility = View.VISIBLE
+                    gradeLayout[i].visibility = View.VISIBLE
+                }
+                gpaValue.text = sharedViewModel.finalGPA.value
+                creditsEarnedValue.text = sharedViewModel.creditsEarned.value
+            }
+            "7" -> {
+                for (i in 0 until 7) {
+                    if(sharedViewModel.creditHours[i] == "4"){
+                        grade[i] = CH4(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "3"){
+                        grade[i] = CH3(sharedViewModel.studentMarks[i])
+                    }  else if(sharedViewModel.creditHours[i] == "2"){
+                        grade[i] = CH2(sharedViewModel.studentMarks[i])
+                    } else if(sharedViewModel.creditHours[i] == "1"){
+                        grade[i] = CH1(sharedViewModel.studentMarks[i])
                     }
                     coursesLayout[i].text = sharedViewModel.subjectsNames[i]
                     gradeLayout[i].text = grade[i]
@@ -199,6 +237,13 @@ class Report : Fragment() {
         else if(marks.toInt() in 26..31) return "B"
         else if(marks.toInt() in 20..25) return "C"
         else if(marks.toInt() in 16..19) return "D"
+        else return "F"
+    }
+    fun CH1(marks: String): String {
+        if(marks.toInt() in 16..20) return "A"
+        else if(marks.toInt() in 13..15) return "B"
+        else if(marks.toInt() in 10..12) return "C"
+        else if(marks.toInt() in 8..9) return "D"
         else return "F"
     }
 

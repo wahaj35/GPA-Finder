@@ -66,6 +66,11 @@ class DataInput : Fragment() {
                         if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
                         else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
                     }
+                    "7" ->{
+                        val isTrue =  DataBetweenFragments()
+                        if(isTrue) {Navigation.findNavController(view).navigate(R.id.action_dataInput5_to_report2)}
+                        else Toast.makeText(activity,"Enter Subjects Names",Toast.LENGTH_SHORT).show()
+                    }
                     else ->{
                         Toast.makeText(activity,"Invalid No.Of Subjects",Toast.LENGTH_SHORT).show()
                     }
@@ -87,7 +92,8 @@ binding.apply {
         Subject3Marks.text.toString(),
         Subject4Marks.text.toString(),
         Subject5Marks.text.toString(),
-        Subject6Marks.text.toString()
+        Subject6Marks.text.toString(),
+        Subject7Marks.text.toString()
     )
     val creditHours = arrayOf(
         creditHours1.text.toString(),
@@ -95,7 +101,8 @@ binding.apply {
         creditHours3.text.toString(),
         creditHours4.text.toString(),
         creditHours5.text.toString(),
-        creditHours6.text.toString()
+        creditHours6.text.toString(),
+        creditHours7.text.toString()
     )
     val subjects = arrayOf(
         Subject1.text.toString(),
@@ -103,7 +110,8 @@ binding.apply {
         Subject3.text.toString(),
         Subject4.text.toString(),
         Subject5.text.toString(),
-        Subject6.text.toString()
+        Subject6.text.toString(),
+        Subject7.text.toString()
     )
 
     when (noOfSubjects){
@@ -162,7 +170,16 @@ binding.apply {
                 sharedViewModel.noOf_subjects.value = noOfSubjects
                 true
             }else false
-        }  else -> return false
+        }
+        "7" ->{
+            return if((binding.Subject1.text.toString() != "") && (binding.Subject2.text.toString() != "") && (binding.Subject3.text.toString() != "") && (binding.Subject4.text.toString() != "") && (binding.Subject5.text.toString() != "") && (binding.Subject6.text.toString() != "") && (binding.Subject7.text.toString() != "")){
+                sharedViewModel.setSubjects(arrayOf(subjects[0],subjects[1],subjects[2],subjects[3],subjects[4],subjects[5],subjects[6]))
+                sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5],marks[6]))
+                sharedViewModel.setCreditHours(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5],creditHours[6]))
+                sharedViewModel.noOf_subjects.value = noOfSubjects
+                true
+            }else false
+        }else -> return false
 
     }
 }
@@ -177,6 +194,7 @@ binding.apply {
             binding.layout4,
             binding.layout5,
             binding.layout6,
+            binding.layout7
         )
 
         val marks = arrayOf(
@@ -185,7 +203,8 @@ binding.apply {
             binding.Subject3Marks,
             binding.Subject4Marks,
             binding.Subject5Marks,
-            binding.Subject6Marks
+            binding.Subject6Marks,
+            binding.Subject7Marks
         )
         val credits = arrayOf(
             binding.creditHours1,
@@ -193,7 +212,9 @@ binding.apply {
             binding.creditHours3,
             binding.creditHours4,
             binding.creditHours5,
-            binding.creditHours6
+            binding.creditHours6,
+            binding.creditHours7,
+
         )
         val subjects  = arrayOf(
             binding.Subject1,
@@ -201,13 +222,15 @@ binding.apply {
             binding.Subject3,
             binding.Subject4,
             binding.Subject5,
-            binding.Subject6
+            binding.Subject6,
+            binding.Subject7
+
         )
 
         when (noOfSubjects) {
             "1" -> {
                 binding.scrollView2.visibility = View.VISIBLE
-                for (i in 0 until 6) {
+                for (i in 0 until 7) {
                     if(i == 0) layouts[i].visibility = View.VISIBLE
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
@@ -222,7 +245,7 @@ binding.apply {
 
             "2" -> {
                 binding.scrollView2.visibility = View.VISIBLE
-                for (i in 0 until 6) {
+                for (i in 0 until 7) {
                     if (i in 0..1) layouts[i].visibility = View.VISIBLE
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
@@ -237,7 +260,7 @@ binding.apply {
 
             "3" -> {
                 binding.scrollView2.visibility = View.VISIBLE
-                for (i in 0 until 6) {
+                for (i in 0 until 7) {
                     if (i in 0.. 2) layouts[i].visibility = View.VISIBLE
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
@@ -252,7 +275,7 @@ binding.apply {
 
             "4" -> {
                 binding.scrollView2.visibility = View.VISIBLE
-                for (i in 0 until 6) {
+                for (i in 0 until 7) {
                     if (i in 0..3) layouts[i].visibility = View.VISIBLE
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
@@ -267,7 +290,7 @@ binding.apply {
 
             "5" -> {
                 binding.scrollView2.visibility = View.VISIBLE
-                for (i in 0 until 6) {
+                for (i in 0 until 7) {
                     if (i in 0 .. 4) layouts[i].visibility = View.VISIBLE
                     else layouts[i].visibility = View.GONE
                     marks[i].setText("")
@@ -282,7 +305,21 @@ binding.apply {
 
             "6" -> {
                 binding.scrollView2.visibility = View.VISIBLE
-                for (i in 0 until 6) {
+                for (i in 0 until 7) {
+                    if (i in 0 .. 5) layouts[i].visibility = View.VISIBLE
+                    else layouts[i].visibility = View.GONE
+                    marks[i].setText("")
+                    credits[i].setText("")
+                    subjects[i].setText("")
+                }
+                binding.noOfSubjectsInputBar.setText("")
+                binding.subjectsAndMarksHeader.visibility = View.VISIBLE
+                binding.ButtonLayout.visibility = View.VISIBLE
+                binding.GPALayout.visibility = View.GONE
+            }
+            "7" -> {
+                binding.scrollView2.visibility = View.VISIBLE
+                for (i in 0 until 7) {
                     layouts[i].visibility = View.VISIBLE
                     marks[i].setText("")
                     credits[i].setText("")
@@ -295,7 +332,7 @@ binding.apply {
             }
             else ->
             {
-                for (i in 0 until 6) {
+                for (i in 0 until 7) {
                     layouts[i].visibility = View.GONE
                     marks[i].setText("")
                     credits[i].setText("")
@@ -314,14 +351,16 @@ binding.apply {
     private fun chkGPA() {
         binding.apply {
             // Assigning the EditText Credit Hours and Marks to the Properties of the Marks and Credit Hours Class
-            val qp = Array(6) { "" }
+            val qp = Array(7) { "" }
             val marks = arrayOf(
                 Subject1Marks.text.toString(),
                 Subject2Marks.text.toString(),
                 Subject3Marks.text.toString(),
                 Subject4Marks.text.toString(),
                 Subject5Marks.text.toString(),
-                Subject6Marks.text.toString()
+                Subject6Marks.text.toString(),
+                Subject7Marks.text.toString()
+
             )
             val creditHours = arrayOf(
                 creditHours1.text.toString(),
@@ -329,11 +368,15 @@ binding.apply {
                 creditHours3.text.toString(),
                 creditHours4.text.toString(),
                 creditHours5.text.toString(),
-                creditHours6.text.toString()
+                creditHours6.text.toString(),
+                creditHours7.text.toString()
+
             )
 
             this.invalidateAll()
             when (noOfSubjects) {
+                "7" -> sevenSubjects(creditHours, marks, qp)
+
                 "6" -> sixSubjects(creditHours, marks, qp)
 
                 "5" -> fiveSubjects(creditHours, marks, qp)
@@ -349,16 +392,19 @@ binding.apply {
         }
 
     }
-    @SuppressLint("ResourceAsColor")
-    private fun sixSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
-        if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.Subject4Marks.text.toString() != "") && (binding.Subject5Marks.text.toString() != "") && (binding.Subject6Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "") && (binding.creditHours4.text.toString() != "") && (binding.creditHours5.text.toString() != "") && (binding.creditHours6.text.toString() != "")) {
+
+
+
+    private fun sevenSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) =
+        if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.Subject4Marks.text.toString() != "") && (binding.Subject5Marks.text.toString() != "") && (binding.Subject6Marks.text.toString() != "") && (binding.Subject7Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "") && (binding.creditHours4.text.toString() != "") && (binding.creditHours5.text.toString() != "") && (binding.creditHours6.text.toString() != "") && (binding.creditHours7.text.toString() != "")) {
 
             if ((binding.creditHours1.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours2.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours3.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours4.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours5.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours6.text.toString().toInt() in 2..4)
+                    .toInt() in (1..4)) && (binding.creditHours2.text.toString()
+                    .toInt() in (1..4)) && (binding.creditHours3.text.toString()
+                    .toInt() in (1..4)) && (binding.creditHours4.text.toString()
+                    .toInt() in (1..4)) && (binding.creditHours5.text.toString()
+                    .toInt() in (1..4)) && (binding.creditHours6.text.toString()
+                    .toInt() in (1..4)) && binding.creditHours7.text.toString().toInt() in 1..4
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
@@ -373,6 +419,9 @@ binding.apply {
                     } else if (creditHours[i] == "2") {
                         val om2 = marks[i]
                         qp[i] = ch2(om2).toString()
+                    } else if (creditHours[i] == "1") {
+                        val om1 = marks[i]
+                        qp[i] = ch1(om1).toString()
                     }
                 }
                 for (element in qp) {
@@ -382,12 +431,82 @@ binding.apply {
                     totalCredit += element.toInt()
                 }
                 val gpa = totalQP / totalCredit
-                GPA = "%.2f".format(gpa).toFloat().toString()
+                "%.2f".format(gpa).toFloat().toString().also { GPA = it }
                 gpa_text.finalGPA = GPA
                 sharedViewModel.finalGPA.value = GPA
                 sharedViewModel.creditsEarned.value = totalCredit.toString()
                 for (element in qp) {
                     when (element) {
+                        0.5.toString() -> {
+                            binding.GPALayout.visibility = View.GONE
+                            binding.checkReportLayout.visibility = View.GONE
+                            Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
+                            break
+                        }
+
+                        else -> {
+                            binding.GPALayout.visibility = View.VISIBLE
+                            binding.checkReportLayout.visibility = View.VISIBLE
+                        }
+                    }
+                }
+            } else {
+                binding.GPALayout.visibility = View.GONE
+                binding.checkReportLayout.visibility = View.GONE
+                Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            binding.GPALayout.visibility = View.GONE
+            binding.checkReportLayout.visibility = View.GONE
+            Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
+        }
+
+
+
+
+
+    @SuppressLint("ResourceAsColor")
+    private fun sixSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
+        if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.Subject4Marks.text.toString() != "") && (binding.Subject5Marks.text.toString() != "") && (binding.Subject6Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "") && (binding.creditHours4.text.toString() != "") && (binding.creditHours5.text.toString() != "") && (binding.creditHours6.text.toString() != "")) {
+
+            if ((binding.creditHours1.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours2.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours3.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours4.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours5.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours6.text.toString().toInt() in 2..4)
+            ) {
+                var totalQP = 0.0.toFloat()
+                var totalCredit = 0
+                lateinit var GPA: String
+                for (i in 0 until creditHours.size - 1) {
+                    if (creditHours[i] == "4") {
+                        val om4 = marks[i]
+                        qp[i] = ch4(om4).toString()
+                    } else if (creditHours[i] == "3") {
+                        val om3 = marks[i]
+                        qp[i] = ch3(om3).toString()
+                    } else if (creditHours[i] == "2") {
+                        val om2 = marks[i]
+                        qp[i] = ch2(om2).toString()
+                    } else if (creditHours[i] == "1") {
+                        val om1 = marks[i]
+                        qp[i] = ch1(om1).toString()
+                    }
+                }
+                for (i in 0 until qp.size - 1) {
+                    totalQP += qp[i].toFloat()
+                }
+                for (i in 0 until creditHours.size - 1) {
+                    totalCredit += creditHours[i].toInt()
+                }
+                val gpa = totalQP / totalCredit
+                GPA = "%.2f".format(gpa).toFloat().toString()
+                gpa_text.finalGPA = GPA
+                sharedViewModel.finalGPA.value = GPA
+                sharedViewModel.creditsEarned.value = totalCredit.toString()
+                for (i in 0 until qp.size - 1) {
+                    when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
                             binding.checkReportLayout.visibility = View.GONE
@@ -417,15 +536,15 @@ binding.apply {
     private fun fiveSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.Subject4Marks.text.toString() != "") && (binding.Subject5Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "") && (binding.creditHours4.text.toString() != "") && (binding.creditHours5.text.toString() != "")) {
             if ((binding.creditHours1.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours2.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours3.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours4.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours5.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours2.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours3.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours4.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours5.text.toString().toInt() in 2..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
                 lateinit var GPA: String
-                for (i in 0 until creditHours.size - 1) {
+                for (i in 0 until creditHours.size - 2) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
                         qp[i] = ch4(om4).toString()
@@ -435,12 +554,15 @@ binding.apply {
                     } else if (creditHours[i] == "2") {
                         val om2 = marks[i]
                         qp[i] = ch2(om2).toString()
+                    } else if (creditHours[i] == "1") {
+                        val om1 = marks[i]
+                        qp[i] = ch1(om1).toString()
                     }
                 }
-                for (i in 0 until qp.size - 1) {
+                for (i in 0 until qp.size - 2) {
                     totalQP += qp[i].toFloat()
                 }
-                for (i in 0 until creditHours.size - 1) {
+                for (i in 0 until creditHours.size - 2) {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit
@@ -448,7 +570,7 @@ binding.apply {
                 gpa_text.finalGPA = GPA
                 sharedViewModel.finalGPA.value = GPA
                 sharedViewModel.creditsEarned.value = totalCredit.toString()
-                for (i in 0 until qp.size - 1) {
+                for (i in 0 until qp.size - 2) {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
@@ -479,14 +601,14 @@ binding.apply {
     private fun fourSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.Subject4Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "") && (binding.creditHours4.text.toString() != "")) {
             if ((binding.creditHours1.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours2.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours3.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours4.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours2.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours3.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours4.text.toString().toInt() in 2..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
                 lateinit var GPA: String
-                for (i in 0 until creditHours.size - 2) {
+                for (i in 0 until creditHours.size - 3) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
                         qp[i] = ch4(om4).toString()
@@ -496,12 +618,15 @@ binding.apply {
                     } else if (creditHours[i] == "2") {
                         val om2 = marks[i]
                         qp[i] = ch2(om2).toString()
+                    } else if (creditHours[i] == "1") {
+                        val om1 = marks[i]
+                        qp[i] = ch1(om1).toString()
                     }
                 }
-                for (i in 0 until qp.size - 2) {
+                for (i in 0 until qp.size - 3) {
                     totalQP += qp[i].toFloat()
                 }
-                for (i in 0 until creditHours.size - 2) {
+                for (i in 0 until creditHours.size - 3) {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit.toInt()
@@ -509,7 +634,7 @@ binding.apply {
                 gpa_text.finalGPA = GPA
                 sharedViewModel.finalGPA.value = GPA
                 sharedViewModel.creditsEarned.value = totalCredit.toString()
-                for (i in 0 until qp.size - 2) {
+                for (i in 0 until qp.size - 3) {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
@@ -540,13 +665,13 @@ binding.apply {
     private fun threeSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "")) {
             if ((binding.creditHours1.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours2.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours3.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours2.text.toString()
+                    .toInt() in 1..4) && (binding.creditHours3.text.toString().toInt() in 2..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
                 lateinit var GPA: String
-                for (i in 0 until creditHours.size - 3) {
+                for (i in 0 until creditHours.size - 4) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
                         qp[i] = ch4(om4).toString()
@@ -556,12 +681,15 @@ binding.apply {
                     } else if (creditHours[i] == "2") {
                         val om2 = marks[i]
                         qp[i] = ch2(om2).toString()
+                    } else if (creditHours[i] == "1") {
+                        val om1 = marks[i]
+                        qp[i] = ch1(om1).toString()
                     }
                 }
-                for (i in 0 until qp.size - 3) {
+                for (i in 0 until qp.size - 4) {
                     totalQP += qp[i].toFloat()
                 }
-                for (i in 0 until creditHours.size - 3) {
+                for (i in 0 until creditHours.size - 4) {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit.toInt()
@@ -569,7 +697,7 @@ binding.apply {
                 gpa_text.finalGPA = GPA
                 sharedViewModel.finalGPA.value = GPA
                 sharedViewModel.creditsEarned.value = totalCredit.toString()
-                for (i in 0 until qp.size - 3) {
+                for (i in 0 until qp.size - 4) {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
@@ -600,12 +728,12 @@ binding.apply {
     private fun twoSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "")) {
             if ((binding.creditHours1.text.toString()
-                    .toInt() in 2..4) && (binding.creditHours2.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours2.text.toString().toInt() in 2..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
                 lateinit var GPA:String
-                for (i in 0 until creditHours.size - 4) {
+                for (i in 0 until creditHours.size - 5) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
                         qp[i] = ch4(om4).toString()
@@ -615,12 +743,15 @@ binding.apply {
                     } else if (creditHours[i] == "2") {
                         val om2 = marks[i]
                         qp[i] = ch2(om2).toString()
+                    } else if (creditHours[i] == "1") {
+                        val om1 = marks[i]
+                        qp[i] = ch1(om1).toString()
                     }
                 }
-                for (i in 0 until qp.size - 4) {
+                for (i in 0 until qp.size - 5) {
                     totalQP += qp[i].toFloat()
                 }
-                for (i in 0 until creditHours.size - 4) {
+                for (i in 0 until creditHours.size - 5) {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit.toInt()
@@ -628,7 +759,7 @@ binding.apply {
                 gpa_text.finalGPA = GPA
                 sharedViewModel.finalGPA.value = GPA
                 sharedViewModel.creditsEarned.value = totalCredit.toString()
-                for (i in 0 until qp.size - 4) {
+                for (i in 0 until qp.size - 5) {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
@@ -658,11 +789,11 @@ binding.apply {
     @SuppressLint("ResourceAsColor")
     private fun oneSubject(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "")) {
-            if ((binding.creditHours1.text.toString().toInt() in 2..4)) {
+            if ((binding.creditHours1.text.toString().toInt() in 1..4)) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
                 lateinit var GPA: String
-                for (i in 0 until creditHours.size - 5) {
+                for (i in 0 until creditHours.size - 6) {
                     if (creditHours[i] == "4") {
                         val om4 = marks[i]
                         qp[i] = ch4(om4).toString()
@@ -672,12 +803,15 @@ binding.apply {
                     } else if (creditHours[i] == "2") {
                         val om2 = marks[i]
                         qp[i] = ch2(om2).toString()
+                    } else if (creditHours[i] == "1") {
+                        val om1 = marks[i]
+                        qp[i] = ch1(om1).toString()
                     }
                 }
-                for (i in 0 until qp.size - 5) {
+                for (i in 0 until qp.size - 6) {
                     totalQP += qp[i].toFloat()
                 }
-                for (i in 0 until creditHours.size - 5) {
+                for (i in 0 until creditHours.size - 6) {
                     totalCredit += creditHours[i].toInt()
                 }
                 val gpa = totalQP / totalCredit
@@ -685,7 +819,7 @@ binding.apply {
                 gpa_text.finalGPA = GPA
                 sharedViewModel.finalGPA.value = GPA
                 sharedViewModel.creditsEarned.value = totalCredit.toString()
-                for (i in 0 until qp.size - 5) {
+                for (i in 0 until qp.size - 6) {
                     when (qp[i]) {
                         0.5.toString() -> {
                             binding.GPALayout.visibility = View.GONE
@@ -845,6 +979,34 @@ private fun ch2(om2: String): Float {
                 i++
             }
             return qp2.toFloat()
+        } else return 0.0.toFloat()
+    } else return 0.5.toFloat()
+}
+
+
+private fun ch1(om1: String): Float {
+    if (om1.toInt() <= 20) {
+        if (om1.toInt() in 8..20) {
+            val qualityPoints = arrayOf(
+                4, 3.67, 3.33, 3, 2.67, 2.33, 2, 1.5, 1
+            )
+            lateinit var qp1: String
+            var i = 0 // counter for the loop
+            var a1 = 16 // minimum marks to get the A grade for 1 credit hour subject
+            while (i <= 8) {
+                if ((om1.toInt() in a1..40)) {
+                    qp1 = qualityPoints[i].toString()
+                    break
+                } else {
+                    if (om1 == a1.toString()) {
+                        qp1 = qualityPoints[i].toString()
+                        break
+                    }
+                }
+                a1--
+                i++
+            }
+            return qp1.toFloat()
         } else return 0.0.toFloat()
     } else return 0.5.toFloat()
 }
