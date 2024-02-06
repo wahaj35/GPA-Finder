@@ -3,26 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/dataInput5">
+    app:startDestination="@id/DataInput">
 
     
 
     <fragment
-        android:id="@+id/dataInput5"
+        android:id="@+id/DataInput"
         android:name="com.example.about.DataInput"
-        android:label="fragment_data_input"
+        android:label="Data Input"
         tools:layout="@layout/fragment_data_input" >
         <action
             android:id="@+id/action_dataInput5_to_report2"
-            app:destination="@id/report2" />
+            app:destination="@id/MarksReport" />
     </fragment>
     <fragment
-        android:id="@+id/report2"
+        android:id="@+id/MarksReport"
         android:name="com.example.about.Report"
-        android:label="fragment_report"
+        android:label="Marks Report"
         tools:layout="@layout/fragment_report" >
         <action
             android:id="@+id/action_report2_to_dataInput5"
-            app:destination="@id/dataInput5" />
+            app:destination="@id/DataInput"
+            app:popUpTo="@id/DataInput" />
     </fragment>
 </navigation>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,76 +13,24 @@
 
         <fragment
             android:id="@+id/NavigationHost"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
-            app:layout_constraintTop_toBottomOf="@id/headerLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-           app:navGraph="@navigation/navigation" />
-
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/headerLayout"
+            app:navGraph="@navigation/navigation" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@android:color/holo_blue_dark"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <FrameLayout
-                android:id="@+id/frameLayout1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@id/header"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@android:color/holo_blue_dark">
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="44dp"
-                    android:layout_height="35dp"
-                    android:contentDescription="@string/leftStarDescription"
-                    app:layout_constraintEnd_toStartOf="@+id/header"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/btn_star_big_on" />
-            </FrameLayout>
-
-
-
-            <FrameLayout
-                android:id="@+id/frameLayout2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/header"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@android:color/holo_blue_dark">
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="44dp"
-                    android:layout_height="35dp"
-                    android:contentDescription="@string/leftStarDescription"
-                    app:layout_constraintStart_toEndOf="@+id/header"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/btn_star_big_on" />
-            </FrameLayout>
-
-
-
-
-            <TextView
-                android:id="@+id/header"
-                style="@style/appHeaderStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/appHeader"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
