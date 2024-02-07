@@ -26,4 +26,9 @@
             app:destination="@id/DataInput"
             app:popUpTo="@id/DataInput" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
 </navigation>

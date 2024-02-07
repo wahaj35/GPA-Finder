@@ -474,7 +474,7 @@ binding.apply {
                     .toInt() in 1..4) && (binding.creditHours3.text.toString()
                     .toInt() in 1..4) && (binding.creditHours4.text.toString()
                     .toInt() in 1..4) && (binding.creditHours5.text.toString()
-                    .toInt() in 1..4) && (binding.creditHours6.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours6.text.toString().toInt() in 1..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
@@ -539,7 +539,7 @@ binding.apply {
                     .toInt() in 1..4) && (binding.creditHours2.text.toString()
                     .toInt() in 1..4) && (binding.creditHours3.text.toString()
                     .toInt() in 1..4) && (binding.creditHours4.text.toString()
-                    .toInt() in 1..4) && (binding.creditHours5.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours5.text.toString().toInt() in 1..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
@@ -603,7 +603,7 @@ binding.apply {
             if ((binding.creditHours1.text.toString()
                     .toInt() in 1..4) && (binding.creditHours2.text.toString()
                     .toInt() in 1..4) && (binding.creditHours3.text.toString()
-                    .toInt() in 1..4) && (binding.creditHours4.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours4.text.toString().toInt() in 1..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
@@ -666,7 +666,7 @@ binding.apply {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.Subject3Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "") && (binding.creditHours3.text.toString() != "")) {
             if ((binding.creditHours1.text.toString()
                     .toInt() in 1..4) && (binding.creditHours2.text.toString()
-                    .toInt() in 1..4) && (binding.creditHours3.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours3.text.toString().toInt() in 1..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
@@ -728,7 +728,7 @@ binding.apply {
     private fun twoSubjects(creditHours: Array<String>, marks: Array<String>, qp: Array<String>) {
         if ((binding.Subject1Marks.text.toString() != "") && (binding.Subject2Marks.text.toString() != "") && (binding.creditHours1.text.toString() != "") && (binding.creditHours2.text.toString() != "")) {
             if ((binding.creditHours1.text.toString()
-                    .toInt() in 1..4) && (binding.creditHours2.text.toString().toInt() in 2..4)
+                    .toInt() in 1..4) && (binding.creditHours2.text.toString().toInt() in 1..4)
             ) {
                 var totalQP = 0.0.toFloat()
                 var totalCredit = 0
