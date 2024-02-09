@@ -5,6 +5,11 @@ import androidx.lifecycle.ViewModel
 
 class SharedViewModel:ViewModel() {
 
+
+    //Mutable Live data for noOfSubjects
+    private var noOfSubjects = MutableLiveData("")
+    var noOf_subjects:MutableLiveData<String> = noOfSubjects
+
     //MutableList for Marks
    private var marks = MutableList(7){""}
     var studentMarks: MutableList<String> = marks
@@ -26,11 +31,15 @@ class SharedViewModel:ViewModel() {
     private var gpa = MutableLiveData("")
     var finalGPA :MutableLiveData<String> = gpa
 
-    private var noOfSubjects = MutableLiveData("")
-    var noOf_subjects:MutableLiveData<String> = noOfSubjects
 
-    fun getNoOfSubjects(noOfSubjects:String){
-        noOf_subjects.value = noOfSubjects
+    //Mutable List for grades
+    private var grades = MutableList(7){""}
+    var courseGrades:MutableList<String> = grades
+
+    fun getGrades(grades:Array<String>){
+        for(i in courseGrades.indices){
+            courseGrades[i] = grades[i]
+        }
     }
 
 

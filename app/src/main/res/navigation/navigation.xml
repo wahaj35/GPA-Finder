@@ -5,30 +5,28 @@
     android:id="@+id/navigation"
     app:startDestination="@id/DataInput">
 
-    
 
     <fragment
         android:id="@+id/DataInput"
         android:name="com.example.about.DataInput"
-        android:label="Data Input"
-        tools:layout="@layout/fragment_data_input" >
+        android:label="GPA Finder"
+        tools:layout="@layout/fragment_data_input">
         <action
-            android:id="@+id/action_dataInput5_to_report2"
-            app:destination="@id/MarksReport" />
-    </fragment>
-    <fragment
-        android:id="@+id/MarksReport"
-        android:name="com.example.about.Report"
-        android:label="Marks Report"
-        tools:layout="@layout/fragment_report" >
-        <action
-            android:id="@+id/action_report2_to_dataInput5"
-            app:destination="@id/DataInput"
-            app:popUpTo="@id/DataInput" />
+            android:id="@+id/action_DataInput_to_reportFragment"
+            app:destination="@id/reportFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.about.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.example.about.ReportFragment"
+        android:label="Report"
+        tools:layout="@layout/fragment_report2" >
+        <action
+            android:id="@+id/action_reportFragment_to_DataInput"
+            app:destination="@id/DataInput" />
+    </fragment>
 </navigation>

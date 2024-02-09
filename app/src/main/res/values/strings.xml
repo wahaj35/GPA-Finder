@@ -13,7 +13,7 @@
     <string name="finalGPA" />
     <string name="no_ofSubjects_InputBar_TextHint">No.Of Subejcts</string>
     <string name="subjectsHeader">Subjects</string>
-    <string name="marksHeader">Marks</string>
+    <string name="marksHeader">  Marks  </string>
     <string name="creditHeader">Credit Hours</string>
     <string name="enterButtonText">Enter</string>
     <string name="gpaText">GPA: </string>
@@ -33,12 +33,12 @@
     <string name="registrationNoText">Registration #:</string>
     <string name="creditsEarnedText">"Credits Earned: "</string>
     <string name="gpaTEXT">GPA:</string>
-    <string name="gradeHeader">Grade</string>
+    <string name="gradeHeader">" Grade "</string>
     <string name="courseTitleHeader">"  Course Tittle  "</string>
     <string name="marksSheetHeaderText">Marks Sheet</string>
     <string name="percentageText">Percentage:</string>
-    <string name="courseTitleText" />
     <string name="subject7Text">Subject 7</string>
     <string name="AboutText">\"Introducing our GPA Calculator app - your ultimate tool for effortless GPA computation. Designed to streamline academic assessment, our app takes the stress out of calculating grades by allowing students to input their marks and credit hours, generating accurate GPAs instantly. Regardless of your Department, our user-friendly interface ensures a smooth experience, empowering you to stay on top of your academic performance with ease.\"</string>
     <string name="AboutHeading">About</string>
+    <string name="CourseMarksText">" Marks "</string>
 </resources>

@@ -16,6 +16,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.about.databinding.ActivityMainBinding
 
 
@@ -29,7 +31,6 @@ open class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(fallbackOnNavigateUpListener = ::onSupportNavigateUp, topLevelDestinationIds = (setOf(R.id.DataInput)))
         bindActivity.myToolbar.setupWithNavController(navController, appBarConfiguration)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
