@@ -14,16 +14,15 @@ import com.example.about.databinding.FragmentReport2Binding
 
 class ReportFragment : Fragment() {
     private lateinit var binding: FragmentReport2Binding
-    val sharedViewModel:SharedViewModel by activityViewModels()
     lateinit var recyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_report2,container, false)
-        recyclerView = binding.myRecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this.context)
-        val data = arrayOf("Object Orieted programming", "Computer Networks" )
-        val adapter = Adapter(data,this)
+        recyclerView = binding.coursesRecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        val courses = arrayOf("Object Oriented Programming" ,"Data Structures", "Computer Networks", "English", "Discrete Structures" ,"English", "Math","Linear Algebra")
+        val adapter = CoursesAdapter(courses,this)
         recyclerView.adapter = adapter
         return binding.root
     }
