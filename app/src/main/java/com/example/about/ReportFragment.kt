@@ -14,16 +14,26 @@ import com.example.about.databinding.FragmentReport2Binding
 
 class ReportFragment : Fragment() {
     private lateinit var binding: FragmentReport2Binding
-    lateinit var recyclerView: RecyclerView
+    private lateinit var coursesRecyclerView: RecyclerView
+    private lateinit var marksRecyclerView: RecyclerView
+    private lateinit var gradeRecyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_report2,container, false)
-        recyclerView = binding.coursesRecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        val courses = arrayOf("Object Oriented Programming" ,"Data Structures", "Computer Networks", "English", "Discrete Structures" ,"English", "Math","Linear Algebra")
-        val adapter = CoursesAdapter(courses,this)
-        recyclerView.adapter = adapter
+        val courses  = arrayOf("Object Oriented Programming", "Data Structures", "Computer Networks","Discrete Structures", "English", "Linear Algebra", "Digital Logic And Design")
+        val marks = arrayOf("50", "80", "90","80", "50", "80", "90")
+        val grade = arrayOf("A", "B", "D","E", "F", "A", "B")
+        coursesRecyclerView = binding.coursesRecyclerView
+        marksRecyclerView = binding.marksRecyclerView
+        gradeRecyclerView = binding.gradeRecyclerView
+        coursesRecyclerView.layoutManager = LinearLayoutManager(context)
+        marksRecyclerView.layoutManager = LinearLayoutManager(context)
+        gradeRecyclerView.layoutManager = LinearLayoutManager(context)
+        coursesRecyclerView.adapter = CoursesAdapter(courses,this)
+        marksRecyclerView.adapter = MarksAdapter(marks,this)
+        gradeRecyclerView.adapter = GradeAdapter(grade,this)
+
         return binding.root
     }
 
