@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.bind
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.navigation.NavInflater
 import androidx.navigation.findNavController
@@ -22,15 +23,15 @@ import com.example.about.databinding.ActivityMainBinding
 
 
 open class MainActivity : AppCompatActivity() {
-    private lateinit var bindActivity: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindActivity = setContentView(this, R.layout.activity_main)
-        setSupportActionBar(bindActivity.myToolbar)
+        binding = setContentView(this, R.layout.activity_main)
+        setSupportActionBar(binding.myToolbar)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.NavigationHost) as NavHostFragment
         val navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration(fallbackOnNavigateUpListener = ::onSupportNavigateUp, topLevelDestinationIds = (setOf(R.id.DataInput)))
-        bindActivity.myToolbar.setupWithNavController(navController, appBarConfiguration)
+        val appBarConfiguration = AppBarConfiguration(fallbackOnNavigateUpListener = ::onSupportNavigateUp, topLevelDestinationIds = (setOf(R.id.homeFragment)))
+        binding.myToolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

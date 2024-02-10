@@ -93,7 +93,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/coursesHeaderCardLayout"
-                        style="@style/HeaderCardStyles"
+                        style="@style/headerCardTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +146,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/marksHeaderCardLayout"
-                        style="@style/HeaderCardStyles"
+                        style="@style/headerCardTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -201,7 +201,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/gradeHeaderCardLayout"
-                        style="@style/HeaderCardStyles"
+                        style="@style/headerCardTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"

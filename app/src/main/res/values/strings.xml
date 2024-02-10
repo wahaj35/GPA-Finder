@@ -41,4 +41,14 @@
     <string name="AboutText">\"Introducing our GPA Calculator app - your ultimate tool for effortless GPA computation. Designed to streamline academic assessment, our app takes the stress out of calculating grades by allowing students to input their marks and credit hours, generating accurate GPAs instantly. Regardless of your Department, our user-friendly interface ensures a smooth experience, empowering you to stay on top of your academic performance with ease.\"</string>
     <string name="AboutHeading">About</string>
     <string name="CourseMarksText">"  Marks  "</string>
+    <string name="imageContentDiscription">This is CUVAS logo and main screen logo</string>
+    <string name="noOfSubjectsSelection">Choose Number of Subjects</string>
+    <string name="oneSubjectText">"One Subject"</string>
+    <string name="twoSubjectsText">"Two Subjects"</string>
+    <string name="threeSubjectText">"Three Subjects"</string>
+    <string name="fourSubjectText">"Four Subjects"</string>
+    <string name="fiveSubjectText">"Five Subjects"</string>
+    <string name="sixSubjectText">"Six Subjects"</string>
+    <string name="sevenSubjectText">"Seven Subjects"</string>
+
 </resources>

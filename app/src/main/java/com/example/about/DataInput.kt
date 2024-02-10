@@ -38,9 +38,9 @@ class DataInput : Fragment() {
             // Setting up setOnClickLick method for the GPA Button
             checkGPAButton.setOnClickListener { chkGPA() }
 
-            checkReportButton.setOnClickListener{view:View ->
-                Navigation.findNavController(view).navigate(R.id.action_DataInput_to_reportFragment)
-            }
+//            checkReportButton.setOnClickListener{view:View ->
+//                Navigation.findNavController(view).navigate(R.id.action_DataInput_to_reportFragment)
+//            }
 //            checkReportButton.setOnClickListener { view: View ->
 //                sharedViewModel.noOf_subjects.value = noOfSubjects
 ////                sharedViewModel.creditsEarned.value = totalCreditsEarned
