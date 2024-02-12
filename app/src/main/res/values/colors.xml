@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FC0000</color>
     <color name="holoBlue">#52CAEF</color>
+    <color name="hoverColor">#37000000</color>
+    <color name="defaultColor">#FFFFFFFF</color>
 </resources>
