@@ -5,226 +5,299 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/MainConstraintLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ImageCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            app:cardCornerRadius="@dimen/cardCornerValue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/headerDesign"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/header_design" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/headerDesign"
+            android:rowCount="5"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="-80dp"
+            android:columnCount="2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/oneSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/oneSubjectCardsStyles">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/oneSubject"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/oneSubject_text"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/twoSubjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/twoSubjectsCardsStyles">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/twoSubjects"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/subjectText"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/threeSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/threeSubjectsCardsStyles">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/threeSubjects"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/subjectsHeader"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fourSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/fourSubjectsCardsStyles">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/fourSubjects"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/subjectsHeader"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fiveSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/fiveSubjectsCardsStyles">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/fiveSubjects"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/subjectsHeader"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sixSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/sixSubjectsCardsStyles">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/sixSubjects"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/subjectsHeader"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sevenSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/sevenSubjectsCardsStyles">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/sevenSubjects"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/subjectsHeader"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/eightSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/eightSubjectsCardsStyles">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/eightSubjects"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/subjectsHeader"
+                        android:textColor="@color/holoBlue"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/cuvasLogo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/imageContentDiscription"
-                app:srcCompat="@drawable/cuvas_logo" />
-        </androidx.cardview.widget.CardView>
+                android:id="@+id/imageView4"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/gpa_removebg_preview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/chooseNoOfSubjectsCard"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="@color/design_default_color_primary_variant"
-            app:cardCornerRadius="@dimen/chooseNoOfSubjectsCardCornerRadius"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ImageCard">
-
-            <TextView
-                android:id="@+id/chooseNoOfSubjectsText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/noOfSubjectsSelection"
-                android:textColor="@color/white"
-                android:textSize="@dimen/noOfSubjectsTitleSize"
-                android:textStyle="bold" />
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/oneSubjectCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/holoBlue"
-            app:cardCornerRadius="@dimen/noOfSubjectTextsCardCornerValue"
-            app:layout_constraintEnd_toStartOf="@+id/TwoSubjectCard"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chooseNoOfSubjectsCard">
-
-
-            <TextView
-                android:id="@+id/oneSubjectText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/oneSubjectText"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/TwoSubjectCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/holoBlue"
-            app:cardCornerRadius="@dimen/noOfSubjectTextsCardCornerValue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/oneSubjectCard"
-            app:layout_constraintTop_toBottomOf="@id/chooseNoOfSubjectsCard">
-
-
-            <TextView
-                android:id="@+id/TwoSubjectsText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/twoSubjectsText"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ThreeSubjectCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/holoBlue"
-            app:cardCornerRadius="@dimen/noOfSubjectTextsCardCornerValue"
-            app:layout_constraintEnd_toStartOf="@+id/FourSubjectCard"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/oneSubjectCard">
-
-
-            <TextView
-                android:id="@+id/ThreeSubjectsText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/threeSubjectText"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/FourSubjectCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/holoBlue"
-            app:cardCornerRadius="@dimen/noOfSubjectTextsCardCornerValue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/ThreeSubjectCard"
-            app:layout_constraintStart_toStartOf="@+id/TwoSubjectCard"
-            app:layout_constraintTop_toBottomOf="@id/oneSubjectCard">
-
-
-            <TextView
-                android:id="@+id/FourSubjectsText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/fourSubjectText"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/FiveSubjectCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/holoBlue"
-            app:cardCornerRadius="@dimen/noOfSubjectTextsCardCornerValue"
-            app:layout_constraintEnd_toStartOf="@+id/SixSubjectCard"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ThreeSubjectCard">
-
-
-            <TextView
-                android:id="@+id/FiveSubjectsText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/fiveSubjectText"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/SixSubjectCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/holoBlue"
-            app:cardCornerRadius="@dimen/noOfSubjectTextsCardCornerValue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/FiveSubjectCard"
-            app:layout_constraintTop_toBottomOf="@id/FourSubjectCard">
-
-
-            <TextView
-                android:id="@+id/SixSubjectsText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/sixSubjectText"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/SevenSubjectCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/holoBlue"
-            app:cardCornerRadius="@dimen/noOfSubjectTextsCardCornerValue"
-            app:layout_constraintEnd_toEndOf="@id/SixSubjectCard"
-            app:layout_constraintStart_toStartOf="@id/FiveSubjectCard"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/FiveSubjectCard"
-            app:layout_constraintTop_toBottomOf="@id/FiveSubjectCard">
-
-
-            <TextView
-                android:id="@+id/SevenSubjectsText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/sevenSubjectText"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </androidx.cardview.widget.CardView>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 
 </layout>

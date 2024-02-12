@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.example.about.databinding.FragmentHomeBinding
 
 
@@ -17,9 +18,7 @@ lateinit var binding: FragmentHomeBinding
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
-        var onClickListener = binding.oneSubjectCard?.setOnClickListener {
-            Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show()
-        }
+//        binding.oneSubject.setOnClickListener{view:View -> Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_reportFragment)}
         return binding.root
     }
 }

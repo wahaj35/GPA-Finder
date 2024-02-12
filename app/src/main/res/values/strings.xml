@@ -50,5 +50,15 @@
     <string name="fiveSubjectText">"Five Subjects"</string>
     <string name="sixSubjectText">"Six Subjects"</string>
     <string name="sevenSubjectText">"Seven Subjects"</string>
+    <string name="oneSubject">1</string>
+    <string name="oneSubject_text">Subject</string>
+    <string name="twoSubjects">2</string>
+    <string name="subjectText">Subjects</string>
+    <string name="threeSubjects">3</string>
+    <string name="fourSubjects">4</string>
+    <string name="fiveSubjects">5</string>
+    <string name="sixSubjects">6</string>
+    <string name="sevenSubjects">7</string>
+    <string name="eightSubjects">8</string>
 
 </resources>
