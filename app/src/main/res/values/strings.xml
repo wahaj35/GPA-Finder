@@ -60,5 +60,7 @@
     <string name="sixSubjects">6</string>
     <string name="sevenSubjects">7</string>
     <string name="eightSubjects">8</string>
+    <string name="subject_7_name">Subject 7</string>
+    <string name="subject_8_name">Subject 8</string>
 
 </resources>

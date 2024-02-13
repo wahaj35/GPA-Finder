@@ -8,24 +8,42 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp">
-
-
+        android:layout_marginTop="55dp">
 
         <View
             android:id="@+id/headerDesign"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/header_design" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.536"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/gpa_removebg_preview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/headerDesign"
             android:rowCount="5"
+            android:layout_below="@id/headerDesign"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginTop="-80dp"
+            android:layout_marginTop="-55dp"
             android:columnCount="2">
 
             <androidx.cardview.widget.CardView
@@ -40,7 +58,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/oneSubject"
@@ -49,7 +67,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/oneSubject_text"
@@ -71,7 +89,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/twoSubjects"
@@ -80,7 +98,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/subjectText"
@@ -102,7 +120,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/threeSubjects"
@@ -111,7 +129,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/subjectsHeader"
@@ -134,7 +152,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/fourSubjects"
@@ -143,7 +161,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/subjectsHeader"
@@ -166,7 +184,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/fiveSubjects"
@@ -175,7 +193,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/subjectsHeader"
@@ -198,7 +216,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/sixSubjects"
@@ -207,7 +225,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/subjectsHeader"
@@ -230,7 +248,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/sevenSubjects"
@@ -239,7 +257,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/subjectsHeader"
@@ -262,7 +280,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/eightSubjects"
@@ -271,7 +289,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/subjectsHeader"
@@ -282,22 +300,6 @@
             </androidx.cardview.widget.CardView>
 
         </GridLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="150sp"
-                android:layout_height="150sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/gpa_removebg_preview" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
     </RelativeLayout>
 
 
