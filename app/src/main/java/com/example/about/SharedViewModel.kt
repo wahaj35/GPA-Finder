@@ -11,15 +11,15 @@ class SharedViewModel:ViewModel() {
     var noOf_subjects:MutableLiveData<String> = noOfSubjects
 
     //MutableList for Marks
-   private var marks = MutableList(7){""}
+   private var marks = MutableList(8){""}
     var studentMarks: MutableList<String> = marks
 
     //MutableList for Subjects
-    private var subjects = MutableList(7){""}
+    private var subjects = MutableList(8){""}
     var subjectsNames: MutableList<String> = subjects
 
     //Mutable List For CreditHours
-    private var credits = MutableList(7){""}
+    private var credits = MutableList(8){""}
     var creditHours: MutableList<String> = credits
 
     //Mutable Live Data For Earned Credts
@@ -33,7 +33,7 @@ class SharedViewModel:ViewModel() {
 
 
     //Mutable List for grades
-    private var grades = MutableList(7){""}
+    private var grades = MutableList(8){""}
     var courseGrades:MutableList<String> = grades
 
     fun getGrades(grades:Array<String>){

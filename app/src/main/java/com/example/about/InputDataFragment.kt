@@ -121,8 +121,6 @@ class InputDataFragment : Fragment() {
                 enterCreditHours7.text.toString(),
                 enterCreditHours8.text.toString(),
                 )
-            sharedViewModel.setMarks(marks)
-            sharedViewModel.getGrades(grades)
             this.invalidateAll()
             when (sharedViewModel.noOf_subjects.value) {
                 "8" -> {
@@ -153,6 +151,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in (1..4))
                         ) {
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5],marks[6],marks[7],))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5],creditHours[6],creditHours[7],))
                             view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
 
@@ -193,6 +193,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in (1..4))
                         ) {
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5],marks[6]))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5],creditHours[6]))
                             view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
 
@@ -219,6 +221,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4)
                         ) {
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5]))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5]))
                             view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
@@ -242,6 +246,8 @@ class InputDataFragment : Fragment() {
                         ) {
 
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4]))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4]))
                             view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
@@ -266,6 +272,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4)
                         ) {
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3]))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3]))
                             view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
@@ -288,6 +296,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4)
                         ) {
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2]))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2]))
                         view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
 
@@ -310,6 +320,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4)
                         ) {
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1]))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1]))
                             view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
@@ -325,6 +337,8 @@ class InputDataFragment : Fragment() {
                     if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "")) {
                         if ((binding.enterCreditHours1.text.toString().toInt() in 1..4)) {
                             gpaCalculation(creditHours, marks, qp, grades)
+                            sharedViewModel.setMarks(arrayOf(marks[0]))
+                            sharedViewModel.getGrades(arrayOf(creditHours[0]))
                             view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
