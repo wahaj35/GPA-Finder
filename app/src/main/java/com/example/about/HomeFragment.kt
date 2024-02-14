@@ -1,6 +1,8 @@
 package com.example.about
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,87 +14,95 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentHomeBinding
+import kotlin.properties.Delegates
+import android.util.AttributeSet
+import android.view.GestureDetector
+import android.widget.Adapter
+import androidx.core.content.ContextCompat
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.about.R.color.defaultColor
+import com.example.about.R.color.hoverColor
 
 
 class HomeFragment : Fragment() {
-lateinit var binding: FragmentHomeBinding
- val sharedViewModel:SharedViewModel by activityViewModels()
+    lateinit var binding: FragmentHomeBinding
+    lateinit var recycler_View: RecyclerView
+    lateinit var cardData: ArrayList<CardData>
+    lateinit var gestureDetector: GestureDetector
+    val sharedViewModel: SharedViewModel by activityViewModels()
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.apply {
-            val cardViews = arrayOf(
-                oneSubject,
-                twoSubjects,
-                threeSubject,
-                fourSubject,
-                fiveSubject,
-                sixSubject,
-                sevenSubject,
-                eightSubject
-            )
-            Toast.makeText(context, "Choose no.Of Subjects", Toast.LENGTH_SHORT).show()
-
-            // Set up touch listener (optional)
-            for(i in cardViews.indices){
-                cardViews[i].setOnTouchListener { v, event ->
-                    when (event.action) {
-                        MotionEvent.ACTION_DOWN -> {
-                            // Touch down
-                            cardViews[i].setBackgroundColor(resources.getColor(R.color.hoverColor))
-                        }
-
-                        MotionEvent.ACTION_UP -> {
-                            // Touch released
-                            cardViews[i].setBackgroundColor(resources.getColor(com.google.android.material.R.color.androidx_core_secondary_text_default_material_light))
-                            if(cardViews[i] == oneSubject){
-                                sharedViewModel.noOf_subjects.value = "1"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            } else if (cardViews[i] == twoSubjects)
-                            {
-                                sharedViewModel.noOf_subjects.value = "2"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            }
-                            else if (cardViews[i] == threeSubject)
-                            {
-                                sharedViewModel.noOf_subjects.value = "3"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            }
-                            else if (cardViews[i] == fourSubject)
-                            {
-                                sharedViewModel.noOf_subjects.value = "4"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            }
-                            else if (cardViews[i] == fiveSubject)
-                            {
-                                sharedViewModel.noOf_subjects.value = "5"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            }
-                            else if (cardViews[i] == sixSubject)
-                            {
-                                sharedViewModel.noOf_subjects.value = "6"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            }
-                            else if (cardViews[i] == sevenSubject)
-                            {
-                                sharedViewModel.noOf_subjects.value = "7"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            }
-                            else if (cardViews[i] == eightSubject)
-                            {
-                                sharedViewModel.noOf_subjects.value = "8"
-                                view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
-                            }
-                        }
-                    }
-                    true
-                }
+            
+             lateinit var count: String
+            oneSubject.setOnTouchListener { view, event ->
+                count = "1"
+                oneSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                gestureDetector.onTouchEvent(event)
+                true
             }
 
-
-            return binding.root
+            twoSubjects.setOnTouchListener { view, event ->
+                count = "2"
+                twoSubjects.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                gestureDetector.onTouchEvent(event)
+                true
+            }
+            threeSubject.setOnTouchListener { view, event ->
+                threeSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                count = "3"
+                gestureDetector.onTouchEvent(event)
+                true
+            }
+            fourSubject.setOnTouchListener { view, event ->
+                fourSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                count = "4"
+                gestureDetector.onTouchEvent(event)
+                true
+            }
+            fiveSubject.setOnTouchListener { view, event ->
+                fiveSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                count = "5"
+                gestureDetector.onTouchEvent(event)
+                true
+            }
+            sixSubject.setOnTouchListener { view, event ->
+                sixSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                count = "6"
+                gestureDetector.onTouchEvent(event)
+                true
+            }
+            sevenSubject.setOnTouchListener { view, event ->
+                sevenSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                count = "7"
+                gestureDetector.onTouchEvent(event)
+                true
+            }
+            eightSubject.setOnTouchListener { view, event ->
+                eightSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
+                count = "8"
+                gestureDetector.onTouchEvent(event)
+                true
+            }
+                gestureDetector =
+                    GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+                        override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                            sharedViewModel.noOf_subjects.value = count
+                            view?.findNavController()
+                                ?.navigate(R.id.action_homeFragment_to_dataInput)
+                            return true
+                        }
+                    })
+            return root
         }
+
     }
+
 }

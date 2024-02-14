@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.lifecycle.ReportFragment
 import androidx.navigation.findNavController
@@ -20,6 +21,7 @@ open class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = setContentView(this, R.layout.activity_main)
+        Toast.makeText(this, "Choose no.Of Subjects", Toast.LENGTH_SHORT).show()
         setSupportActionBar(binding.myToolbar)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.NavigationHost) as NavHostFragment
         val navController = navHostFragment.navController

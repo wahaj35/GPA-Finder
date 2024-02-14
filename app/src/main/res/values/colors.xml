@@ -5,5 +5,6 @@
     <color name="red">#FC0000</color>
     <color name="holoBlue">#52CAEF</color>
     <color name="hoverColor">#37000000</color>
-    <color name="defaultColor">#FFFFFFFF</color>
+    <color name="defaultColor">#52CAEF</color>
+    <color name="ripple_color">#941E84</color>
 </resources>

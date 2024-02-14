@@ -36,6 +36,16 @@
                 app:srcCompat="@drawable/gpa_removebg_preview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/headerDesign"-->
+<!--            android:layout_marginTop="-40dp"-->
+<!--            />-->
+
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -58,6 +68,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -89,6 +100,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -120,6 +132,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -152,6 +165,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -184,6 +198,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -216,6 +231,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -248,6 +264,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -280,6 +297,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/subject8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
