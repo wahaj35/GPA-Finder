@@ -3,64 +3,55 @@ package com.example.about
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SharedViewModel:ViewModel() {
+class SharedViewModel : ViewModel() {
 
 
     //Mutable Live data for noOfSubjects
     private var noOfSubjects = MutableLiveData("")
-    var noOf_subjects:MutableLiveData<String> = noOfSubjects
+    var noOf_subjects: MutableLiveData<String> = noOfSubjects
 
     //MutableList for Marks
-   private var marks = MutableList(8){""}
+    private var marks = MutableList(8) { "" }
     var studentMarks: MutableList<String> = marks
 
     //MutableList for Subjects
-    private var subjects = MutableList(8){""}
+    private var subjects = MutableList(8) { "" }
     var subjectsNames: MutableList<String> = subjects
 
     //Mutable List For CreditHours
-    private var credits = MutableList(8){""}
+    private var credits = MutableList(8) { "" }
     var creditHours: MutableList<String> = credits
 
     //Mutable Live Data For Earned Credts
     private var EarnedCredits = MutableLiveData("")
-    var creditsEarned :MutableLiveData<String> = EarnedCredits
+    var creditsEarned: MutableLiveData<String> = EarnedCredits
 
 
     //Mutable Live Data For GPA
     private var gpa = MutableLiveData("")
-    var finalGPA :MutableLiveData<String> = gpa
+    var finalGPA: MutableLiveData<String> = gpa
 
 
     //Mutable List for grades
-    private var grades = MutableList(8){""}
-    var courseGrades:MutableList<String> = grades
+    private var grades = MutableList(8) { "" }
+    var courseGrades: MutableList<String> = grades
 
-    fun getGrades(grades:Array<String>){
-        for(i in courseGrades.indices){
+    fun getGrades(grades: Array<String>) {
+        for (i in 0 until noOf_subjects.value.toString().toInt()) {
             courseGrades[i] = grades[i]
         }
     }
 
-
-    //Function to Set Subjects Names in the List
-    fun setSubjects(subjects: Array<String>){
-        for(i in subjects.indices){
-            subjectsNames[i] = subjects[i]
-        }
-
-    }
-
     //Function to Set marks Names in the List
-    fun setMarks(marks: Array<String>){
-        for(i in marks.indices){
+    fun setMarks(marks: Array<String>) {
+        for (i in 0 until noOf_subjects.value.toString().toInt()) {
             studentMarks[i] = marks[i]
         }
 
     }
 
-    fun setCreditHours(credits:Array<String>){
-        for(i in credits.indices){
+    fun setCreditHours(credits: Array<String>) {
+        for (i in 0 until noOf_subjects.value.toString().toInt()) {
             creditHours[i] = credits[i]
         }
     }

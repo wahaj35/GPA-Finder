@@ -24,12 +24,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.about.R.color.defaultColor
 import com.example.about.R.color.hoverColor
-
-
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
-    lateinit var recycler_View: RecyclerView
-    lateinit var cardData: ArrayList<CardData>
     lateinit var gestureDetector: GestureDetector
     val sharedViewModel: SharedViewModel by activityViewModels()
 
@@ -40,7 +36,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.apply {
-            
+
              lateinit var count: String
             oneSubject.setOnTouchListener { view, event ->
                 count = "1"

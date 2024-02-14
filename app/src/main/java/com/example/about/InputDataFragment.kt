@@ -11,11 +11,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentInputDataBinding
+import kotlin.system.exitProcess
 
 class InputDataFragment : Fragment() {
     lateinit var binding: FragmentInputDataBinding
     val sharedViewModel: SharedViewModel by activityViewModels()
-    lateinit var GPA :String
+    lateinit var GPA: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,58 +40,36 @@ class InputDataFragment : Fragment() {
                 sevenInputCardLayout,
                 eightInputCardLayout
             )
+            val marksEditText = arrayOf(
+                enterMarksEditText1,
+                enterMarksEditText2,
+                enterMarksEditText3,
+                enterMarksEditText4,
+                enterMarksEditText5,
+                enterMarksEditText6,
+                enterMarksEditText7,
+                enterMarksEditText8
+            )
+            val creditEditText = arrayOf(
+                enterCreditHours1,
+                enterCreditHours2,
+                enterCreditHours3,
+                enterCreditHours4,
+                enterCreditHours5,
+                enterCreditHours6,
+                enterCreditHours7,
+                enterCreditHours8
+            )
             checkGPAButton.visibility = View.VISIBLE
-            when (sharedViewModel.noOf_subjects.value) {
-                "1" -> {
-                    views[0].visibility = View.VISIBLE
+            resetButton.visibility = View.VISIBLE
+            resetButton.setOnClickListener {
+                for(i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()){
+                    marksEditText[i].setText("")
+                    creditEditText[i].setText("")
                 }
-
-                "2" -> {
-                    for (i in 0..1) {
-                        views[i].visibility = View.VISIBLE
-                    }
-                }
-
-                "3" -> {
-                    for (i in 0..2) {
-                        views[i].visibility = View.VISIBLE
-                    }
-                }
-
-                "4" -> {
-                    for (i in 0..3) {
-                        views[i].visibility = View.VISIBLE
-                    }
-                }
-
-                "5" -> {
-                    for (i in 0..4) {
-                        views[i].visibility = View.VISIBLE
-                    }
-
-                }
-
-                "6" -> {
-                    for (i in 0..5) {
-                        views[i].visibility = View.VISIBLE
-                    }
-
-                }
-
-                "7" -> {
-                    for (i in 0..6) {
-                        views[i].visibility = View.VISIBLE
-                    }
-
-                }
-
-                "8" -> {
-                    for (i in 0..7) {
-                        views[i].visibility = View.VISIBLE
-                    }
-
-                }
-
+            }
+            for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
+                views[i].visibility = View.VISIBLE
             }
         }
     }
@@ -120,7 +99,8 @@ class InputDataFragment : Fragment() {
                 enterCreditHours6.text.toString(),
                 enterCreditHours7.text.toString(),
                 enterCreditHours8.text.toString(),
-                )
+            )
+            sharedViewModel.setMarks(marks)
             this.invalidateAll()
             when (sharedViewModel.noOf_subjects.value) {
                 "8" -> {
@@ -150,10 +130,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in (1..4)) && (binding.enterCreditHours8.text.toString()
                                 .toInt() in (1..4))
                         ) {
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5],marks[6],marks[7],))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5],creditHours[6],creditHours[7],))
-                            view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
 
                         } else {
@@ -192,10 +170,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in (1..4)) && (binding.enterCreditHours7.text.toString()
                                 .toInt() in (1..4))
                         ) {
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5],marks[6]))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5],creditHours[6]))
-                            view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
 
                         } else {
@@ -220,10 +196,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4) && (binding.enterCreditHours6.text.toString()
                                 .toInt() in 1..4)
                         ) {
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4],marks[5]))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4],creditHours[5]))
-                            view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -245,10 +219,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4)
                         ) {
 
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3],marks[4]))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3],creditHours[4]))
-                            view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -271,10 +243,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4) && (binding.enterCreditHours4.text.toString()
                                 .toInt() in 1..4)
                         ) {
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2],marks[3]))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2],creditHours[3]))
-                            view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -295,10 +265,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4) && (binding.enterCreditHours3.text.toString()
                                 .toInt() in 1..4)
                         ) {
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1],marks[2]))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1],creditHours[2]))
-                        view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
 
                         } else {
@@ -319,10 +287,8 @@ class InputDataFragment : Fragment() {
                                 .toInt() in 1..4) && (binding.enterCreditHours2.text.toString()
                                 .toInt() in 1..4)
                         ) {
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0],marks[1]))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0],creditHours[1]))
-                            view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -336,10 +302,8 @@ class InputDataFragment : Fragment() {
                 "1" -> {
                     if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "")) {
                         if ((binding.enterCreditHours1.text.toString().toInt() in 1..4)) {
-                            gpaCalculation(creditHours, marks, qp, grades)
-                            sharedViewModel.setMarks(arrayOf(marks[0]))
-                            sharedViewModel.getGrades(arrayOf(creditHours[0]))
-                            view?.findNavController()
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -349,12 +313,8 @@ class InputDataFragment : Fragment() {
                         Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
                     }
                 }
-
-                else -> Toast.makeText(activity, "Invalid No.Of Subjects", Toast.LENGTH_SHORT)
-                    .show()
             }
         }
-
     }
 
     private fun gpaCalculation(
@@ -362,7 +322,7 @@ class InputDataFragment : Fragment() {
         marks: Array<String>,
         qp: Array<String>,
         grades: Array<String>
-    ) {
+    ): Boolean {
         var totalQP = 0.0.toFloat()
         var totalCredit = 0
         for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
@@ -395,14 +355,18 @@ class InputDataFragment : Fragment() {
         GPA = "%.2f".format(gpa).toFloat().toString()
         sharedViewModel.finalGPA.value = GPA
         sharedViewModel.creditsEarned.value = totalCredit.toString()
+        sharedViewModel.getGrades(grades)
         for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
             when (qp[i]) {
                 0.5.toString() -> {
                     Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
                     break
                 }
+
+                else -> return true
             }
         }
+        return false
     }
 
     fun calculateGrade(obtainedMarks: String, creditHours: String): String {
