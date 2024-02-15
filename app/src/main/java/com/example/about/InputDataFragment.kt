@@ -133,6 +133,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
 
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -173,6 +174,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
 
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -199,6 +201,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
                                 .show()
@@ -222,6 +225,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
                                 .show()
@@ -246,6 +250,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
                                 .show()
@@ -268,6 +273,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
 
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
@@ -290,6 +296,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
                                 .show()
@@ -305,6 +312,7 @@ class InputDataFragment : Fragment() {
                             val isTrue = gpaCalculation(creditHours, marks, qp, grades)
                             if (isTrue) view?.findNavController()
                                 ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else Toast.makeText(context,"Invalid Marks",Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
                                 .show()
@@ -327,21 +335,25 @@ class InputDataFragment : Fragment() {
         var totalCredit = 0
         for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
             if (creditHours[i] == "4") {
-                val om4 = marks[i]
-                qp[i] = ch4(om4).toString()
-                grades[i] = calculateGrade(om4, creditHours[i])
+                    val om4 = marks[i]
+                    qp[i] = ch4(om4).toString()
+                    grades[i] = calculateGrade(om4, creditHours[i])
+
             } else if (creditHours[i] == "3") {
-                val om3 = marks[i]
-                qp[i] = ch3(om3).toString()
-                grades[i] = calculateGrade(om3, creditHours[i])
+                    val om3 = marks[i]
+                    qp[i] = ch3(om3).toString()
+                    grades[i] = calculateGrade(om3, creditHours[i])
+
             } else if (creditHours[i] == "2") {
-                val om2 = marks[i]
-                qp[i] = ch2(om2).toString()
-                grades[i] = calculateGrade(om2, creditHours[i])
+                    val om2 = marks[i]
+                    qp[i] = ch2(om2).toString()
+                    grades[i] = calculateGrade(om2, creditHours[i])
+
             } else if (creditHours[i] == "1") {
-                val om1 = marks[i]
-                qp[i] = ch1(om1).toString()
-                grades[i] = calculateGrade(om1, creditHours[i])
+                    val om1 = marks[i]
+                    qp[i] = ch1(om1).toString()
+                    grades[i] = calculateGrade(om1, creditHours[i])
+
             }
         }
 
@@ -356,17 +368,16 @@ class InputDataFragment : Fragment() {
         sharedViewModel.finalGPA.value = GPA
         sharedViewModel.creditsEarned.value = totalCredit.toString()
         sharedViewModel.getGrades(grades)
+        var cheker = true
         for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
-            when (qp[i]) {
+             when (qp[i]) {
                 0.5.toString() -> {
-                    Toast.makeText(activity, "Invalid Marks", Toast.LENGTH_SHORT).show()
+                    cheker = false
                     break
                 }
-
-                else -> return true
             }
         }
-        return false
+        return cheker
     }
 
     fun calculateGrade(obtainedMarks: String, creditHours: String): String {
