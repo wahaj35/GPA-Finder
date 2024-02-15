@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/header_design" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -38,279 +39,292 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <GridLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/headerDesign"
+            android:id="@+id/card_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:rowCount="5"
-            android:layout_below="@id/headerDesign"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginTop="-55dp"
+            android:layout_marginTop="-50dp"
             android:layout_marginBottom="50dp"
-            android:columnCount="2">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/oneSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/oneSubjectCardsStyles">
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/subject1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/oneSubject"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/oneSubject_text"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/twoSubjects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/twoSubjectsCardsStyles">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/subject2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/twoSubjects"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/subjectText"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/threeSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/threeSubjectsCardsStyles">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/subject3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/threeSubjects"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/subjectsHeader"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2" />
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fourSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/fourSubjectsCardsStyles">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+<!--        <GridLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:rowCount="5"-->
+<!--            android:layout_below="@id/headerDesign"-->
+<!--            android:layout_marginLeft="24dp"-->
+<!--            android:layout_marginRight="24dp"-->
+<!--            android:layout_marginTop="-55dp"-->
+<!--            android:layout_marginBottom="50dp"-->
+<!--            android:columnCount="2">-->
 
-                    <TextView
-                        android:id="@+id/subject4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/fourSubjects"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/oneSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/oneSubjectCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/subjectsHeader"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject1"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/oneSubject"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
 
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/oneSubject_text"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fiveSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/fiveSubjectsCardsStyles">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/twoSubjects"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/twoSubjectsCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:id="@+id/subject5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/fiveSubjects"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/twoSubjects"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/subjectsHeader"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/subjectText"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/threeSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/threeSubjectsCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/sixSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/sixSubjectsCardsStyles">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject3"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/threeSubjects"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/subject6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/sixSubjects"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/subjectsHeader"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/sevenSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/sevenSubjectsCardsStyles">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/subject7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/sevenSubjects"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/subjectsHeader"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/subjectsHeader"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/eightSubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/eightSubjectsCardsStyles">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/fourSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/fourSubjectsCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:id="@+id/subject8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/eightSubjects"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="50dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject4"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/fourSubjects"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/subjectsHeader"
-                        android:textColor="@color/holoBlue"
-                        android:textSize="30dp"
-                        android:textStyle="italic" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/subjectsHeader"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
 
-        </GridLayout>
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/fiveSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/fiveSubjectsCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject5"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/fiveSubjects"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/subjectsHeader"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/sixSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/sixSubjectsCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject6"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/sixSubjects"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/subjectsHeader"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/sevenSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/sevenSubjectsCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject7"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/sevenSubjects"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/subjectsHeader"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/eightSubject"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/eightSubjectsCardsStyles">-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/subject8"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/eightSubjects"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="50dp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_horizontal"-->
+<!--                        android:text="@string/subjectsHeader"-->
+<!--                        android:textColor="@color/holoBlue"-->
+<!--                        android:textSize="30dp"-->
+<!--                        android:textStyle="italic" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--        </GridLayout>-->
     </RelativeLayout>
 
 
