@@ -11,6 +11,15 @@
         android:layout_height="match_parent">
 
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/holoBlue"
+            app:menu="@menu/bottom_items"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
@@ -32,8 +41,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:navGraph="@navigation/navigation" />
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

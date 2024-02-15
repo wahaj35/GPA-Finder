@@ -1,29 +1,17 @@
 package com.example.about
 
 import android.annotation.SuppressLint
-import android.content.res.ColorStateList
-import android.graphics.drawable.RippleDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentHomeBinding
-import kotlin.properties.Delegates
-import android.util.AttributeSet
 import android.view.GestureDetector
-import android.widget.Adapter
-import androidx.core.content.ContextCompat
-import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.about.R.color.defaultColor
-import com.example.about.R.color.hoverColor
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var gestureDetector: GestureDetector
@@ -44,7 +32,6 @@ class HomeFragment : Fragment() {
                 gestureDetector.onTouchEvent(event)
                 true
             }
-
             twoSubjects.setOnTouchListener { view, event ->
                 count = "2"
                 twoSubjects.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
