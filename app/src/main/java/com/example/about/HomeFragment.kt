@@ -12,63 +12,64 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentHomeBinding
 import android.view.GestureDetector
+@Suppress("DEPRECATION")
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
-    lateinit var gestureDetector: GestureDetector
+   private lateinit var gestureDetector: GestureDetector
     val sharedViewModel: SharedViewModel by activityViewModels()
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.apply {
 
              lateinit var count: String
-            oneSubject.setOnTouchListener { view, event ->
+            oneSubject.setOnTouchListener { _, event ->
                 count = "1"
                 oneSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 gestureDetector.onTouchEvent(event)
                 true
             }
-            twoSubjects.setOnTouchListener { view, event ->
+            twoSubjects.setOnTouchListener { _, event ->
                 count = "2"
                 twoSubjects.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 gestureDetector.onTouchEvent(event)
                 true
             }
-            threeSubject.setOnTouchListener { view, event ->
+            threeSubject.setOnTouchListener { _, event ->
                 threeSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 count = "3"
                 gestureDetector.onTouchEvent(event)
                 true
             }
-            fourSubject.setOnTouchListener { view, event ->
+            fourSubject.setOnTouchListener { _, event ->
                 fourSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 count = "4"
                 gestureDetector.onTouchEvent(event)
                 true
             }
-            fiveSubject.setOnTouchListener { view, event ->
+            fiveSubject.setOnTouchListener { _, event ->
                 fiveSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 count = "5"
                 gestureDetector.onTouchEvent(event)
                 true
             }
-            sixSubject.setOnTouchListener { view, event ->
+            sixSubject.setOnTouchListener { _, event ->
                 sixSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 count = "6"
                 gestureDetector.onTouchEvent(event)
                 true
             }
-            sevenSubject.setOnTouchListener { view, event ->
+            sevenSubject.setOnTouchListener { _, event ->
                 sevenSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 count = "7"
                 gestureDetector.onTouchEvent(event)
                 true
             }
-            eightSubject.setOnTouchListener { view, event ->
+            eightSubject.setOnTouchListener { _, event ->
                 eightSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                 count = "8"
                 gestureDetector.onTouchEvent(event)

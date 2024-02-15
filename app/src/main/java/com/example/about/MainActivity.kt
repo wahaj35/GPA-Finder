@@ -13,8 +13,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.about.databinding.ActivityMainBinding
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 open class MainActivity : AppCompatActivity() {
@@ -44,7 +42,7 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(
-            item!!,
+            item,
             findNavController(R.id.NavigationHost)
         ) ||
                 super.onOptionsItemSelected(item)
