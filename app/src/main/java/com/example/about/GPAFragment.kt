@@ -10,16 +10,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import com.example.about.databinding.FragmentHomeBinding
 import android.view.GestureDetector
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.about.databinding.GpaFragmentBinding
 
 @Suppress("DEPRECATION")
-class HomeFragment : Fragment() {
-    lateinit var binding: FragmentHomeBinding
+class GPAFragment : Fragment() {
+    lateinit var binding: GpaFragmentBinding
     lateinit var recyclerView: RecyclerView
    private lateinit var gestureDetector: GestureDetector
     val sharedViewModel: SharedViewModel by activityViewModels()
@@ -29,7 +28,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.gpa_fragment, container, false)
         binding.apply {
 
              lateinit var count: String
@@ -46,15 +45,15 @@ class HomeFragment : Fragment() {
             val subjects  = listOf("Subject","Subjects")
             val num = arrayOf("1","2","3","4","5","6","7","8")
              recyclerView = cardRecyclerView
-            val adapter = HomeItemsAdapter(subjectsNo, subjects)
+            val adapter = gpaAapater(subjectsNo, subjects)
             recyclerView.adapter = adapter
             (recyclerView.layoutManager  as GridLayoutManager).spanCount = 2
-            adapter.setItemClickListener(object:HomeItemsAdapter.SetOnItemClickListener{
+            adapter.setItemClickListener(object:gpaAapater.SetOnItemClickListener{
                 override fun itemClickListener(position: Int, view: View) {
                     sharedViewModel.noOf_subjects.value = num[position]
                   val cardView =   view.findViewById<CardView>(R.id.cardView)
                     cardView.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-                    view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
+                    view?.findNavController()?.navigate(R.id.action_GPAFrament_to_dataInput)
                 }
             })
 //            oneSubject.setOnTouchListener { _, event ->
@@ -109,8 +108,8 @@ class HomeFragment : Fragment() {
                     GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
                         override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
                             sharedViewModel.noOf_subjects.value = count
-                            view?.findNavController()
-                                ?.navigate(R.id.action_homeFragment_to_dataInput)
+//                            view?.findNavController()
+//                                ?.navigate(R.id.action_homeFragment_to_dataInput)
                             return true
                         }
                     })

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeItemsAdapter(private val subjectsNo:List<String>,private val subjects:List<String>):RecyclerView.Adapter<HomeItemsAdapter.ViewHolder>() {
+class gpaAapater(private val subjectsNo:List<String>, private val subjects:List<String>):RecyclerView.Adapter<gpaAapater.ViewHolder>() {
     lateinit var clickListener: SetOnItemClickListener
     interface SetOnItemClickListener{
         fun itemClickListener(position: Int, view: View)
@@ -24,7 +24,7 @@ class HomeItemsAdapter(private val subjectsNo:List<String>,private val subjects:
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.items,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.gpa_items,parent,false)
         return ViewHolder(view,clickListener)
     }
 

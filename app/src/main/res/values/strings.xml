@@ -63,5 +63,9 @@
     <string name="subject_7_name">Subject 7</string>
     <string name="subject_8_name">Subject 8</string>
     <string name="resetButtonText">Reset Input</string>
+    <string name="calculateText">Calculate</string>
+    <string name="calculateGPAText">GPA</string>
+    <string name="GraduatesText">Graduates</string>
+    <string name="slogonLines">Enahance Your Acadamics</string>
 
 </resources>

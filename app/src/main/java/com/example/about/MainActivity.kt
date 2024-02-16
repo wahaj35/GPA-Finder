@@ -30,7 +30,7 @@ open class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(
             fallbackOnNavigateUpListener = ::onSupportNavigateUp,
-            topLevelDestinationIds = (setOf(R.id.homeFragment))
+            topLevelDestinationIds = (setOf(R.id.fragmentHome))
         )
         binding.myToolbar.setupWithNavController(navController, appBarConfiguration)
         bottomBar.setupWithNavController(navController)
