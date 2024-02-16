@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeItemsAdapter(private val subjects:List<String>):RecyclerView.Adapter<HomeItemsAdapter.ViewHolder>() {
+class HomeItemsAdapter(private val subjectsNo:List<String>,private val subjects:List<String>):RecyclerView.Adapter<HomeItemsAdapter.ViewHolder>() {
     lateinit var clickListener: SetOnItemClickListener
     interface SetOnItemClickListener{
         fun itemClickListener(position: Int, view: View)
@@ -16,6 +16,7 @@ class HomeItemsAdapter(private val subjects:List<String>):RecyclerView.Adapter<H
     }
     class ViewHolder(itemView:View,clickListener: SetOnItemClickListener):RecyclerView.ViewHolder(itemView) {
                val noOfSubjects  = itemView.findViewById<TextView>(R.id.noOfSubjectsText)
+               val subjects = itemView.findViewById<TextView>(R.id.subjectsText)
         init {
             itemView.setOnClickListener{
                 clickListener.itemClickListener(adapterPosition,itemView)
@@ -27,10 +28,14 @@ class HomeItemsAdapter(private val subjects:List<String>):RecyclerView.Adapter<H
         return ViewHolder(view,clickListener)
     }
 
-    override fun getItemCount(): Int = subjects.size
+    override fun getItemCount(): Int = subjectsNo.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.noOfSubjects.text = subjects[position]
+        holder.noOfSubjects.text = subjectsNo[position]
+        when(position){
+            0 -> holder.subjects.text = subjects[0]
+            else -> holder.subjects.text = subjects[1]
+        }
     }
 
 }

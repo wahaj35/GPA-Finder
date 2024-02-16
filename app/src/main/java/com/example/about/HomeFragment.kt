@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         binding.apply {
 
              lateinit var count: String
-            val subjects = listOf(
+            val subjectsNo = listOf(
                 getString(R.string.oneSubject),
                 getString(R.string.twoSubjects),
                 getString(R.string.threeSubjects),
@@ -43,22 +43,17 @@ class HomeFragment : Fragment() {
                 getString(R.string.sevenSubjects),
                 getString(R.string.eightSubjects),
             )
+            val subjects  = listOf("Subject","Subjects")
             val num = arrayOf("1","2","3","4","5","6","7","8")
              recyclerView = cardRecyclerView
-            val adapter = HomeItemsAdapter(subjects)
+            val adapter = HomeItemsAdapter(subjectsNo, subjects)
             recyclerView.adapter = adapter
             (recyclerView.layoutManager  as GridLayoutManager).spanCount = 2
             adapter.setItemClickListener(object:HomeItemsAdapter.SetOnItemClickListener{
                 override fun itemClickListener(position: Int, view: View) {
-//                   if(position == 0) count = "1"
-//                   else if(position == 1) count = "2"
-//                   else if(position == 2) count = "3"
-//                   else if(position == 3) count = "4"
-//                   else if(position == 4) count = "5"
-//                   else if(position == 5) count = "6"
-//                   else if(position == 6) count = "7"
-//                   else if(position == 7) count = "8"
                     sharedViewModel.noOf_subjects.value = num[position]
+                  val cardView =   view.findViewById<CardView>(R.id.cardView)
+                    cardView.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                     view?.findNavController()?.navigate(R.id.action_homeFragment_to_dataInput)
                 }
             })
