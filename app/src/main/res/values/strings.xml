@@ -67,5 +67,6 @@
     <string name="calculateGPAText">GPA</string>
     <string name="GraduatesText">Graduates</string>
     <string name="slogonLines">Enahance Your Acadamics</string>
+    <string name="semestersText">Semesters</string>
 
 </resources>

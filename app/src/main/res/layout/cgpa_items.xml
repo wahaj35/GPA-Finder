@@ -16,13 +16,13 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/noOfSubjectsText"
+            android:id="@+id/noOfSemesters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="50dp"
             android:textStyle="bold"
             android:textColor="#007AFF"
-            android:text="@string/oneSubject"
+            android:text="2"
             android:paddingBottom="8dp"/>
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
-            android:text="@string/oneSubject_text"
+            android:text="@string/semestersText"
             android:textColor="#007AFF"
             android:textSize="24sp"
             android:textStyle="italic" />

@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_fragmentHome_to_GPAFragment"
             app:destination="@id/GPAFrament" />
+        <action
+            android:id="@+id/action_fragmentHome_to_CGPAFragment"
+            app:destination="@id/CGPAFragment" />
     </fragment>
     <fragment
         android:id="@+id/GPAFrament"
@@ -43,4 +46,9 @@
             android:id="@+id/action_GPAFrament_to_dataInput"
             app:destination="@id/dataInput" />
     </fragment>
+    <fragment
+        android:id="@+id/CGPAFragment"
+        android:name="com.example.about.CGPAFragment"
+        android:label="CGPA Calculation"
+        tools:layout="@layout/fragment_cgpa" />
 </navigation>

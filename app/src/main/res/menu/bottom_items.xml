@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:icon="@drawable/gpa_icon" />
     <item
-        android:id="@+id/cgpa"
+        android:id="@+id/CGPAFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/cgpa_icon" />
