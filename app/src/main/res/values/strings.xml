@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GPA Finder</string>
+    <string name="app_name">Graduates</string>
     <string name="appHeader">GPA Finder</string>
     <string name="subject_2_name">Subject 2</string>
     <string name="marks">Marks</string>

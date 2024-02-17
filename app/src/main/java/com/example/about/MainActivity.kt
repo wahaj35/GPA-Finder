@@ -20,10 +20,9 @@ open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = setContentView(this, R.layout.activity_main)
         val bottomBar :BottomNavigationView = binding.bottomNavigationView
-        Toast.makeText(this, "Choose no.Of Subjects", Toast.LENGTH_SHORT).show()
         setSupportActionBar(binding.myToolbar)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.NavigationHost) as NavHostFragment
