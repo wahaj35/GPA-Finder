@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".gpaDataInput">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".cgpaDataInput">
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/oneInputCardLayout"
+                android:id="@+id/oneSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
@@ -34,41 +37,40 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/OneSubject"
+                        android:id="@+id/oneSemster"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_1_name"
+                        android:text="@string/semester1"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText1"
+                        android:id="@+id/enterGPAEditText1"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours1"
+                        android:id="@+id/enterTotalCredits1"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
             <androidx.cardview.widget.CardView
-                android:id="@+id/twoInputCardLayout"
+                android:id="@+id/twoSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/oneInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/oneSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,41 +78,41 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/twoSubject"
+                        android:id="@+id/twoSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_2_name"
+                        android:text="@string/semester2"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText2"
+                        android:id="@+id/enterGPAEditText2"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ems="1"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours2"
+                        android:id="@+id/enterTotalCredits2"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/threeInputCardLayout"
+                android:id="@+id/threeSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/twoInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/twoSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -118,41 +120,40 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/threeSubject"
+                        android:id="@+id/threeSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_3_name"
+                        android:text="@string/semester3"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText3"
+                        android:id="@+id/enterGPAEditText3"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours3"
+                        android:id="@+id/enterTotalCredits3"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
             <androidx.cardview.widget.CardView
-                android:id="@+id/fourInputCardLayout"
+                android:id="@+id/fourSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/threeInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/threeSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -160,41 +161,41 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/fourSubject"
+                        android:id="@+id/fourSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_4_name"
+                        android:text="@string/semester4"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText4"
+                        android:id="@+id/enterGPAEditText4"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours4"
+                        android:id="@+id/enterTotalCredits4"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/fiveInputCardLayout"
+                android:id="@+id/fiveSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fourInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/fourSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -202,40 +203,41 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/fiveSubject"
+                        android:id="@+id/fiveSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_5_name"
+                        android:text="@string/semester5"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText5"
+                        android:id="@+id/enterGPAEditText5"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours5"
+                        android:id="@+id/enterTotalCredits5"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/sixInputCardLayout"
+                android:id="@+id/sixSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fiveInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/fiveSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -243,40 +245,40 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/sixSubject"
+                        android:id="@+id/sixSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_6_name"
+                        android:text="@string/semester6"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText6"
+                        android:id="@+id/enterGPAEditText6"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours6"
+                        android:id="@+id/enterTotalCredits6"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/sevenInputCardLayout"
+                android:id="@+id/sevenSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sixInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/sixSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -284,40 +286,40 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/sevenSubject"
+                        android:id="@+id/sevenSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_7_name"
+                        android:text="@string/semester7"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText7"
+                        android:id="@+id/enterGPAEditText7"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours7"
+                        android:id="@+id/enterTotalCredits7"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/eightInputCardLayout"
+                android:id="@+id/eightSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sevenInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/sevenSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -325,40 +327,40 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/eightSubject"
+                        android:id="@+id/eightSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/subject_8_name"
+                        android:text="@string/semester8"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText8"
+                        android:id="@+id/enterGPAEditText8"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours8"
+                        android:id="@+id/enterTotalCredits8"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/nineInputCardLayout"
+                android:id="@+id/nineSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/eightInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/eightSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -366,41 +368,41 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/nineSubject"
+                        android:id="@+id/nineSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/nineSubjectsText"
+                        android:text="@string/semester9"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText9"
+                        android:id="@+id/enterGPAEditText9"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours9"
+                        android:id="@+id/enterTotalCredits9"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/tenInputCardLayout"
+                android:id="@+id/tenSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10sp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/nineInputCardLayout">
+                app:layout_constraintTop_toBottomOf="@id/nineSemesterInputCardLayout">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -408,26 +410,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tenSubject"
+                        android:id="@+id/tenSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/tenSubjectsText"
+                        android:text="@string/semester10"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/enterMarksEditText10"
+                        android:id="@+id/enterGPAEditText10"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
-                        android:id="@+id/enterCreditHours10"
+                        android:id="@+id/enterTotalCredits10"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -435,11 +437,11 @@
 
 
         <Button
-            android:id="@+id/checkGPAButton"
+            android:id="@+id/checkCGPAButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/checkGPA_button_text"
-            android:visibility="gone"
+            android:text="@string/checkCGPAButtonText"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/resetButton"
             app:layout_constraintHorizontal_bias="0.5"
@@ -451,15 +453,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/resetButtonText"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/checkGPAButton"
+            app:layout_constraintStart_toEndOf="@+id/checkCGPAButton"
             app:layout_constraintTop_toBottomOf="@id/InputLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</layout>
 
+</layout>

@@ -13,7 +13,7 @@
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/dataInput"
-        android:name="com.example.about.InputDataFragment"
+        android:name="com.example.about.gpaDataInput"
         android:label="Input Data"
         tools:layout="@layout/fragment_input_data" >
         <action
@@ -50,5 +50,14 @@
         android:id="@+id/CGPAFragment"
         android:name="com.example.about.CGPAFragment"
         android:label="CGPA Calculation"
-        tools:layout="@layout/fragment_cgpa" />
+        tools:layout="@layout/fragment_cgpa" >
+        <action
+            android:id="@+id/action_CGPAFragment_to_cgpaDataInput"
+            app:destination="@id/cgpaDataInput" />
+    </fragment>
+    <fragment
+        android:id="@+id/cgpaDataInput"
+        android:name="com.example.about.cgpaDataInput"
+        android:label="Data Input"
+        tools:layout="@layout/fragment_cgpa_data_input" />
 </navigation>

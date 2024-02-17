@@ -30,8 +30,6 @@ class GPAFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.gpa_fragment, container, false)
         binding.apply {
-
-             lateinit var count: String
             val subjectsNo = listOf(
                 getString(R.string.oneSubject),
                 getString(R.string.twoSubjects),
@@ -41,9 +39,11 @@ class GPAFragment : Fragment() {
                 getString(R.string.sixSubjects),
                 getString(R.string.sevenSubjects),
                 getString(R.string.eightSubjects),
+                getString(R.string.nineSubjects),
+                getString(R.string.tenSubjects)
             )
             val subjects  = listOf("Subject","Subjects")
-            val num = arrayOf("1","2","3","4","5","6","7","8")
+            val num = arrayOf("1","2","3","4","5","6","7","8","9","10")
              recyclerView = cardRecyclerView
             val adapter = gpaAapater(subjectsNo, subjects)
             recyclerView.adapter = adapter
@@ -56,66 +56,8 @@ class GPAFragment : Fragment() {
                     view?.findNavController()?.navigate(R.id.action_GPAFrament_to_dataInput)
                 }
             })
-//            oneSubject.setOnTouchListener { _, event ->
-//                count = "1"
-//                oneSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-//            twoSubjects.setOnTouchListener { _, event ->
-//                count = "2"
-//                twoSubjects.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-//            threeSubject.setOnTouchListener { _, event ->
-//                threeSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                count = "3"
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-//            fourSubject.setOnTouchListener { _, event ->
-//                fourSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                count = "4"
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-//            fiveSubject.setOnTouchListener { _, event ->
-//                fiveSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                count = "5"
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-//            sixSubject.setOnTouchListener { _, event ->
-//                sixSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                count = "6"
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-//            sevenSubject.setOnTouchListener { _, event ->
-//                sevenSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                count = "7"
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-//            eightSubject.setOnTouchListener { _, event ->
-//                eightSubject.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-//                count = "8"
-//                gestureDetector.onTouchEvent(event)
-//                true
-//            }
-                gestureDetector =
-                    GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-                        override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-                            sharedViewModel.noOf_subjects.value = count
-//                            view?.findNavController()
-//                                ?.navigate(R.id.action_homeFragment_to_dataInput)
-                            return true
-                        }
-                    })
             return root
         }
 
     }
-
 }

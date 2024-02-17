@@ -50,6 +50,9 @@
     <string name="fiveSubjectText">"Five Subjects"</string>
     <string name="sixSubjectText">"Six Subjects"</string>
     <string name="sevenSubjectText">"Seven Subjects"</string>
+    <string name="eightSubjectText">"Eight Subjects"</string>
+    <string name="kkk">"Nine Subjects"</string>
+    <string name="ki">"Ten Subjects"</string>
     <string name="oneSubject">1</string>
     <string name="oneSubject_text">Subject</string>
     <string name="twoSubjects">2</string>
@@ -68,5 +71,24 @@
     <string name="GraduatesText">Graduates</string>
     <string name="slogonLines">Enahance Your Acadamics</string>
     <string name="semestersText">Semesters</string>
+    <string name="semester1">"Semester 1: "</string>
+    <string name="semester2">"Semester 2: "</string>
+    <string name="semester3">"Semester 3: "</string>
+    <string name="semester4">"Semester 4: "</string>
+    <string name="semester5">"Semester 5: "</string>
+    <string name="semester6">"Semester 6: "</string>
+    <string name="semester7">"Semester 7: "</string>
+    <string name="semester8">"Semester 8: "</string>
+    <string name="semester9">"Semester 9: "</string>
+    <string name="semester10">"Semester 10: "</string>
+    <string name="enterGPAHint">GPA</string>
+    <string name="totalCreditsHint">Total Credits</string>
+    <string name="checkCGPAButtonText">Check CGPA</string>
+    <string name="nineSubjects">9</string>
+    <string name="tenSubjects">10</string>
+    <string name="nineSubjectsText">Subject 9</string>
+    <string name="tenSubjectsText">Subject 10</string>
+    <string name="subject_9_text">Subject 9</string>
+    <string name="subject_10_text">Subject 10</string>
 
 </resources>

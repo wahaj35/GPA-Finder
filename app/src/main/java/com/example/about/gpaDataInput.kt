@@ -12,7 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentInputDataBinding
 
-class InputDataFragment : Fragment() {
+class gpaDataInput : Fragment() {
     lateinit var binding: FragmentInputDataBinding
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var GPA: String
@@ -37,7 +37,9 @@ class InputDataFragment : Fragment() {
                 fiveInputCardLayout,
                 sixInputCardLayout,
                 sevenInputCardLayout,
-                eightInputCardLayout
+                eightInputCardLayout,
+                nineInputCardLayout,
+                tenInputCardLayout
             )
             val marksEditText = arrayOf(
                 enterMarksEditText1,
@@ -47,7 +49,9 @@ class InputDataFragment : Fragment() {
                 enterMarksEditText5,
                 enterMarksEditText6,
                 enterMarksEditText7,
-                enterMarksEditText8
+                enterMarksEditText8,
+                enterMarksEditText9,
+                enterMarksEditText10
             )
             val creditEditText = arrayOf(
                 enterCreditHours1,
@@ -57,7 +61,9 @@ class InputDataFragment : Fragment() {
                 enterCreditHours5,
                 enterCreditHours6,
                 enterCreditHours7,
-                enterCreditHours8
+                enterCreditHours8,
+                enterCreditHours9,
+                enterCreditHours10
             )
             checkGPAButton.visibility = View.VISIBLE
             resetButton.visibility = View.VISIBLE
@@ -88,6 +94,8 @@ class InputDataFragment : Fragment() {
                 enterMarksEditText6.text.toString(),
                 enterMarksEditText7.text.toString(),
                 enterMarksEditText8.text.toString(),
+                enterMarksEditText9.text.toString(),
+                enterMarksEditText10.text.toString(),
             )
             val creditHours = arrayOf(
                 enterCreditHours1.text.toString(),
@@ -98,10 +106,108 @@ class InputDataFragment : Fragment() {
                 enterCreditHours6.text.toString(),
                 enterCreditHours7.text.toString(),
                 enterCreditHours8.text.toString(),
+                enterCreditHours9.text.toString(),
+                enterCreditHours10.text.toString(),
             )
             sharedViewModel.setMarks(marks)
             this.invalidateAll()
             when (sharedViewModel.noOf_subjects.value) {
+
+
+                "10" -> {
+                    if ((binding.enterMarksEditText1.text.toString() != "") &&
+                        (binding.enterMarksEditText2.text.toString() != "") &&
+                        (binding.enterMarksEditText3.text.toString() != "") &&
+                        (binding.enterMarksEditText4.text.toString() != "") &&
+                        (binding.enterMarksEditText5.text.toString() != "") &&
+                        (binding.enterMarksEditText6.text.toString() != "") &&
+                        (binding.enterMarksEditText7.text.toString() != "") &&
+                        (binding.enterMarksEditText8.text.toString() != "") &&
+                        (binding.enterCreditHours1.text.toString() != "") &&
+                        (binding.enterCreditHours2.text.toString() != "") &&
+                        (binding.enterCreditHours3.text.toString() != "") &&
+                        (binding.enterCreditHours4.text.toString() != "") &&
+                        (binding.enterCreditHours5.text.toString() != "") &&
+                        (binding.enterCreditHours6.text.toString() != "") &&
+                        (binding.enterCreditHours7.text.toString() != "") &&
+                        (binding.enterCreditHours8.text.toString() != "") &&
+                        (binding.enterCreditHours9.text.toString() != "") && (binding.enterCreditHours10.text.toString() != "")
+                    ) {
+                        if ((binding.enterCreditHours1.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours2.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours3.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours4.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours5.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours6.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours7.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours8.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours9.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours10.text.toString()
+                                .toInt() in (1..4))
+                        ) {
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
+                                ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else  Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
+
+                        } else {
+                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+
+                    } else {
+                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+
+
+                "9" -> {
+                    if ((binding.enterMarksEditText1.text.toString() != "") &&
+                        (binding.enterMarksEditText2.text.toString() != "") &&
+                        (binding.enterMarksEditText3.text.toString() != "") &&
+                        (binding.enterMarksEditText4.text.toString() != "") &&
+                        (binding.enterMarksEditText5.text.toString() != "") &&
+                        (binding.enterMarksEditText6.text.toString() != "") &&
+                        (binding.enterMarksEditText7.text.toString() != "") &&
+                        (binding.enterMarksEditText8.text.toString() != "") &&
+                        (binding.enterCreditHours1.text.toString() != "") &&
+                        (binding.enterCreditHours2.text.toString() != "") &&
+                        (binding.enterCreditHours3.text.toString() != "") &&
+                        (binding.enterCreditHours4.text.toString() != "") &&
+                        (binding.enterCreditHours5.text.toString() != "") &&
+                        (binding.enterCreditHours6.text.toString() != "") &&
+                        (binding.enterCreditHours7.text.toString() != "") &&
+                        (binding.enterCreditHours8.text.toString() != "") && (binding.enterCreditHours9.text.toString() != "")
+                    ) {
+                        if ((binding.enterCreditHours1.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours2.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours3.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours4.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours5.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours6.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours7.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours8.text.toString()
+                                .toInt() in (1..4)) && (binding.enterCreditHours9.text.toString()
+                                .toInt() in (1..4))
+                        ) {
+                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
+                            if (isTrue) view?.findNavController()
+                                ?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else  Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
+
+                        } else {
+                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+
+                    } else {
+                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+
+
                 "8" -> {
                     if ((binding.enterMarksEditText1.text.toString() != "") &&
                         (binding.enterMarksEditText2.text.toString() != "") &&

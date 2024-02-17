@@ -212,7 +212,7 @@
                     android:id="@+id/subject4Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/subject_3_name"
+                    android:text="@string/subject_4_name"
                     android:textSize="@dimen/gradeAndMarksTextSize"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="@id/subject3Text"
@@ -362,6 +362,69 @@
                     app:layout_constraintEnd_toEndOf="@id/grade7"
                     app:layout_constraintStart_toStartOf="@id/grade7"
                     app:layout_constraintTop_toBottomOf="@id/grade7" />
+
+                <TextView
+                    android:id="@+id/subject9Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subject_9_text"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/subject8Text"
+                    app:layout_constraintStart_toStartOf="@id/subject8Text"
+                    app:layout_constraintTop_toBottomOf="@id/subject8Text" />
+
+                <TextView
+                    android:id="@+id/marks9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/marks8"
+                    app:layout_constraintStart_toStartOf="@id/marks8"
+                    app:layout_constraintTop_toBottomOf="@id/marks8" />
+
+                <TextView
+                    android:id="@+id/grade9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/grade8"
+                    app:layout_constraintStart_toStartOf="@id/grade8"
+                    app:layout_constraintTop_toBottomOf="@id/grade8" />
+
+
+                <TextView
+                    android:id="@+id/subject10Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subject_10_text"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/subject9Text"
+                    app:layout_constraintStart_toStartOf="@id/subject9Text"
+                    app:layout_constraintTop_toBottomOf="@id/subject9Text" />
+
+                <TextView
+                    android:id="@+id/marks10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/marks9"
+                    app:layout_constraintStart_toStartOf="@id/marks9"
+                    app:layout_constraintTop_toBottomOf="@id/marks9" />
+
+                <TextView
+                    android:id="@+id/grade10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/grade9"
+                    app:layout_constraintStart_toStartOf="@id/grade9"
+                    app:layout_constraintTop_toBottomOf="@id/grade9" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
