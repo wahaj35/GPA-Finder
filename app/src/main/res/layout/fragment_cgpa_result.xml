@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ResultFragment">
+    tools:context=".cgpaResult">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/GPAcardLayout"
+            android:id="@+id/CGPAcardLayout"
             style="@style/careDesign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,22 +19,22 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/GPALayout"
+                android:id="@+id/CGPALayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="visible">
 
                 <TextView
-                    android:id="@+id/gpaTEXT"
+                    android:id="@+id/cgpaTEXT"
                     style="@style/gpaAndCreditTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/gpaTEXT"
+                    android:text="@string/cgpa_TEXT"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/gpaVALUE"
+                    android:id="@+id/cgpaVALUE"
                     style="@style/gpaAndCreditValueStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -51,7 +50,7 @@
                     android:text="@string/creditsEarnedText"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/gpaTEXT" />
+                    app:layout_constraintTop_toBottomOf="@id/cgpaTEXT" />
 
                 <TextView
                     android:id="@+id/creditVALUE"
@@ -60,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/gpaVALUE" />
+                    app:layout_constraintTop_toBottomOf="@id/cgpaVALUE" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -72,7 +71,7 @@
             android:visibility="visible"
             app:cardCornerRadius="15sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/GPAcardLayout">
+            app:layout_constraintTop_toBottomOf="@id/CGPAcardLayout">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Headerlayout"
@@ -81,349 +80,353 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/SubjectsHeader"
+                    android:id="@+id/SemesterHeader"
                     style="@style/HeaderTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/subjectsHeader"
-                    app:layout_constraintEnd_toStartOf="@+id/marksHeader"
+                    android:text="@string/semesterHeading"
+                    app:layout_constraintEnd_toStartOf="@+id/GPAHeader"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/marksHeader"
+                    android:id="@+id/GPAHeader"
                     style="@style/HeaderTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/marksHeader"
-                    app:layout_constraintEnd_toStartOf="@+id/gradeHeader"
+                    android:text="@string/calculateGPAText"
+                    app:layout_constraintEnd_toStartOf="@+id/creditHeader"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/SubjectsHeader"
+                    app:layout_constraintStart_toEndOf="@+id/SemesterHeader"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/gradeHeader"
+                    android:id="@+id/creditHeader"
                     style="@style/HeaderTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/gradeHeader"
+                    android:text="@string/creditsHeader"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/marksHeader"
+                    app:layout_constraintStart_toEndOf="@+id/GPAHeader"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/subject1Text"
+                    android:id="@+id/semester1Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/subject_1_name"
+                    android:text="@string/semester1"
                     android:textSize="@dimen/gradeAndMarksTextSize"
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/SubjectsHeader"
-                    app:layout_constraintStart_toStartOf="@id/SubjectsHeader"
-                    app:layout_constraintTop_toBottomOf="@id/SubjectsHeader" />
+                    app:layout_constraintEnd_toEndOf="@id/SemesterHeader"
+                    app:layout_constraintStart_toStartOf="@id/SemesterHeader"
+                    app:layout_constraintTop_toBottomOf="@id/SemesterHeader" />
 
                 <TextView
-                    android:id="@+id/marks1"
+                    android:id="@+id/GPA1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/gradeAndMarksTextSize"
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marksHeader"
-                    app:layout_constraintStart_toStartOf="@id/marksHeader"
-                    app:layout_constraintTop_toBottomOf="@id/marksHeader" />
+                    app:layout_constraintEnd_toEndOf="@id/GPAHeader"
+                    app:layout_constraintStart_toStartOf="@id/GPAHeader"
+                    app:layout_constraintTop_toBottomOf="@id/GPAHeader" />
 
                 <TextView
-                    android:id="@+id/grade1"
+                    android:id="@+id/credit1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/gradeAndMarksTextSize"
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/gradeHeader"
-                    app:layout_constraintStart_toStartOf="@id/gradeHeader"
-                    app:layout_constraintTop_toBottomOf="@id/gradeHeader" />
-
-
-                <TextView
-                    android:id="@+id/subject2Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_2_name"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject1Text"
-                    app:layout_constraintStart_toStartOf="@id/subject1Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject1Text" />
-
-                <TextView
-                    android:id="@+id/marks2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks1"
-                    app:layout_constraintStart_toStartOf="@id/marks1"
-                    app:layout_constraintTop_toBottomOf="@id/marks1" />
-
-                <TextView
-                    android:id="@+id/grade2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade1"
-                    app:layout_constraintStart_toStartOf="@id/grade1"
-                    app:layout_constraintTop_toBottomOf="@id/grade1" />
-
-                <TextView
-                    android:id="@+id/subject3Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_3_name"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject2Text"
-                    app:layout_constraintStart_toStartOf="@id/subject2Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject2Text" />
-
-                <TextView
-                    android:id="@+id/marks3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks2"
-                    app:layout_constraintStart_toStartOf="@id/marks2"
-                    app:layout_constraintTop_toBottomOf="@id/marks2" />
-
-                <TextView
-                    android:id="@+id/grade3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade2"
-                    app:layout_constraintStart_toStartOf="@id/grade2"
-                    app:layout_constraintTop_toBottomOf="@id/grade2" />
-
-                <TextView
-                    android:id="@+id/subject4Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_4_name"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject3Text"
-                    app:layout_constraintStart_toStartOf="@id/subject3Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject3Text" />
-
-                <TextView
-                    android:id="@+id/marks4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks3"
-                    app:layout_constraintStart_toStartOf="@id/marks3"
-                    app:layout_constraintTop_toBottomOf="@id/marks3" />
-
-                <TextView
-                    android:id="@+id/grade4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade3"
-                    app:layout_constraintStart_toStartOf="@id/grade3"
-                    app:layout_constraintTop_toBottomOf="@id/grade3" />
-
-                <TextView
-                    android:id="@+id/subject5Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_5_name"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject4Text"
-                    app:layout_constraintStart_toStartOf="@id/subject4Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject4Text" />
-
-                <TextView
-                    android:id="@+id/marks5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks4"
-                    app:layout_constraintStart_toStartOf="@id/marks4"
-                    app:layout_constraintTop_toBottomOf="@id/marks4" />
-
-                <TextView
-                    android:id="@+id/grade5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade4"
-                    app:layout_constraintStart_toStartOf="@id/grade4"
-                    app:layout_constraintTop_toBottomOf="@id/grade4" />
-
-                <TextView
-                    android:id="@+id/subject6Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_6_name"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject5Text"
-                    app:layout_constraintStart_toStartOf="@id/subject5Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject5Text" />
-
-                <TextView
-                    android:id="@+id/marks6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks5"
-                    app:layout_constraintStart_toStartOf="@id/marks5"
-                    app:layout_constraintTop_toBottomOf="@id/marks5" />
-
-                <TextView
-                    android:id="@+id/grade6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade5"
-                    app:layout_constraintStart_toStartOf="@id/grade5"
-                    app:layout_constraintTop_toBottomOf="@id/grade5" />
-
-                <TextView
-                    android:id="@+id/subject7Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_7_name"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject6Text"
-                    app:layout_constraintStart_toStartOf="@id/subject6Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject6Text" />
-
-                <TextView
-                    android:id="@+id/marks7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks6"
-                    app:layout_constraintStart_toStartOf="@id/marks6"
-                    app:layout_constraintTop_toBottomOf="@id/marks6" />
-
-                <TextView
-                    android:id="@+id/grade7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade6"
-                    app:layout_constraintStart_toStartOf="@id/grade6"
-                    app:layout_constraintTop_toBottomOf="@id/grade6" />
-
-                <TextView
-                    android:id="@+id/subject8Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_8_name"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject7Text"
-                    app:layout_constraintStart_toStartOf="@id/subject7Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject7Text" />
-
-                <TextView
-                    android:id="@+id/marks8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks7"
-                    app:layout_constraintStart_toStartOf="@id/marks7"
-                    app:layout_constraintTop_toBottomOf="@id/marks7" />
-
-                <TextView
-                    android:id="@+id/grade8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade7"
-                    app:layout_constraintStart_toStartOf="@id/grade7"
-                    app:layout_constraintTop_toBottomOf="@id/grade7" />
-
-                <TextView
-                    android:id="@+id/subject9Text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/subject_9_text"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject8Text"
-                    app:layout_constraintStart_toStartOf="@id/subject8Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject8Text" />
-
-                <TextView
-                    android:id="@+id/marks9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks8"
-                    app:layout_constraintStart_toStartOf="@id/marks8"
-                    app:layout_constraintTop_toBottomOf="@id/marks8" />
-
-                <TextView
-                    android:id="@+id/grade9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/gradeAndMarksTextSize"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade8"
-                    app:layout_constraintStart_toStartOf="@id/grade8"
-                    app:layout_constraintTop_toBottomOf="@id/grade8" />
+                    app:layout_constraintEnd_toEndOf="@id/creditHeader"
+                    app:layout_constraintStart_toStartOf="@id/creditHeader"
+                    app:layout_constraintTop_toBottomOf="@id/creditHeader" />
 
 
                 <TextView
-                    android:id="@+id/subject10Text"
+                    android:id="@+id/semester2Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/subject_10_text"
+                    android:text="@string/semester2"
                     android:textSize="@dimen/gradeAndMarksTextSize"
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/subject9Text"
-                    app:layout_constraintStart_toStartOf="@id/subject9Text"
-                    app:layout_constraintTop_toBottomOf="@id/subject9Text" />
+                    app:layout_constraintEnd_toEndOf="@id/semester1Text"
+                    app:layout_constraintStart_toStartOf="@id/semester1Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester1Text" />
 
                 <TextView
-                    android:id="@+id/marks10"
+                    android:id="@+id/GPA2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/gradeAndMarksTextSize"
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/marks9"
-                    app:layout_constraintStart_toStartOf="@id/marks9"
-                    app:layout_constraintTop_toBottomOf="@id/marks9" />
+                    app:layout_constraintEnd_toEndOf="@id/GPA1"
+                    app:layout_constraintStart_toStartOf="@id/GPA1"
+                    app:layout_constraintTop_toBottomOf="@id/GPA1" />
 
                 <TextView
-                    android:id="@+id/grade10"
+                    android:id="@+id/credit2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/gradeAndMarksTextSize"
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="@id/grade9"
-                    app:layout_constraintStart_toStartOf="@id/grade9"
-                    app:layout_constraintTop_toBottomOf="@id/grade9" />
+                    app:layout_constraintEnd_toEndOf="@id/credit1"
+                    app:layout_constraintStart_toStartOf="@id/credit1"
+                    app:layout_constraintTop_toBottomOf="@id/credit1" />
+
+
+                <TextView
+                    android:id="@+id/semester3Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester3"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester2Text"
+                    app:layout_constraintStart_toStartOf="@id/semester2Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester2Text" />
+
+                <TextView
+                    android:id="@+id/GPA3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA2"
+                    app:layout_constraintStart_toStartOf="@id/GPA2"
+                    app:layout_constraintTop_toBottomOf="@id/GPA2" />
+
+                <TextView
+                    android:id="@+id/credit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit2"
+                    app:layout_constraintStart_toStartOf="@id/credit2"
+                    app:layout_constraintTop_toBottomOf="@id/credit2" />
+
+                <TextView
+                    android:id="@+id/semester4Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester4"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester3Text"
+                    app:layout_constraintStart_toStartOf="@id/semester3Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester3Text" />
+
+                <TextView
+                    android:id="@+id/GPA4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA3"
+                    app:layout_constraintStart_toStartOf="@id/GPA3"
+                    app:layout_constraintTop_toBottomOf="@id/GPA3" />
+
+                <TextView
+                    android:id="@+id/credit4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit3"
+                    app:layout_constraintStart_toStartOf="@id/credit3"
+                    app:layout_constraintTop_toBottomOf="@id/credit3" />
+
+
+                <TextView
+                    android:id="@+id/semester5Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester5"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester4Text"
+                    app:layout_constraintStart_toStartOf="@id/semester4Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester4Text" />
+
+                <TextView
+                    android:id="@+id/GPA5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA4"
+                    app:layout_constraintStart_toStartOf="@id/GPA4"
+                    app:layout_constraintTop_toBottomOf="@id/GPA4" />
+
+                <TextView
+                    android:id="@+id/credit5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit4"
+                    app:layout_constraintStart_toStartOf="@id/credit4"
+                    app:layout_constraintTop_toBottomOf="@id/credit4" />
+
+                <TextView
+                    android:id="@+id/semester6Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester6"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester5Text"
+                    app:layout_constraintStart_toStartOf="@id/semester5Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester5Text" />
+
+                <TextView
+                    android:id="@+id/GPA6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA5"
+                    app:layout_constraintStart_toStartOf="@id/GPA5"
+                    app:layout_constraintTop_toBottomOf="@id/GPA5" />
+
+                <TextView
+                    android:id="@+id/credit6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit5"
+                    app:layout_constraintStart_toStartOf="@id/credit5"
+                    app:layout_constraintTop_toBottomOf="@id/credit5" />
+
+
+                <TextView
+                    android:id="@+id/semester7Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester7"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester6Text"
+                    app:layout_constraintStart_toStartOf="@id/semester6Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester6Text" />
+
+                <TextView
+                    android:id="@+id/GPA7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA6"
+                    app:layout_constraintStart_toStartOf="@id/GPA6"
+                    app:layout_constraintTop_toBottomOf="@id/GPA6" />
+
+                <TextView
+                    android:id="@+id/credit7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit6"
+                    app:layout_constraintStart_toStartOf="@id/credit6"
+                    app:layout_constraintTop_toBottomOf="@id/credit6" />
+
+                <TextView
+                    android:id="@+id/semester8Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester8"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester7Text"
+                    app:layout_constraintStart_toStartOf="@id/semester7Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester7Text" />
+
+                <TextView
+                    android:id="@+id/GPA8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA7"
+                    app:layout_constraintStart_toStartOf="@id/GPA7"
+                    app:layout_constraintTop_toBottomOf="@id/GPA7" />
+
+                <TextView
+                    android:id="@+id/credit8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit7"
+                    app:layout_constraintStart_toStartOf="@id/credit7"
+                    app:layout_constraintTop_toBottomOf="@id/credit7" />
+
+
+                <TextView
+                    android:id="@+id/semester9Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester9"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester8Text"
+                    app:layout_constraintStart_toStartOf="@id/semester8Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester8Text" />
+
+                <TextView
+                    android:id="@+id/GPA9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA8"
+                    app:layout_constraintStart_toStartOf="@id/GPA8"
+                    app:layout_constraintTop_toBottomOf="@id/GPA8" />
+
+                <TextView
+                    android:id="@+id/credit9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit8"
+                    app:layout_constraintStart_toStartOf="@id/credit8"
+                    app:layout_constraintTop_toBottomOf="@id/credit8" />
+
+
+                <TextView
+                    android:id="@+id/semester10Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/semester10"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/semester9Text"
+                    app:layout_constraintStart_toStartOf="@id/semester9Text"
+                    app:layout_constraintTop_toBottomOf="@id/semester9Text" />
+
+                <TextView
+                    android:id="@+id/GPA10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/GPA9"
+                    app:layout_constraintStart_toStartOf="@id/GPA9"
+                    app:layout_constraintTop_toBottomOf="@id/GPA9" />
+
+                <TextView
+                    android:id="@+id/credit10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/gradeAndMarksTextSize"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/credit9"
+                    app:layout_constraintStart_toStartOf="@id/credit9"
+                    app:layout_constraintTop_toBottomOf="@id/credit9" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

@@ -5,9 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".gpaDataInput">
 
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="150sp"
+        android:fillViewport="true">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/InputLayout"
@@ -20,7 +29,6 @@
                 android:id="@+id/oneInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
                 android:visibility="gone"
                 app:cardCornerRadius="15sp"
                 app:cardElevation="15sp"
@@ -46,14 +54,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours1"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -89,14 +99,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="1"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours2"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -130,14 +142,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours3"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -172,14 +186,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours4"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -214,14 +230,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours5"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -255,14 +273,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours6"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -296,14 +316,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours7"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -337,14 +359,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours8"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -378,14 +402,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours9"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -420,14 +446,16 @@
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/marks" />
+                        android:hint="@string/marks"
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/enterCreditHours10"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/credit_hours_hint" />
+                        android:hint="@string/credit_hours_hint"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -460,6 +488,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </androidx.core.widget.NestedScrollView>
 </layout>
 

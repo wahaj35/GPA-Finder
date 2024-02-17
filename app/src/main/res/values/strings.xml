@@ -90,5 +90,8 @@
     <string name="tenSubjectsText">Subject 10</string>
     <string name="subject_9_text">Subject 9</string>
     <string name="subject_10_text">Subject 10</string>
+    <string name="cgpa_TEXT">CGPA: </string>
+    <string name="semesterHeading">Semester</string>
+    <string name="creditsHeader">Credits</string>
 
 </resources>

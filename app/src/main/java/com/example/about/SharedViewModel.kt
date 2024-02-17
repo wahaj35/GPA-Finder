@@ -18,14 +18,22 @@ class SharedViewModel : ViewModel() {
     private var subjects = MutableList(10) { "" }
     var subjectsNames: MutableList<String> = subjects
 
-    //Mutable List For CreditHours
-    private var credits = MutableList(10) { "" }
-    var creditHours: MutableList<String> = credits
 
     //Mutable Live Data For Earned Credts
     private var EarnedCredits = MutableLiveData("")
     var creditsEarned: MutableLiveData<String> = EarnedCredits
 
+    private var cgpa = MutableLiveData("")
+    var finalCGPA :MutableLiveData<String> = cgpa
+
+    private var totalCreditHours = MutableList(10){""}
+    var totalCreditHoursSemesterList :MutableList<String> = totalCreditHours
+
+    private var totalCredits = MutableLiveData("")
+    var totalCreditHoursSemester :MutableLiveData<String> = totalCredits
+
+    private var GPA = MutableList(10){""}
+    var semesterGPA : MutableList<String> = GPA
 
     //Mutable Live Data For GPA
     private var gpa = MutableLiveData("")
@@ -37,6 +45,18 @@ class SharedViewModel : ViewModel() {
     //Mutable List for grades
     private var grades = MutableList(10) { "" }
     var courseGrades: MutableList<String> = grades
+
+    fun setGPA(gpa:Array<String>){
+        for (i in 0 until noOfSemester.value.toString().toInt()){
+            semesterGPA[i] = gpa[i]
+        }
+    }
+
+    fun setCreditHours(credits:Array<String>){
+        for(i in 0 until noOfSemester.value.toString().toInt()){
+            totalCreditHoursSemesterList[i] = credits[i]
+        }
+    }
 
     fun getGrades(grades: Array<String>) {
         for (i in 0 until noOf_subjects.value.toString().toInt()) {
@@ -50,12 +70,6 @@ class SharedViewModel : ViewModel() {
             studentMarks[i] = marks[i]
         }
 
-    }
-
-    fun setCreditHours(credits: Array<String>) {
-        for (i in 0 until noOf_subjects.value.toString().toInt()) {
-            creditHours[i] = credits[i]
-        }
     }
 
 }

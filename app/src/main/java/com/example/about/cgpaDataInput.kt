@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentCgpaDataInputBinding
 
 class cgpaDataInput : Fragment() {
@@ -33,12 +34,42 @@ class cgpaDataInput : Fragment() {
                 nineSemesterInputCardLayout,
                 tenSemesterInputCardLayout
             )
+            val gpaEditTextsStrings = arrayOf(
+                enterGPAEditText1,
+                enterGPAEditText2,
+                enterGPAEditText3,
+                enterGPAEditText4,
+                enterGPAEditText5,
+                enterGPAEditText6,
+                enterGPAEditText7,
+                enterGPAEditText8,
+                enterGPAEditText9,
+                enterGPAEditText10
+            )
+            val creditsEditTextStrings = arrayOf(
+                enterTotalCredits1,
+                enterTotalCredits2,
+                enterTotalCredits3,
+                enterTotalCredits4,
+                enterTotalCredits5,
+                enterTotalCredits6,
+                enterTotalCredits7,
+                enterTotalCredits8,
+                enterTotalCredits9,
+                enterTotalCredits10
+            )
 
             for (i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()) {
                 views[i].visibility = View.VISIBLE
             }
 
             checkCGPAButton.setOnClickListener { chkCGPA() }
+            resetButton.setOnClickListener {
+                for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
+                    gpaEditTextsStrings[i].setText("")
+                    creditsEditTextStrings[i].setText("")
+                }
+            }
             return root
         }
     }
@@ -114,8 +145,11 @@ class cgpaDataInput : Fragment() {
         }
         var cgpa = totalQP/totalCredits
         val CGPA = "%.2f".format(cgpa)
-        Toast.makeText(context,CGPA,Toast.LENGTH_SHORT).show()
-        lateinit var string : String
+        sharedViewModel.finalCGPA.value = CGPA
+        sharedViewModel.totalCreditHoursSemester.value = totalCredits.toString()
+        sharedViewModel.setCreditHours(creditsEditTextStrings)
+        sharedViewModel.setGPA(gpaEditTextsStrings)
+        view?.findNavController()?.navigate(R.id.action_cgpaDataInput_to_cgpaResult)
     }
 
     private fun emptyStingChecker(
