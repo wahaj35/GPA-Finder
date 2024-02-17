@@ -115,6 +115,7 @@ class cgpaDataInput : Fragment() {
         var cgpa = totalQP/totalCredits
         val CGPA = "%.2f".format(cgpa)
         Toast.makeText(context,CGPA,Toast.LENGTH_SHORT).show()
+        lateinit var string : String
     }
 
     private fun emptyStingChecker(
