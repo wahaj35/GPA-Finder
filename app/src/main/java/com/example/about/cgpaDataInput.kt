@@ -77,18 +77,45 @@ class cgpaDataInput : Fragment() {
                     checker,
                     Toast.LENGTH_SHORT
                 ).show()
-                "Not Empty" -> Toast.makeText(context,checker,Toast.LENGTH_SHORT).show()
+
+                "Not Empty" -> {
+                  val check =   valid_invalidGPAChecker(gpaEditTextsStrings)
+                    if(check == "Valid") calculateCGPA(gpaEditTextsStrings,creditsEditTextStrings)
+                    else Toast.makeText(context,check,Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
-//    private fun calculateCGPA(gpaEditTextsStrings:Array<String>,creditsEditTextStrings:Array<String>) {
-//        var totalQP  = 0.0
-//        var totatCredtis =  0
-//        for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
-//                totalQP = gpaEditTextsStrings[i].toDouble() * creditsEditTextStrings[i].toDouble()
-//        }
-//        Toast.makeText(context,totalQP.toString(),Toast.LENGTH_SHORT).show()
-//    }
+
+    private fun valid_invalidGPAChecker(
+        gpaEditTextsStrings: Array<String>
+    ) :String{
+        var num  = 0
+        for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
+               if(gpaEditTextsStrings[i].toDouble()in 0.0 ..4.0){
+                   num++
+               }
+        }
+        if(num == sharedViewModel.noOfSemester.value.toString().toInt()) return "Valid"
+        else return "Invalid GPA"
+    }
+
+    private fun calculateCGPA(
+        gpaEditTextsStrings: Array<String>,
+        creditsEditTextStrings: Array<String>
+    ) {
+        var totalQP = 0.0
+        var totalCredits = 0
+        for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
+            totalQP += gpaEditTextsStrings[i].toDouble()*creditsEditTextStrings[i].toDouble()
+        }
+        for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
+            totalCredits += creditsEditTextStrings[i].toInt()
+        }
+        var cgpa = totalQP/totalCredits
+        val CGPA = "%.2f".format(cgpa)
+        Toast.makeText(context,CGPA,Toast.LENGTH_SHORT).show()
+    }
 
     private fun emptyStingChecker(
         gpaEditTexts: Array<String>,
