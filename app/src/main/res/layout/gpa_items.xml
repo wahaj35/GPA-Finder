@@ -32,7 +32,7 @@
             android:paddingTop="8dp"
             android:text="@string/oneSubject_text"
             android:textColor="#007AFF"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="italic" />
 
     </LinearLayout>
