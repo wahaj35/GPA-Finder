@@ -11,4 +11,5 @@
     <dimen name="noOfSubjectsTitleSize">20sp</dimen>
     <dimen name="noOfSubjectTextsCardCornerValue">10dp</dimen>
     <dimen name="gradeAndMarksTextSize">16sp</dimen>
+    <dimen name="noOfSemesterTextSize">50sp</dimen>
 </resources>

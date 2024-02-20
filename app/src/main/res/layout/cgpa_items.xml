@@ -19,11 +19,10 @@
             android:id="@+id/noOfSemesters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:textStyle="bold"
+            android:paddingBottom="8sp"
             android:textColor="#007AFF"
-            android:text="2"
-            android:paddingBottom="8dp"/>
+            android:textSize="@dimen/noOfSemesterTextSize"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/subjectsText"

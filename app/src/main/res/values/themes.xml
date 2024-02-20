@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.About" parent="Base.Theme.About" />
+
 </resources>

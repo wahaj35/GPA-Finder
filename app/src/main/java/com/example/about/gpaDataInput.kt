@@ -160,8 +160,6 @@ class gpaDataInput : Fragment() {
                     }
                 }
 
-
-
                 "9" -> {
                     if ((binding.enterMarksEditText1.text.toString() != "") &&
                         (binding.enterMarksEditText2.text.toString() != "") &&

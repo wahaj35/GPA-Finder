@@ -38,7 +38,12 @@
     <string name="marksSheetHeaderText">Marks Sheet</string>
     <string name="percentageText">Percentage:</string>
     <string name="subject7Text">Subject 7</string>
-    <string name="AboutText">\"Introducing our GPA Calculator app - your ultimate tool for effortless GPA computation. Designed to streamline academic assessment, our app takes the stress out of calculating grades by allowing students to input their marks and credit hours, generating accurate GPAs instantly. Regardless of your Department, our user-friendly interface ensures a smooth experience, empowering you to stay on top of your academic performance with ease.\"</string>
+    <string name="AboutText">\"Welcome to our innovative project designed to streamline the process of calculating both CGPA (Cumulative Grade Point Average) and GPA (Grade Point Average) for students.
+Embark on a journey with us as we unveil a powerful tool crafted to effortlessly determine the academic standing of students through precise CGPA and GPA calculations. Unlock the potential of accurate academic evaluation with our project, meticulously engineered to compute CGPA and GPA, providing educators and students alike with invaluable insights.Join us in revolutionizing academic assessment with our cutting-edge project, revolutionizing the way CGPA and GPA are calculated, enhancing efficiency and accuracy.
+Step into the future of academic evaluation with our groundbreaking project, simplifying the complexities of CGPA and GPA calculations for students, teachers, and institutions.
+Experience the ease and reliability of our project, designed to simplify the intricate process of computing CGPA and GPA, empowering students to track their academic progress effortlessly.
+Discover the power of precision in academic assessment with our project, offering a seamless solution for computing CGPA and GPA, ensuring transparency and accuracy in student performance evaluation.
+Enter a world of efficiency and accuracy in academic evaluation with our project, equipped with advanced algorithms to compute CGPA and GPA, setting new benchmarks in student performance assessment.\"</string>
     <string name="AboutHeading">About</string>
     <string name="CourseMarksText">"  Marks  "</string>
     <string name="imageContentDiscription">This is CUVAS logo and main screen logo</string>

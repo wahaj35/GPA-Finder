@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="100sp"
+        android:height="100sp"
+        android:drawable="@drawable/whatsapp_image_2024_02_18_at_7_02_46_pm_removebg_preview"
+        android:gravity="center" />
+</layer-list>

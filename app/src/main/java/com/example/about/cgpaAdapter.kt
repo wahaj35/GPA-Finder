@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class cgpaAdapter(private val noOfSemesters:Array<String>):RecyclerView.Adapter<cgpaAdapter.ViewHolder>() {
     lateinit var clickListener: OnItemClickListener
+
+    //Setting up clickOnListener on each item in recycler View
     interface OnItemClickListener{
         fun itemClickListener(position: Int,itemView: View)
     }
@@ -18,6 +20,7 @@ class cgpaAdapter(private val noOfSemesters:Array<String>):RecyclerView.Adapter<
     class ViewHolder(itemView: View,clickListener: OnItemClickListener):RecyclerView.ViewHolder(itemView) {
         val semesterNo = itemView.findViewById<TextView>(R.id.noOfSemesters)
         init {
+            //Initializing each item with listener and passing adapter position to the custom function to set click listener
             itemView.setOnClickListener {
                 clickListener.itemClickListener(adapterPosition,itemView)
             }
