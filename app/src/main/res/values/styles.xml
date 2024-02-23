@@ -54,7 +54,7 @@
         <item name="android:layout_marginStart">10dp</item>
     </style>
 <style name="gpaAndCreditValueStyle">
-    <item name="android:textSize">20dp</item>
+    <item name="android:textSize">20sp</item>
     <item name="android:textStyle">bold</item>
     <item name="android:textColor">@color/holoBlue</item>
 </style>
@@ -149,18 +149,30 @@
     <style name="editTextStyle">
         <item name="android:layout_weight">1</item>
         <item name="backgroundTintMode">multiply</item>
-        <item name="android:breakStrategy">high_quality</item>
+        <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
+        <item name="android:autofillHints" tools:targetApi="o">none</item>
         <item name="android:bufferType">editable</item>
         <item name="android:cursorVisible">true</item>
         <item name="android:ems">1</item>
-        <item name="android:hyphenationFrequency">normal</item>
+        <item name="android:hint">GPA</item>
+        <item name="android:hyphenationFrequency" tools:targetApi="m">normal</item>
         <item name="android:inputType">numberDecimal</item>
         <item name="android:layerType">software</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
     </style>
 
+    <style name="SubjectHeadingStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
-
+    <style name="inputCardStyles">
+        <item name="cardCornerRadius">15sp</item>
+        <item name="cardElevation">15sp</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
 
 </resources>

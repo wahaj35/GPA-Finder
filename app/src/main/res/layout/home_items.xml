@@ -21,9 +21,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bevan"
-            android:paddingTop="8dp"
+            android:paddingTop="8sp"
             android:text="@string/calculateText"
-            android:textColor="@color/holoBlue"
+            android:textColor="#007AFF"
             android:textSize="20sp"
             android:textStyle="italic" />
 
@@ -32,10 +32,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/black_han_sans"
-            android:paddingTop="8dp"
+            android:paddingTop="8sp"
             android:text="@string/calculateGPAText"
-            android:textColor="@color/holoBlue"
-            android:textSize="30dp"
+            android:textColor="#007AFF"
+            android:textSize="30sp"
             android:textStyle="italic" />
 
     </LinearLayout>

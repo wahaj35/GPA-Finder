@@ -28,6 +28,7 @@
                 android:layout_width="200sp"
                 android:layout_height="200sp"
                 android:layout_marginTop="20sp"
+                android:contentDescription="@string/cgpaIconDescription"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.536"
                 app:layout_constraintStart_toStartOf="parent"

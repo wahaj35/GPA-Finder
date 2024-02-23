@@ -14,6 +14,7 @@
         android:id="@+id/gpaIcon"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:contentDescription="@string/aboutImageDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,12 +29,13 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:layout_marginTop="10sp"
                 android:id="@+id/AboutText"
-                android:layout_marginBottom="300sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="300sp"
+                android:contentDescription="@string/AboutIntro"
                 android:text="@string/AboutText"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"

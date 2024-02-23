@@ -4,12 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
@@ -32,8 +30,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             />
-
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/NavigationHost"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"

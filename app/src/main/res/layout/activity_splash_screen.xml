@@ -7,9 +7,10 @@
     tools:context=".SplashScreen">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/appIcon"
         android:layout_width="100sp"
         android:layout_height="100sp"
+        android:contentDescription="@string/aboutImageDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,13 +18,24 @@
         app:srcCompat="@drawable/splash_screen_design" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/developerByText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Developed by Wahaj Sajid"
+        android:text="@string/DevelopedByText"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/developerName"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/developerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:text="@string/DeveloperName"
+        android:textSize="20sp"
+        android:textColor="#007AFF"
+        app:layout_constraintBottom_toBottomOf="@id/developerByText"
+        app:layout_constraintStart_toEndOf="@id/developerByText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

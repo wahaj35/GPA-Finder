@@ -29,11 +29,9 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/oneSemesterInputCardLayout"
+                style="@style/inputCardStyles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -45,27 +43,26 @@
 
                     <TextView
                         android:id="@+id/oneSemster"
+                        style="@style/SubjectHeadingStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester1"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester1" />
 
                     <EditText
                         android:id="@+id/enterGPAEditText1"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:autofillHints="none"
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
                         android:id="@+id/enterTotalCredits1"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:autofillHints="none"
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -73,10 +70,7 @@
                 android:id="@+id/twoSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/oneSemesterInputCardLayout">
@@ -87,28 +81,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/twoSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester2"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester2" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText2"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits2"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -117,10 +110,7 @@
                 android:id="@+id/threeSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/twoSemesterInputCardLayout">
@@ -131,28 +121,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/threeSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester3"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester3" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText3"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits3"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -160,10 +149,7 @@
                 android:id="@+id/fourSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/threeSemesterInputCardLayout">
@@ -174,14 +160,14 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/fourSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester4"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester4" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText4"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
@@ -190,6 +176,7 @@
                         android:textSize="20sp" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits4"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
@@ -204,10 +191,7 @@
                 android:id="@+id/fiveSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fourSemesterInputCardLayout">
@@ -218,28 +202,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/fiveSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester5"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester5" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText5"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits5"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -248,10 +231,7 @@
                 android:id="@+id/sixSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fiveSemesterInputCardLayout">
@@ -262,28 +242,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/sixSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester6"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester6" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText6"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits6"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -291,10 +270,7 @@
                 android:id="@+id/sevenSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sixSemesterInputCardLayout">
@@ -305,28 +281,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/sevenSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester7"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester7" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText7"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits7"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -334,10 +309,7 @@
                 android:id="@+id/eightSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sevenSemesterInputCardLayout">
@@ -348,28 +320,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/eightSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester8"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester8" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText8"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits8"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -377,10 +348,7 @@
                 android:id="@+id/nineSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/eightSemesterInputCardLayout">
@@ -391,28 +359,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/nineSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester9"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester9" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText9"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits9"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -421,10 +388,7 @@
                 android:id="@+id/tenSemesterInputCardLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:visibility="gone"
-                app:cardCornerRadius="15sp"
-                app:cardElevation="15sp"
+                style="@style/inputCardStyles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/nineSemesterInputCardLayout">
@@ -435,28 +399,27 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        style="@style/SubjectHeadingStyle"
                         android:id="@+id/tenSemsters"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/semester10"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/semester10" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterGPAEditText10"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/enterGPAHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/enterGPAHint" />
 
                     <EditText
+                        android:autofillHints="none"
                         android:id="@+id/enterTotalCredits10"
                         style="@style/editTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/totalCreditsHint"
-                        android:textSize="20sp" />
+                        android:hint="@string/totalCreditsHint" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

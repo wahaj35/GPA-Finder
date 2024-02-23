@@ -98,5 +98,11 @@ Enter a world of efficiency and accuracy in academic evaluation with our project
     <string name="cgpa_TEXT">CGPA: </string>
     <string name="semesterHeading">Semester</string>
     <string name="creditsHeader">Credits</string>
+    <string name="AboutIntro">About Intro</string>
+    <string name="aboutImageDescription">App Icon</string>
+    <string name="cgpaIconDescription">CGPA Icon</string>
+    <string name="developerName">Developed by Wahaj Sajid</string>
+    <string name="DevelopedByText">Developed by</string>
+    <string name="DeveloperName">Wahaj Sajid</string>
 
 </resources>
