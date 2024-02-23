@@ -104,5 +104,6 @@ Enter a world of efficiency and accuracy in academic evaluation with our project
     <string name="developerName">Developed by Wahaj Sajid</string>
     <string name="DevelopedByText">Developed by</string>
     <string name="DeveloperName">Wahaj Sajid</string>
-
+<string name="GPAText">GPA</string>
+    <string name="CGPAText">CGPA</string>
 </resources>

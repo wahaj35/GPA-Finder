@@ -12,11 +12,11 @@ import com.example.about.databinding.FragmentResultBinding
 class ResultFragment : Fragment() {
 
     lateinit var binding: FragmentResultBinding
-    val sharedViewModel: SharedViewModel by activityViewModels()
+   private val sharedViewModel: SharedViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_result, container, false)
         binding.apply {

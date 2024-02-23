@@ -1,13 +1,13 @@
 package com.example.about
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toolbar
-import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.appbar.AppBarLayout
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

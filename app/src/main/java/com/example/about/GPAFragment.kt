@@ -45,10 +45,10 @@ class GPAFragment : Fragment() {
             val subjects  = listOf("Subject","Subjects")
             val num = arrayOf("1","2","3","4","5","6","7","8","9","10")
              recyclerView = cardRecyclerView
-            val adapter = gpaAapater(subjectsNo, subjects)
+            val adapter = GPAAdapater(subjectsNo, subjects)
             recyclerView.adapter = adapter
             (recyclerView.layoutManager  as GridLayoutManager).spanCount = 2
-            adapter.setItemClickListener(object:gpaAapater.SetOnItemClickListener{
+            adapter.setItemClickListener(object:GPAAdapater.SetOnItemClickListener{
                 override fun itemClickListener(position: Int, view: View) {
                     sharedViewModel.noOf_subjects.value = num[position]
                   val cardView =   view.findViewById<CardView>(R.id.cardView)

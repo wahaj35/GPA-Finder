@@ -9,13 +9,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import com.example.about.databinding.FragmentCgpaResultBinding
 
-class cgpaResult : Fragment() {
+class CGPAResult : Fragment() {
     lateinit var binding: FragmentCgpaResultBinding
-    val sharedViewModel: SharedViewModel by activityViewModels()
+   private val sharedViewModel: SharedViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cgpa_result, container, false)
         binding.apply {

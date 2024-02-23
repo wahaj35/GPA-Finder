@@ -14,10 +14,6 @@ class SharedViewModel : ViewModel() {
     private var marks = MutableList(10) { "" }
     var studentMarks: MutableList<String> = marks
 
-    //MutableList for Subjects
-    private var subjects = MutableList(10) { "" }
-    var subjectsNames: MutableList<String> = subjects
-
 
     //Mutable Live Data For Earned Credts
     private var EarnedCredits = MutableLiveData("")

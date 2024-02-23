@@ -1,5 +1,6 @@
 package com.example.about
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,26 +13,28 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.about.databinding.FragmentHome2Binding
 
+@Suppress("DEPRECATION")
 class FragmentHome : Fragment() {
-    lateinit var recyclerView: RecyclerView
+   private lateinit var recyclerView: RecyclerView
     lateinit var binding: FragmentHome2Binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home2, container, false)
         recyclerView = binding.homeRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
         val adapter = HomeAdapter()
         recyclerView.adapter = adapter
-           adapter.itemClickListener(object :HomeAdapter.OnItemClickListener{
+           adapter.itemClickListener(@SuppressLint("SuspiciousIndentation")
+           object :HomeAdapter.OnItemClickListener{
                override fun itemClickListener(position: Int,view: View) {
                    val cardView = view.findViewById<CardView>(R.id.cardView)
                    cardView.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
                    when(position){
-                       0 -> view?.findNavController()?.navigate(R.id.action_fragmentHome_to_GPAFragment)
-                       1 -> view?.findNavController()?.navigate(R.id.action_fragmentHome_to_CGPAFragment)
+                       0 -> view.findNavController().navigate(R.id.action_fragmentHome_to_GPAFragment)
+                       1 -> view.findNavController().navigate(R.id.action_fragmentHome_to_CGPAFragment)
                    }
                }
            })

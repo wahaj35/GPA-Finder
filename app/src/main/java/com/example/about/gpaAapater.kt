@@ -1,19 +1,15 @@
 package com.example.about
 
-import android.view.GestureDetector
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class gpaAapater(
+class GPAAdapater(
     private val subjectsNo: List<String>, private val subjects: List<String>
-) : RecyclerView.Adapter<gpaAapater.ViewHolder>() {
-    private lateinit var gestureDetector: GestureDetector
-    lateinit var clickListener: SetOnItemClickListener
+) : RecyclerView.Adapter<GPAAdapater.ViewHolder>() {
+    private lateinit var clickListener: SetOnItemClickListener
 
     interface SetOnItemClickListener {
         fun itemClickListener(position: Int, view: View)
@@ -25,8 +21,8 @@ class gpaAapater(
 
     class ViewHolder(itemView: View, clickListener: SetOnItemClickListener) :
         RecyclerView.ViewHolder(itemView) {
-        val noOfSubjects = itemView.findViewById<TextView>(R.id.noOfSubjectsText)
-        val subjects = itemView.findViewById<TextView>(R.id.subjectsText)
+        val noOfSubjects :TextView= itemView.findViewById(R.id.noOfSubjectsText)
+        val subjects:TextView = itemView.findViewById(R.id.subjectsText)
 
         init {
             itemView.setOnClickListener {

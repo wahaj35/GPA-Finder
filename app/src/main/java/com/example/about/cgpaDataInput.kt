@@ -11,9 +11,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentCgpaDataInputBinding
 
-class cgpaDataInput : Fragment() {
+class CGPADataInput : Fragment() {
     lateinit var binding: FragmentCgpaDataInputBinding
-    val sharedViewModel: SharedViewModel by activityViewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -110,7 +110,7 @@ class cgpaDataInput : Fragment() {
                 ).show()
 
                 "Not Empty" -> {
-                  val check =   valid_invalidGPAChecker(gpaEditTextsStrings)
+                  val check =   validInvalidGPAChecker(gpaEditTextsStrings)
                     if(check == "Valid") calculateCGPA(gpaEditTextsStrings,creditsEditTextStrings)
                     else Toast.makeText(context,check,Toast.LENGTH_SHORT).show()
                 }
@@ -118,7 +118,7 @@ class cgpaDataInput : Fragment() {
         }
     }
 
-    private fun valid_invalidGPAChecker(
+    private fun validInvalidGPAChecker(
         gpaEditTextsStrings: Array<String>
     ) :String{
         var num  = 0
@@ -127,8 +127,8 @@ class cgpaDataInput : Fragment() {
                    num++
                }
         }
-        if(num == sharedViewModel.noOfSemester.value.toString().toInt()) return "Valid"
-        else return "Invalid GPA"
+        return if(num == sharedViewModel.noOfSemester.value.toString().toInt()) "Valid"
+        else "Invalid GPA"
     }
 
     private fun calculateCGPA(
@@ -143,9 +143,9 @@ class cgpaDataInput : Fragment() {
         for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
             totalCredits += creditsEditTextStrings[i].toInt()
         }
-        var cgpa = totalQP/totalCredits
-        val CGPA = "%.2f".format(cgpa)
-        sharedViewModel.finalCGPA.value = CGPA
+        val cgpa = totalQP/totalCredits
+        val formattedCGPA = "%.2f".format(cgpa)
+        sharedViewModel.finalCGPA.value = formattedCGPA
         sharedViewModel.totalCreditHoursSemester.value = totalCredits.toString()
         sharedViewModel.setCreditHours(creditsEditTextStrings)
         sharedViewModel.setGPA(gpaEditTextsStrings)

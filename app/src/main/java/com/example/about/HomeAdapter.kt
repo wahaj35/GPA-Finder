@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeAdapter():RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
-    lateinit var clickListener: OnItemClickListener
+class HomeAdapter:RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+  private  lateinit var clickListener: OnItemClickListener
     interface OnItemClickListener{
         fun itemClickListener(position: Int,view:View)
     }
@@ -15,7 +15,7 @@ class HomeAdapter():RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         clickListener = listener
     }
     class ViewHolder(itemView: View,clickListener: OnItemClickListener):RecyclerView.ViewHolder(itemView){
-        val gpaAndCGPAText = itemView.findViewById<TextView>(R.id.calculateGPAText)
+        val gpaAndCGPAText :TextView= itemView.findViewById(R.id.calculateGPAText)
         init {
             itemView.setOnClickListener {
                 clickListener.itemClickListener(adapterPosition,itemView)
@@ -30,8 +30,8 @@ class HomeAdapter():RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     override fun getItemCount(): Int  = 2
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        when(position){
-           0 -> holder.gpaAndCGPAText.text = "GPA"
-           1 -> holder.gpaAndCGPAText.text = "CGPA"
+           0 -> holder.gpaAndCGPAText.setText(R.string.GPAText)
+           1 -> holder.gpaAndCGPAText.setText(R.string.CGPAText)
        }
     }
 }
