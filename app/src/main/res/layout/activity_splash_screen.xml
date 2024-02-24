@@ -8,14 +8,15 @@
 
     <ImageView
         android:id="@+id/appIcon"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
         android:contentDescription="@string/aboutImageDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/splash_screen_design" />
+        app:srcCompat="@drawable/newicon_removebg_preview"
+        tools:targetApi="p" />
 
     <TextView
         android:id="@+id/developerByText"

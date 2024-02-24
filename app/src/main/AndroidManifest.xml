@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/whatsapp_image_2024_02_18_at_7_02_46_pm_removebg_preview"
+        android:icon="@drawable/newicon_removebg_preview"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/whatsapp_image_2024_02_18_at_7_02_46_pm_removebg_preview"
+        android:roundIcon="@drawable/newicon_removebg_preview"
         android:supportsRtl="true"
         android:theme="@style/Theme.About"
         tools:targetApi="31">
