@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/appIcon"
-        android:layout_width="200sp"
-        android:layout_height="200sp"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
         android:contentDescription="@string/aboutImageDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,25 +18,34 @@
         app:srcCompat="@drawable/newicon_removebg_preview"
         tools:targetApi="p" />
 
-    <TextView
-        android:id="@+id/developerByText"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/DevelopedByText"
-        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/developerName"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="20sp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/developerName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5sp"
-        android:text="@string/DeveloperName"
-        android:textSize="20sp"
-        android:textColor="#007AFF"
-        app:layout_constraintBottom_toBottomOf="@id/developerByText"
-        app:layout_constraintStart_toEndOf="@id/developerByText" />
+        <TextView
+            android:id="@+id/developerByText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/DevelopedByText"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/developerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/DeveloperName"
+            android:textColor="#007AFF"
+            android:layout_marginStart="5sp"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

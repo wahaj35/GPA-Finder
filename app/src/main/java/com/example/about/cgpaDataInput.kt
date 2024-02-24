@@ -10,10 +10,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentCgpaDataInputBinding
+import kotlin.properties.Delegates
 
 class cgpaDataInput : Fragment() {
     lateinit var binding: FragmentCgpaDataInputBinding
     val sharedViewModel: SharedViewModel by activityViewModels()
+    private var count = 0
+    private var indexing = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -112,7 +115,16 @@ class cgpaDataInput : Fragment() {
                 "Not Empty" -> {
                   val check =   valid_invalidGPAChecker(gpaEditTextsStrings)
                     if(check == "Valid") calculateCGPA(gpaEditTextsStrings,creditsEditTextStrings)
-                    else Toast.makeText(context,check,Toast.LENGTH_SHORT).show()
+                    else{
+                        if(count == 1) {
+                            Toast.makeText(context,"Invalid Semester $indexing GPA",Toast.LENGTH_SHORT).show()
+                            count --
+                        }
+                        else {
+                            Toast.makeText(context,"Invalid Multiple GPA Inputs including Semester $indexing GPA",Toast.LENGTH_SHORT).show()
+                            count -= 2
+                        }
+                    }
                 }
             }
         }
@@ -125,6 +137,10 @@ class cgpaDataInput : Fragment() {
         for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
                if(gpaEditTextsStrings[i].toDouble()in 0.0 ..4.0){
                    num++
+               }
+               else {
+                   count ++
+                   indexing = i+1
                }
         }
         if(num == sharedViewModel.noOfSemester.value.toString().toInt()) return "Valid"

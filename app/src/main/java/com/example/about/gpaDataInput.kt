@@ -16,6 +16,8 @@ class gpaDataInput : Fragment() {
     lateinit var binding: FragmentInputDataBinding
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var GPA: String
+    private var indexing  = 0
+    private var count = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,7 +25,7 @@ class gpaDataInput : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_input_data, container, false)
         displayViews()
-        binding.checkGPAButton.setOnClickListener { chkGPA() }
+        binding.checkGPAButton.setOnClickListener { GPAChecker() }
         return binding.root
     }
 
@@ -78,11 +80,8 @@ class gpaDataInput : Fragment() {
             }
         }
     }
-
-    @SuppressLint("ResourceAsColor")
-    private fun chkGPA() {
+    private fun GPAChecker(){
         binding.apply {
-            // Assigning the EditText Credit Hours and Marks to the Properties of the Marks and Credit Hours Class
             val qp = Array(sharedViewModel.noOf_subjects.value.toString().toInt()) { "" }
             val grades = Array(sharedViewModel.noOf_subjects.value.toString().toInt()) { "" }
             val marks = arrayOf(
@@ -110,320 +109,77 @@ class gpaDataInput : Fragment() {
                 enterCreditHours10.text.toString(),
             )
             sharedViewModel.setMarks(marks)
-            this.invalidateAll()
-            when (sharedViewModel.noOf_subjects.value) {
-
-
-                "10" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") &&
-                        (binding.enterMarksEditText2.text.toString() != "") &&
-                        (binding.enterMarksEditText3.text.toString() != "") &&
-                        (binding.enterMarksEditText4.text.toString() != "") &&
-                        (binding.enterMarksEditText5.text.toString() != "") &&
-                        (binding.enterMarksEditText6.text.toString() != "") &&
-                        (binding.enterMarksEditText7.text.toString() != "") &&
-                        (binding.enterMarksEditText8.text.toString() != "") &&
-                        (binding.enterCreditHours1.text.toString() != "") &&
-                        (binding.enterCreditHours2.text.toString() != "") &&
-                        (binding.enterCreditHours3.text.toString() != "") &&
-                        (binding.enterCreditHours4.text.toString() != "") &&
-                        (binding.enterCreditHours5.text.toString() != "") &&
-                        (binding.enterCreditHours6.text.toString() != "") &&
-                        (binding.enterCreditHours7.text.toString() != "") &&
-                        (binding.enterCreditHours8.text.toString() != "") &&
-                        (binding.enterCreditHours9.text.toString() != "") && (binding.enterCreditHours10.text.toString() != "")
-                    ) {
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours4.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours5.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours6.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours7.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours8.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours9.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours10.text.toString()
-                                .toInt() in (1..4))
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else  Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
+            when(val checker = emptyStingChecker(marks,creditHours)){
+                "Empty Marks Strings" -> Toast.makeText(context,checker,Toast.LENGTH_SHORT).show()
+                "Empty Credit Hour String" -> Toast.makeText(context,checker,Toast.LENGTH_SHORT).show()
+                "Empty Both Marks & Credit Strings" -> Toast.makeText(context,checker,Toast.LENGTH_SHORT).show()
+                "Not Empty" -> {
+                    when(val check =  valid_invalidCreditChecker(creditHours)){
+                        "Invalid Credit Hours" -> {
+                            if(count == 1) {
+                                Toast.makeText(context,"Invalid Subject $indexing Credit Hours",Toast.LENGTH_SHORT).show()
+                                count --
+                            }
+                            else {
+                                Toast.makeText(context,"Invalid Multiple Credit Inputs including Subject $indexing Credits",Toast.LENGTH_SHORT).show()
+                                count -= 2
+                            }
                         }
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                "9" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") &&
-                        (binding.enterMarksEditText2.text.toString() != "") &&
-                        (binding.enterMarksEditText3.text.toString() != "") &&
-                        (binding.enterMarksEditText4.text.toString() != "") &&
-                        (binding.enterMarksEditText5.text.toString() != "") &&
-                        (binding.enterMarksEditText6.text.toString() != "") &&
-                        (binding.enterMarksEditText7.text.toString() != "") &&
-                        (binding.enterMarksEditText8.text.toString() != "") &&
-                        (binding.enterCreditHours1.text.toString() != "") &&
-                        (binding.enterCreditHours2.text.toString() != "") &&
-                        (binding.enterCreditHours3.text.toString() != "") &&
-                        (binding.enterCreditHours4.text.toString() != "") &&
-                        (binding.enterCreditHours5.text.toString() != "") &&
-                        (binding.enterCreditHours6.text.toString() != "") &&
-                        (binding.enterCreditHours7.text.toString() != "") &&
-                        (binding.enterCreditHours8.text.toString() != "") && (binding.enterCreditHours9.text.toString() != "")
-                    ) {
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours4.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours5.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours6.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours7.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours8.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours9.text.toString()
-                                .toInt() in (1..4))
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else  Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
+                        else -> {
+                         val isTrue = gpaCalculation(creditHours,marks,qp,grades)
+                            if(isTrue) view?.findNavController()?.navigate(R.id.action_dataInput_to_resultFragment)
+                            else {
+                                for(i in qp.indices){
+                                    if(qp[i].toDouble() == 0.5){
+                                        Toast.makeText(context,"Invalid Subject ${i+1} Marks",Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }
                         }
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-
-
-                "8" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") &&
-                        (binding.enterMarksEditText2.text.toString() != "") &&
-                        (binding.enterMarksEditText3.text.toString() != "") &&
-                        (binding.enterMarksEditText4.text.toString() != "") &&
-                        (binding.enterMarksEditText5.text.toString() != "") &&
-                        (binding.enterMarksEditText6.text.toString() != "") &&
-                        (binding.enterMarksEditText7.text.toString() != "") &&
-                        (binding.enterMarksEditText8.text.toString() != "") &&
-                        (binding.enterCreditHours1.text.toString() != "") &&
-                        (binding.enterCreditHours2.text.toString() != "") &&
-                        (binding.enterCreditHours3.text.toString() != "") &&
-                        (binding.enterCreditHours4.text.toString() != "") &&
-                        (binding.enterCreditHours5.text.toString() != "") &&
-                        (binding.enterCreditHours6.text.toString() != "") &&
-                        (binding.enterCreditHours7.text.toString() != "") && (binding.enterCreditHours8.text.toString() != "")
-                    ) {
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours4.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours5.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours6.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours7.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours8.text.toString()
-                                .toInt() in (1..4))
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                           else  Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                "7" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") &&
-                        (binding.enterMarksEditText2.text.toString() != "") &&
-                        (binding.enterMarksEditText3.text.toString() != "") &&
-                        (binding.enterMarksEditText4.text.toString() != "") &&
-                        (binding.enterMarksEditText5.text.toString() != "") &&
-                        (binding.enterMarksEditText6.text.toString() != "") &&
-                        (binding.enterMarksEditText7.text.toString() != "") &&
-                        (binding.enterCreditHours1.text.toString() != "") &&
-                        (binding.enterCreditHours2.text.toString() != "") &&
-                        (binding.enterCreditHours3.text.toString() != "") &&
-                        (binding.enterCreditHours4.text.toString() != "") &&
-                        (binding.enterCreditHours5.text.toString() != "") &&
-                        (binding.enterCreditHours6.text.toString() != "") &&
-                        (binding.enterCreditHours7.text.toString() != "")
-                    ) {
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours4.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours5.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours6.text.toString()
-                                .toInt() in (1..4)) && (binding.enterCreditHours7.text.toString()
-                                .toInt() in (1..4))
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-
-                "6" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterMarksEditText2.text.toString() != "") && (binding.enterMarksEditText3.text.toString() != "") && (binding.enterMarksEditText4.text.toString() != "") && (binding.enterMarksEditText5.text.toString() != "") && (binding.enterMarksEditText6.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "") && (binding.enterCreditHours2.text.toString() != "") && (binding.enterCreditHours3.text.toString() != "") && (binding.enterCreditHours4.text.toString() != "") && (binding.enterCreditHours5.text.toString() != "") && (binding.enterCreditHours6.text.toString() != "")) {
-
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours4.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours5.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours6.text.toString()
-                                .toInt() in 1..4)
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                "5" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterMarksEditText2.text.toString() != "") && (binding.enterMarksEditText3.text.toString() != "") && (binding.enterMarksEditText4.text.toString() != "") && (binding.enterMarksEditText5.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "") && (binding.enterCreditHours2.text.toString() != "") && (binding.enterCreditHours3.text.toString() != "") && (binding.enterCreditHours4.text.toString() != "") && (binding.enterCreditHours5.text.toString() != "")) {
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours4.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours5.text.toString()
-                                .toInt() in 1..4)
-                        ) {
-
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-
-                }
-
-                "4" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterMarksEditText2.text.toString() != "") && (binding.enterMarksEditText3.text.toString() != "") && (binding.enterMarksEditText4.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "") && (binding.enterCreditHours2.text.toString() != "") && (binding.enterCreditHours3.text.toString() != "") && (binding.enterCreditHours4.text.toString() != "")) {
-
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours4.text.toString()
-                                .toInt() in 1..4)
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                "3" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterMarksEditText2.text.toString() != "") && (binding.enterMarksEditText3.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "") && (binding.enterCreditHours2.text.toString() != "") && (binding.enterCreditHours3.text.toString() != "")) {
-
-
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours3.text.toString()
-                                .toInt() in 1..4)
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                "2" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterMarksEditText2.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "") && (binding.enterCreditHours2.text.toString() != "")) {
-
-
-                        if ((binding.enterCreditHours1.text.toString()
-                                .toInt() in 1..4) && (binding.enterCreditHours2.text.toString()
-                                .toInt() in 1..4)
-                        ) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                "1" -> {
-                    if ((binding.enterMarksEditText1.text.toString() != "") && (binding.enterCreditHours1.text.toString() != "")) {
-                        if ((binding.enterCreditHours1.text.toString().toInt() in 1..4)) {
-                            val isTrue = gpaCalculation(creditHours, marks, qp, grades)
-                            if (isTrue) view?.findNavController()
-                                ?.navigate(R.id.action_dataInput_to_resultFragment)
-                            else Toast.makeText(context, "Invalid Marks", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(activity, "Invalid Credit Hour", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-                    } else {
-                        Toast.makeText(activity, "Empty Input String", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
+        }
+    }
+    private fun valid_invalidCreditChecker(
+        creditHours: Array<String>
+    ) :String{
+        var num  = 0
+        for(i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()){
+            if(creditHours[i].toInt()in 1 ..4){
+                num++
+            } else{
+                indexing = i+1
+                count++
+            }
+        }
+        if(num == sharedViewModel.noOf_subjects.value.toString().toInt()) return "Valid"
+        else return "Invalid Credit Hours"
+    }
+    private fun emptyStingChecker(
+        marks: Array<String>,
+        creditHours: Array<String>
+    ): String {
+        binding.apply {
+            lateinit var checker: String // This will track if one of the GPA or Credit Strings is empty
+            var num = 0 // This will track if both GPA and credits are empty
+            for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
+                if (marks[i] == "") {
+                    checker = "Empty Marks Strings"
+                    num++
+                    break
+                }
+            }
+            for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
+                if (creditHours[i] == "") {
+                    checker = "Empty Credit Hour String"
+                    num++
+                    break
+                }
+            }
+            if (num == 2) checker = "Empty Both Marks & Credit Strings"
+            if (num == 0) checker = "Not Empty"
+            return checker
         }
     }
 
