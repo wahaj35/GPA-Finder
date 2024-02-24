@@ -1,24 +1,35 @@
 package com.example.about
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.findViewTreeLifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 class HomeAdapter:RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
   private  lateinit var clickListener: OnItemClickListener
+
     interface OnItemClickListener{
         fun itemClickListener(position: Int,view:View)
+        val mutex:Mutex
     }
     fun itemClickListener(listener: OnItemClickListener){
-        clickListener = listener
+     clickListener = listener
     }
-    class ViewHolder(itemView: View,clickListener: OnItemClickListener):RecyclerView.ViewHolder(itemView){
+    @OptIn(DelicateCoroutinesApi::class)
+    class ViewHolder(itemView: View, clickListener: OnItemClickListener):RecyclerView.ViewHolder(itemView){
         val gpaAndCGPAText :TextView= itemView.findViewById(R.id.calculateGPAText)
         init {
             itemView.setOnClickListener {
-                clickListener.itemClickListener(adapterPosition,itemView)
+                itemView.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
+                    clickListener.mutex.withLock { clickListener.itemClickListener(adapterPosition,itemView) }
+                }
+
             }
         }
     }

@@ -48,6 +48,7 @@ class GPAFragment : Fragment() {
             val adapter = GPAAdapater(subjectsNo, subjects)
             recyclerView.adapter = adapter
             (recyclerView.layoutManager  as GridLayoutManager).spanCount = 2
+            recyclerView.isMotionEventSplittingEnabled = false
             adapter.setItemClickListener(object:GPAAdapater.SetOnItemClickListener{
                 override fun itemClickListener(position: Int, view: View) {
                     sharedViewModel.noOf_subjects.value = num[position]

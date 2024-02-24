@@ -30,6 +30,7 @@ class CGPAFragment : Fragment() {
         (recyclerView.layoutManager as GridLayoutManager).spanCount = 2
         val adapter = CGPAAdapter(noOfSemesters)
         recyclerView.adapter = adapter
+        recyclerView.isMotionEventSplittingEnabled = false
         adapter.itemClickListener(object:CGPAAdapter.OnItemClickListener{
             override fun itemClickListener(position: Int,itemView: View) {
                 sharedViewModel.noOfSemester.value = noOfSemesters[position]

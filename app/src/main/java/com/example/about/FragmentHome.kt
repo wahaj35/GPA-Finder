@@ -8,10 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.about.databinding.FragmentHome2Binding
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
 
 @Suppress("DEPRECATION")
 class FragmentHome : Fragment() {
@@ -26,9 +29,10 @@ class FragmentHome : Fragment() {
         recyclerView = binding.homeRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
         val adapter = HomeAdapter()
-        recyclerView.adapter = adapter
+        recyclerView.isMotionEventSplittingEnabled = false
            adapter.itemClickListener(@SuppressLint("SuspiciousIndentation")
            object :HomeAdapter.OnItemClickListener{
+               override val mutex: Mutex = Mutex()
                override fun itemClickListener(position: Int,view: View) {
                    val cardView = view.findViewById<CardView>(R.id.cardView)
                    cardView.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
@@ -38,6 +42,7 @@ class FragmentHome : Fragment() {
                    }
                }
            })
+        recyclerView.adapter = adapter
         return binding.root
     }
 }
