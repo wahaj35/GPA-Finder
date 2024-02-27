@@ -13,6 +13,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.about.databinding.ActivityMainBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 open class MainActivity : AppCompatActivity() {
@@ -22,6 +25,7 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = setContentView(this, R.layout.activity_main)
+        MobileAds.initialize(this)
         val bottomBar :BottomNavigationView = binding.bottomNavigationView
         setSupportActionBar(binding.myToolbar)
         val navHostFragment =

@@ -1,6 +1,9 @@
 package com.example.about
 
+import android.app.Activity
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +12,14 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import com.example.about.databinding.ActivityMainBinding
 import com.example.about.databinding.FragmentCgpaDataInputBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.MobileAds.initialize
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlin.properties.Delegates
 
 class cgpaDataInput : Fragment() {
@@ -17,6 +27,8 @@ class cgpaDataInput : Fragment() {
     val sharedViewModel: SharedViewModel by activityViewModels()
     private var count = 0
     private var indexing = 0
+    private var mInterstitialAd: InterstitialAd? = null
+    private var trueToLoadAd: Boolean = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,6 +36,8 @@ class cgpaDataInput : Fragment() {
         // Inflate the layout for this fragment
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_cgpa_data_input, container, false)
+        MobileAds.initialize(requireContext())
+
         binding.apply {
             val views = arrayOf(
                 oneSemesterInputCardLayout,
@@ -66,7 +80,14 @@ class cgpaDataInput : Fragment() {
                 views[i].visibility = View.VISIBLE
             }
 
-            checkCGPAButton.setOnClickListener { chkCGPA() }
+            checkCGPAButton.setOnClickListener {
+                chkCGPA()
+                if(trueToLoadAd){
+                    loadAD()
+                    mInterstitialAd?.show(requireActivity())
+                }
+
+            }
             resetButton.setOnClickListener {
                 for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
                     gpaEditTextsStrings[i].setText("")
@@ -75,6 +96,22 @@ class cgpaDataInput : Fragment() {
             }
             return root
         }
+    }
+
+    private fun loadAD(){
+        val adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                adError.toString().let { Log.d(TAG, it) }
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.d(TAG, "Ad was loaded.")
+                mInterstitialAd = interstitialAd
+            }
+        })
     }
 
     private fun chkCGPA() {
@@ -165,6 +202,7 @@ class cgpaDataInput : Fragment() {
         sharedViewModel.totalCreditHoursSemester.value = totalCredits.toString()
         sharedViewModel.setCreditHours(creditsEditTextStrings)
         sharedViewModel.setGPA(gpaEditTextsStrings)
+        trueToLoadAd = true
         view?.findNavController()?.navigate(R.id.action_cgpaDataInput_to_cgpaResult)
     }
 

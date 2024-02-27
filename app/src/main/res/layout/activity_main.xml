@@ -19,6 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_items" />
 
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             app:defaultNavHost="true"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/my_toolbar"
             app:navGraph="@navigation/navigation" />
     </androidx.constraintlayout.widget.ConstraintLayout>

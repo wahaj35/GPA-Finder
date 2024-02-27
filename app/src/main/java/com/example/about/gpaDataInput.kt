@@ -1,7 +1,9 @@
 package com.example.about
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.about.databinding.FragmentInputDataBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 class gpaDataInput : Fragment() {
     lateinit var binding: FragmentInputDataBinding
@@ -18,6 +24,8 @@ class gpaDataInput : Fragment() {
     private lateinit var GPA: String
     private var indexing  = 0
     private var count = 0
+    private var mInterstitialAd: InterstitialAd? = null
+    private var trueToLoadAd: Boolean = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,9 +33,30 @@ class gpaDataInput : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_input_data, container, false)
         displayViews()
-        binding.checkGPAButton.setOnClickListener { GPAChecker() }
+        binding.checkGPAButton.setOnClickListener {
+            GPAChecker()
+            if(trueToLoadAd){
+                loadAD()
+                mInterstitialAd?.show(requireActivity())
+            }
+        }
         return binding.root
     }
+private fun loadAD(){
+    val adRequest = AdRequest.Builder().build()
+
+    InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+        override fun onAdFailedToLoad(adError: LoadAdError) {
+            adError.toString().let { Log.d(ContentValues.TAG, it) }
+            mInterstitialAd = null
+        }
+
+        override fun onAdLoaded(interstitialAd: InterstitialAd) {
+            Log.d(ContentValues.TAG, "Ad was loaded.")
+            mInterstitialAd = interstitialAd
+        }
+    })
+}
 
     private fun displayViews() {
         binding.apply {
@@ -126,8 +155,11 @@ class gpaDataInput : Fragment() {
                             }
                         }
                         else -> {
-                         val isTrue = gpaCalculation(creditHours,marks,qp,grades)
-                            if(isTrue) view?.findNavController()?.navigate(R.id.action_dataInput_to_resultFragment)
+                         var isTrue = gpaCalculation(creditHours,marks,qp,grades)
+                            if(isTrue) {
+                                trueToLoadAd = true
+                                view?.findNavController()?.navigate(R.id.action_dataInput_to_resultFragment)
+                            }
                             else {
                                 for(i in qp.indices){
                                     if(qp[i].toDouble() == 0.5){

@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import com.example.about.databinding.FragmentCgpaResultBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class cgpaResult : Fragment() {
     lateinit var binding: FragmentCgpaResultBinding
@@ -18,6 +21,11 @@ class cgpaResult : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cgpa_result, container, false)
+        MobileAds.initialize(requireContext())
+        val adView = AdView(requireContext())
+        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
         binding.apply {
             val semesterViews = arrayOf(
                 semester1Text,
