@@ -82,11 +82,6 @@ class cgpaDataInput : Fragment() {
 
             checkCGPAButton.setOnClickListener {
                 chkCGPA()
-                if(trueToLoadAd){
-                    loadAD()
-                    mInterstitialAd?.show(requireActivity())
-                }
-
             }
             resetButton.setOnClickListener {
                 for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
@@ -194,7 +189,7 @@ class cgpaDataInput : Fragment() {
             totalQP += gpaEditTextsStrings[i].toDouble()*creditsEditTextStrings[i].toDouble()
         }
         for(i in 0 until sharedViewModel.noOfSemester.value.toString().toInt()){
-            totalCredits += creditsEditTextStrings[i].toInt()
+            totalCredits += creditsEditTextStrings[i].toFloat().toInt()
         }
         var cgpa = totalQP/totalCredits
         val CGPA = "%.2f".format(cgpa)
@@ -202,7 +197,8 @@ class cgpaDataInput : Fragment() {
         sharedViewModel.totalCreditHoursSemester.value = totalCredits.toString()
         sharedViewModel.setCreditHours(creditsEditTextStrings)
         sharedViewModel.setGPA(gpaEditTextsStrings)
-        trueToLoadAd = true
+        loadAD()
+        mInterstitialAd?.show(requireActivity())
         view?.findNavController()?.navigate(R.id.action_cgpaDataInput_to_cgpaResult)
     }
 

@@ -35,10 +35,6 @@ class gpaDataInput : Fragment() {
         displayViews()
         binding.checkGPAButton.setOnClickListener {
             GPAChecker()
-            if(trueToLoadAd){
-                loadAD()
-                mInterstitialAd?.show(requireActivity())
-            }
         }
         return binding.root
     }
@@ -155,9 +151,10 @@ private fun loadAD(){
                             }
                         }
                         else -> {
-                         var isTrue = gpaCalculation(creditHours,marks,qp,grades)
+                         val isTrue = gpaCalculation(creditHours,marks,qp,grades)
                             if(isTrue) {
-                                trueToLoadAd = true
+                                loadAD()
+                                mInterstitialAd?.show(requireActivity())
                                 view?.findNavController()?.navigate(R.id.action_dataInput_to_resultFragment)
                             }
                             else {
@@ -178,15 +175,15 @@ private fun loadAD(){
     ) :String{
         var num  = 0
         for(i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()){
-            if(creditHours[i].toInt()in 1 ..4){
+            if(creditHours[i].toFloat().toInt()in 1 ..4){
                 num++
             } else{
                 indexing = i+1
                 count++
             }
         }
-        if(num == sharedViewModel.noOf_subjects.value.toString().toInt()) return "Valid"
-        else return "Invalid Credit Hours"
+        return if(num == sharedViewModel.noOf_subjects.value.toString().toInt()) "Valid"
+        else "Invalid Credit Hours"
     }
     private fun emptyStingChecker(
         marks: Array<String>,
@@ -224,26 +221,25 @@ private fun loadAD(){
         var totalQP = 0.0.toFloat()
         var totalCredit = 0
         for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
-            if (creditHours[i] == "4") {
-                val om4 = marks[i]
-                qp[i] = ch4(om4).toString()
-                grades[i] = calculateGrade(om4, creditHours[i])
+            val credits = creditHours[i].toFloat().toInt()
+            if (credits == 4) {
+                val om4 = marks[i].toFloat().toInt()
+                    qp[i] = ch4(om4).toString()
+                    grades[i] = calculateGrade(om4, credits)
+            } else if (credits == 3) {
+                val om3 = marks[i].toFloat().toInt()
+                    qp[i] = ch3(om3).toString()
+                    grades[i] = calculateGrade(om3, credits)
 
-            } else if (creditHours[i] == "3") {
-                val om3 = marks[i]
-                qp[i] = ch3(om3).toString()
-                grades[i] = calculateGrade(om3, creditHours[i])
+            } else if (credits == 2) {
+                val om2 = marks[i].toFloat().toInt()
+                    qp[i] = ch2(om2).toString()
+                    grades[i] = calculateGrade(om2, credits)
 
-            } else if (creditHours[i] == "2") {
-                val om2 = marks[i]
-                qp[i] = ch2(om2).toString()
-                grades[i] = calculateGrade(om2, creditHours[i])
-
-            } else if (creditHours[i] == "1") {
-                val om1 = marks[i]
-                qp[i] = ch1(om1).toString()
-                grades[i] = calculateGrade(om1, creditHours[i])
-
+            } else if (credits == 1) {
+                val om1 = marks[i].toFloat().toInt()
+                    qp[i] = ch1(om1).toString()
+                    grades[i] = calculateGrade(om1,credits)
             }
         }
 
@@ -251,7 +247,7 @@ private fun loadAD(){
             totalQP += qp[i].toFloat()
         }
         for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
-            totalCredit += creditHours[i].toInt()
+            totalCredit += creditHours[i].toFloat().toInt()
         }
         val gpa = totalQP / totalCredit
         GPA = "%.2f".format(gpa).toFloat().toString()
@@ -270,47 +266,55 @@ private fun loadAD(){
         return cheker
     }
 
-    private fun calculateGrade(obtainedMarks: String, creditHours: String): String {
+    private fun calculateGrade(obtainedMarks: Int, creditHours: Int): String {
         when (creditHours) {
-            "1" -> {
-                return if (obtainedMarks.toInt() in 16..20) "A"
-                else if (obtainedMarks.toInt() in 13..15) "B"
-                else if (obtainedMarks.toInt() in 10..12) "C"
-                else if (obtainedMarks.toInt() in 8..9) "D"
-                else "F"
+            1 -> {
+                return when (obtainedMarks) {
+                    in 16..20 -> "A"
+                    in 13..15 -> "B"
+                    in 10..12 -> "C"
+                    in 8..9 -> "D"
+                    else -> "F"
+                }
             }
 
-            "2" -> {
-                return if (obtainedMarks.toInt() in 32..40) "A"
-                else if (obtainedMarks.toInt() in 26..31) "B"
-                else if (obtainedMarks.toInt() in 20..25) "C"
-                else if (obtainedMarks.toInt() in 16..19) "D"
-                else "F"
+            2 -> {
+                return when (obtainedMarks) {
+                    in 32..40 -> "A"
+                    in 26..31 -> "B"
+                    in 20..25 -> "C"
+                    in 16..19 -> "D"
+                    else -> "F"
+                }
             }
 
-            "3" -> {
-                return if (obtainedMarks.toInt() in 48..60) "A"
-                else if (obtainedMarks.toInt() in 39..47) "B"
-                else if (obtainedMarks.toInt() in 30..38) "C"
-                else if (obtainedMarks.toInt() in 24..29) "D"
-                else "F"
+            3 -> {
+                return when (obtainedMarks) {
+
+                    in 48..60 -> "A"
+                    in 39..47 -> "B"
+                    in 30..38 -> "C"
+                    in 24..29 -> "D"
+                    else -> "F"
+                }
             }
 
-            "4" -> {
-                return if (obtainedMarks.toInt() in 64..80) "A"
-                else if (obtainedMarks.toInt() in 52..63) "B"
-                else if (obtainedMarks.toInt() in 40..51) "C"
-                else if (obtainedMarks.toInt() in 32..39) "D"
-                else "F"
+            4 -> {
+                return when (obtainedMarks) {
+                    in 64..80 -> "A"
+                    in 52..63 -> "B"
+                    in 40..51 -> "C"
+                    in 32..39 -> "D"
+                    else -> "F"
+                }
             }
-
             else -> return "F"
         }
     }
 
 }
 
-private fun ch4(om4: String): Float {
+private fun ch4(om4: Int): Float {
     if (om4.toInt() <= 80) {
         if (om4.toInt() in 32..80) {
             val qualityPoints = arrayOf(
@@ -367,7 +371,7 @@ private fun ch4(om4: String): Float {
 }
 
 // This function will calculate the quality points for the Subject with 3 credit hours.
-private fun ch3(om3: String): Float {
+private fun ch3(om3: Int): Float {
     if (om3.toInt() <= 60) {
         if (om3.toInt() in 25..60) {
             val qualityPoints = arrayOf(
@@ -405,7 +409,7 @@ private fun ch3(om3: String): Float {
                     qp3 = qualityPoints[i].toString()
                     break
                 } else {
-                    if (om3 == a1.toString()) {
+                    if (om3 == a1) {
                         qp3 = qualityPoints[i].toString()
                         break
                     }
@@ -419,7 +423,7 @@ private fun ch3(om3: String): Float {
 }
 
 // This function will calculate the quality points for the Subject with 2 credit hours.
-private fun ch2(om2: String): Float {
+private fun ch2(om2: Int): Float {
     if (om2.toInt() <= 40) {
         if (om2.toInt() in 16..40) {
             val qualityPoints = arrayOf(
@@ -433,7 +437,7 @@ private fun ch2(om2: String): Float {
                     qp2 = qualityPoints[i].toString()
                     break
                 } else {
-                    if (om2 == a1.toString()) {
+                    if (om2 == a1) {
                         qp2 = qualityPoints[i].toString()
                         break
                     }
@@ -447,7 +451,7 @@ private fun ch2(om2: String): Float {
 }
 
 
-private fun ch1(om1: String): Float {
+private fun ch1(om1: Int): Float {
     if (om1.toInt() <= 20) {
         if (om1.toInt() in 8..20) {
             val qualityPoints = arrayOf(
@@ -461,7 +465,7 @@ private fun ch1(om1: String): Float {
                     qp1 = qualityPoints[i].toString()
                     break
                 } else {
-                    if (om1 == a1.toString()) {
+                    if (om1 == a1) {
                         qp1 = qualityPoints[i].toString()
                         break
                     }
