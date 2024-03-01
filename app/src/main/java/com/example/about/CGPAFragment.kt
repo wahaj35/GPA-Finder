@@ -36,7 +36,6 @@ class CGPAFragment : Fragment() {
                 sharedViewModel.noOfSemester.value = noOfSemesters[position]
                 val cardView = itemView.findViewById<CardView>(R.id.cardView)
                 cardView.setCardBackgroundColor(resources.getColor(R.color.hoverColor))
-                Toast.makeText(context,"Hello",Toast.LENGTH_SHORT).show()
                 view?.findNavController()?.navigate(R.id.action_CGPAFragment_to_cgpaDataInput)
             }
         })

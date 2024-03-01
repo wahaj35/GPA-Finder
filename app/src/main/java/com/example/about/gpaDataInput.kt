@@ -222,24 +222,30 @@ private fun loadAD(){
         var totalCredit = 0
         for (i in 0 until sharedViewModel.noOf_subjects.value.toString().toInt()) {
             val credits = creditHours[i].toFloat().toInt()
-            if (credits == 4) {
-                val om4 = marks[i].toFloat().toInt()
+
+            when (credits) {
+                4 -> {
+                    val om4 = marks[i].toFloat().toInt()
                     qp[i] = ch4(om4).toString()
                     grades[i] = calculateGrade(om4, credits)
-            } else if (credits == 3) {
-                val om3 = marks[i].toFloat().toInt()
+                }
+                3 -> {
+                    val om3 = marks[i].toFloat().toInt()
                     qp[i] = ch3(om3).toString()
                     grades[i] = calculateGrade(om3, credits)
 
-            } else if (credits == 2) {
-                val om2 = marks[i].toFloat().toInt()
+                }
+                2 -> {
+                    val om2 = marks[i].toFloat().toInt()
                     qp[i] = ch2(om2).toString()
                     grades[i] = calculateGrade(om2, credits)
 
-            } else if (credits == 1) {
-                val om1 = marks[i].toFloat().toInt()
+                }
+                1 -> {
+                    val om1 = marks[i].toFloat().toInt()
                     qp[i] = ch1(om1).toString()
                     grades[i] = calculateGrade(om1,credits)
+                }
             }
         }
 
