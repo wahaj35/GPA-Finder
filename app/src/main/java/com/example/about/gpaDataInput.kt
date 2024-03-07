@@ -154,7 +154,7 @@ private fun loadAD(){
                          val isTrue = gpaCalculation(creditHours,marks,qp,grades)
                             if(isTrue) {
                                 loadAD()
-                                mInterstitialAd?.show(requireActivity())
+//                                mInterstitialAd?.show(requireActivity())
                                 view?.findNavController()?.navigate(R.id.action_dataInput_to_resultFragment)
                             }
                             else {

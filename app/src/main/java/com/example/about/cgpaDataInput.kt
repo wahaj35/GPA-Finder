@@ -198,7 +198,7 @@ class cgpaDataInput : Fragment() {
         sharedViewModel.setCreditHours(creditsEditTextStrings)
         sharedViewModel.setGPA(gpaEditTextsStrings)
         loadAD()
-        mInterstitialAd?.show(requireActivity())
+//        mInterstitialAd?.show(requireActivity())
         view?.findNavController()?.navigate(R.id.action_cgpaDataInput_to_cgpaResult)
     }
 
