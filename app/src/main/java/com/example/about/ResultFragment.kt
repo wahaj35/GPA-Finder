@@ -24,9 +24,9 @@ class ResultFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_result, container, false)
         MobileAds.initialize(requireContext())
         val adView = AdView(requireContext())
-//        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
-//        val adRequest = AdRequest.Builder().build()
-//        binding.adView.loadAd(adRequest)
+        adView.adUnitId = "ca-app-pub-4251504542022137/2602518505"
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
         binding.apply {
             val subjectsView = arrayOf(subject1Text,subject2Text,subject3Text,subject4Text,subject5Text,subject6Text,subject7Text,subject8Text,subject9Text,subject10Text)
             val marksView = arrayOf(marks1,marks2,marks3,marks4,marks5,marks6,marks7,marks8,marks9,marks10)

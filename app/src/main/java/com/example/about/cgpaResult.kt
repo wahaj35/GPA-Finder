@@ -23,9 +23,9 @@ class cgpaResult : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cgpa_result, container, false)
         MobileAds.initialize(requireContext())
         val adView = AdView(requireContext())
-//        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
-//        val adRequest = AdRequest.Builder().build()
-//        binding.adView.loadAd(adRequest)
+        adView.adUnitId = "ca-app-pub-4251504542022137/2602518505"
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
         binding.apply {
             val semesterViews = arrayOf(
                 semester1Text,

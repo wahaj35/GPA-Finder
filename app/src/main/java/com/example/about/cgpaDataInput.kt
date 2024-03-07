@@ -96,7 +96,7 @@ class cgpaDataInput : Fragment() {
     private fun loadAD(){
         val adRequest = AdRequest.Builder().build()
 
-        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(requireContext(),"ca-app-pub-4251504542022137/9857852686", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 adError.toString().let { Log.d(TAG, it) }
                 mInterstitialAd = null
@@ -198,7 +198,7 @@ class cgpaDataInput : Fragment() {
         sharedViewModel.setCreditHours(creditsEditTextStrings)
         sharedViewModel.setGPA(gpaEditTextsStrings)
         loadAD()
-//        mInterstitialAd?.show(requireActivity())
+        mInterstitialAd?.show(requireActivity())
         view?.findNavController()?.navigate(R.id.action_cgpaDataInput_to_cgpaResult)
     }
 
